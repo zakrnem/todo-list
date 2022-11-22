@@ -1,0 +1,24 @@
+Basic Functionality:
+    User inputs task
+    The task needs a constructor
+    The task object has the following parameters:
+        Title
+        Description
+        Due-date
+        Priority
+        Checklist
+    We need to group tasks in different projects
+
+Pseudocode:
+    A function return an object with the parameters that we need.
+    The user inputs the task parameter in the argument of this function.
+    This task can have no project.
+    So we would have to display all task with no project in the first.
+    If the user decides to specify a new project it'll create a "folder".
+    The task should be editable.    
+
+
+Modules:
+    Task constructor: newTask.js
+    Project constructor: newProject.js
+
