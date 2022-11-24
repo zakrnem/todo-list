@@ -10,7 +10,7 @@ Basic Functionality:
     We need to group tasks in different projects
 
 Pseudocode:
-    A function return an object with the parameters that we need.
+    A function returns an object with the parameters that we need.
     The user inputs the task parameter in the argument of this function.
     This task can have no project.
     So we would have to display all task with no project in the first.

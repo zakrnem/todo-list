@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/zakrnem/todo-list#readme",
   "devDependencies": {
+    "css-loader": "^6.7.2",
+    "source-map-loader": "^4.0.1",
+    "style-loader": "^3.3.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.0"
   }
