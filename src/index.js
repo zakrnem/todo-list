@@ -5,16 +5,35 @@ function homeDOM() {
     let content = document.querySelector('#content')
     let header = document.createElement('header')
     
-    let sidebarButton = document.createElement('button')
-    sidebarButton.className = 'header-button'
-    sidebarButton.id = 'sidebar-button'
-    let sidebarIcon = document.createElement('img')
-    sidebarIcon.src = './img/sidebar-close-svgrepo-com.svg'
-    sidebarIcon.className = 'icon'
-    sidebarButton.appendChild(sidebarIcon)
-    header.appendChild(sidebarButton)
+    let sideBarButton = newIcon('header-button', 'sidebar-button', 'sidebar-close-svgrepo-com.svg')
+    header.appendChild(sideBarButton)
+
+    let homeButton = newIcon('header-button','home-button', 'home-svgrepo-com.svg')
+    header.appendChild(homeButton)
+
+    let searchBar = document.createElement('input')
+    searchBar.setAttribute("type", "text");
+    searchBar.className = 'header-search'
+    searchBar.id = 'search-bar'
+    header.appendChild(searchBar)
+
+
+    let plusButton = newIcon('header-button','plus-button', 'plus-svgrepo-com.svg')
+    header.appendChild(plusButton)
 
     content.appendChild(header)
 }
 
 homeDOM()
+
+function newIcon(className, id, imgSrc) {
+    let newButton = document.createElement('button')
+    newButton.className = className
+    newButton.id = id
+    let newIcon = document.createElement('img')
+    newIcon.src = `./img/${imgSrc}`
+    newIcon.className = 'icon'
+    newButton.appendChild(newIcon)
+    
+    return newButton
+}

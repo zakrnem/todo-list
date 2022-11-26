@@ -32,8 +32,9 @@ header {
 
 .icon {
     height: 3rem;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(256deg) brightness(106%) contrast(101%);
 }
 
 .icon:hover {
-/* filter: invert(95%) sepia(0%) saturate(7472%) hue-rotate(107deg) brightness(103%) contrast(106%); */
+    filter: invert(82%) sepia(33%) saturate(1048%) hue-rotate(37deg) brightness(94%) contrast(98%);
 }
