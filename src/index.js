@@ -76,8 +76,6 @@ function dashboardDOM() {
     let dashboard = document.createElement('div')
     dashboard.className = 'dashboard'
 
-    
-
     content.appendChild(dashboard)
 }
 
@@ -100,6 +98,16 @@ function taskEdit () {
     taskContent.id = 'task-content'
     taskEdit.appendChild(taskContent)
 
-    content.appendChild(taskEdit)
+    let main = document.querySelector('main')
+    
+   if (main === null) {
+        let main = document.createElement('main')
+        main.appendChild(taskEdit)
+        content.appendChild(main)
+    }
+    else {
+        main.appendChild(taskEdit)
+        content.appendChild(main)
+    }
 }
 taskEdit()
