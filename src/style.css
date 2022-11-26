@@ -35,6 +35,15 @@ header {
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(256deg) brightness(106%) contrast(101%);
 }
 
-.icon:hover {
+.header-icon:hover {
     filter: invert(82%) sepia(33%) saturate(1048%) hue-rotate(37deg) brightness(94%) contrast(98%);
 }
+
+.sidebar {
+    background-color: aqua;
+}
+
+.task-dashboard {
+    background-color: #995ad0;
+}
+

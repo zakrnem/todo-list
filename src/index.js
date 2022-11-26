@@ -55,11 +55,17 @@ function sidebarDOM() {
     'plus-svgrepo-com.svg', 'sidebar-icon', 'New Task')
     sidebar.appendChild(taskButton)
 
+    let upcomingButton = newIcon('sidebar-button', 'upcoming',
+    'calendar-svgrepo-com.svg', 'sidebar-icon', 'Upcoming Tasks')
+    sidebar.appendChild(upcomingButton)
+
     let projectsButton = newIcon('sidebar-button', 'project-dropdown',
     'plus-svgrepo-com.svg', 'sidebar-icon', 'Projects')
     sidebar.appendChild(projectsButton)
     
-    content.appendChild(sidebar)
+    let main = document.createElement('main')
+    main.appendChild(sidebar)
+    content.appendChild(main)
 }
 
 sidebarDOM()
@@ -70,5 +76,30 @@ function dashboardDOM() {
     let dashboard = document.createElement('div')
     dashboard.className = 'dashboard'
 
+    
+
     content.appendChild(dashboard)
 }
+
+function taskEdit () {
+    let content = document.querySelector('#content')
+    let taskEdit = document.createElement('div')
+    taskEdit.className = 'task-dashboard'
+
+    let taskTitle = document.createElement('input')
+    taskTitle.setAttribute("type", "text");
+    taskTitle.placeholder = 'Title your note'
+    taskTitle.className = 'task-title'
+    taskTitle.id = 'task-title'
+    taskEdit.appendChild(taskTitle)
+
+    let taskContent = document.createElement('input')
+    taskContent.setAttribute("type", "text");
+    taskContent.placeholder = 'Start typing'
+    taskContent.className = 'task-content'
+    taskContent.id = 'task-content'
+    taskEdit.appendChild(taskContent)
+
+    content.appendChild(taskEdit)
+}
+taskEdit()
