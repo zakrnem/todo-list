@@ -17,6 +17,8 @@ function homeDOM() {
     searchBar.id = 'search-bar'
     header.appendChild(searchBar)
 
+    let searchButton = newIcon('header-button', 'search-button', 'search-svgrepo-com.svg')
+    header.appendChild(searchButton)
 
     let plusButton = newIcon('header-button','plus-button', 'plus-svgrepo-com.svg')
     header.appendChild(plusButton)
