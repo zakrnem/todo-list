@@ -39,3 +39,21 @@ function newIcon(className, id, imgSrc) {
     
     return newButton
 }
+
+function sidebarDOM() {
+    let content = document.querySelector('#content')
+
+    let sidebar = document.createElement('div')
+    sidebar.className = 'sidebar'
+
+    content.appendChild(sidebar)
+}
+
+function dashboardDOM() {
+    let content = document.querySelector('#content')
+
+    let dashboard = document.createElement('div')
+    dashboard.className = 'dashboard'
+
+    content.appendChild(dashboard)
+}
