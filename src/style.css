@@ -24,10 +24,10 @@ header {
     margin-bottom: 1.5rem;
 }
 
-.header-button {
+.header-button,
+.sidebar-button {
     background: none;
 	border: none;
-	padding: 0;
 }
 
 .header-icon {
@@ -47,3 +47,38 @@ header {
     background-color: #995ad0;
 }
 
+main {
+    display: flex;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar-button {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.sidebar-icon {
+    height: 1.5rem;
+}
+
+.task-dashboard {
+    flex: auto;
+    flex-direction: column;
+}
+
+.task-edit-input {
+    width: 100%
+}
+
+input {
+    border: none;
+
+}

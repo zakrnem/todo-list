@@ -60,7 +60,7 @@ function sidebarDOM() {
     sidebar.appendChild(upcomingButton)
 
     let projectsButton = newIcon('sidebar-button', 'project-dropdown',
-    'plus-svgrepo-com.svg', 'sidebar-icon', 'Projects')
+    'stack-svgrepo-com.svg', 'sidebar-icon', 'Projects')
     sidebar.appendChild(projectsButton)
     
     let main = document.createElement('main')
@@ -84,17 +84,33 @@ function taskEdit () {
     let taskEdit = document.createElement('div')
     taskEdit.className = 'task-dashboard'
 
+    let taskCheckLabel = document.createElement('label')
+    taskCheckLabel.htmlFor = 'task-completed'
+    taskCheckLabel.textContent = 'Completed'
+    taskEdit.appendChild(taskCheckLabel)
+
+    let taskCheck = document.createElement('input')
+    taskCheck.setAttribute("type", "checkbox");
+    taskCheck.id = 'task-completed'
+    taskEdit.appendChild(taskCheck)
+
+
     let taskTitle = document.createElement('input')
     taskTitle.setAttribute("type", "text");
-    taskTitle.placeholder = 'Title your note'
-    taskTitle.className = 'task-title'
+    taskTitle.placeholder = 'Title your task'
+    taskTitle.className = 'task-edit-input'
     taskTitle.id = 'task-title'
     taskEdit.appendChild(taskTitle)
 
+    let dueDate = document.createElement('input')
+    dueDate.setAttribute("type", "date")
+    dueDate.className = 'task-edit-input'
+    taskEdit.appendChild(dueDate)
+
     let taskContent = document.createElement('input')
     taskContent.setAttribute("type", "text");
-    taskContent.placeholder = 'Start typing'
-    taskContent.className = 'task-content'
+    taskContent.placeholder = 'Add a description'
+    taskContent.className = 'task-edit-input'
     taskContent.id = 'task-content'
     taskEdit.appendChild(taskContent)
 
