@@ -74,8 +74,8 @@ main {
     flex-direction: column;
 }
 
-.task-edit-input {
-    width: 100%
+.task-container1 {
+    display: flex;
 }
 
 input {

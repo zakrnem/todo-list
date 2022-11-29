@@ -1,3 +1,12 @@
+Pending:
+    Style task edit DOM
+    Remove header bottom margin
+    Separate functions into new files
+    Add footer
+    Create dashboard function
+    
+    
+
 Basic Functionality:
     User inputs task
     The task needs a constructor

@@ -84,35 +84,41 @@ function taskEdit () {
     let taskEdit = document.createElement('div')
     taskEdit.className = 'task-dashboard'
 
-    let taskCheckLabel = document.createElement('label')
-    taskCheckLabel.htmlFor = 'task-completed'
-    taskCheckLabel.textContent = 'Completed'
-    taskEdit.appendChild(taskCheckLabel)
+    let taskContainer1 = document.createElement('div')
+    taskContainer1.className = 'task-container1'
+    taskEdit.appendChild(taskContainer1)
 
-    let taskCheck = document.createElement('input')
-    taskCheck.setAttribute("type", "checkbox");
-    taskCheck.id = 'task-completed'
-    taskEdit.appendChild(taskCheck)
+        let taskCheckLabel = document.createElement('label')
+        taskCheckLabel.htmlFor = 'task-completed'
+        taskCheckLabel.textContent = 'Completed'
+        taskContainer1.appendChild(taskCheckLabel)
 
+        let taskCheck = document.createElement('input')
+        taskCheck.setAttribute("type", "checkbox");
+        taskCheck.id = 'task-completed'
+        taskContainer1.appendChild(taskCheck)
 
-    let taskTitle = document.createElement('input')
-    taskTitle.setAttribute("type", "text");
-    taskTitle.placeholder = 'Title your task'
-    taskTitle.className = 'task-edit-input'
-    taskTitle.id = 'task-title'
-    taskEdit.appendChild(taskTitle)
+        let taskTitle = document.createElement('input')
+        taskTitle.setAttribute("type", "text");
+        taskTitle.placeholder = 'Title your task'
+        taskTitle.id = 'task-title'
+        taskContainer1.appendChild(taskTitle)
 
-    let dueDate = document.createElement('input')
-    dueDate.setAttribute("type", "date")
-    dueDate.className = 'task-edit-input'
-    taskEdit.appendChild(dueDate)
+    let taskContainer2 = document.createElement('div')
+    taskContainer2.className = 'task-container2'
+    taskEdit.appendChild(taskContainer2)
 
-    let taskContent = document.createElement('input')
-    taskContent.setAttribute("type", "text");
-    taskContent.placeholder = 'Add a description'
-    taskContent.className = 'task-edit-input'
-    taskContent.id = 'task-content'
-    taskEdit.appendChild(taskContent)
+        let dueDate = document.createElement('input')
+        dueDate.setAttribute("type", "date")
+        dueDate.className = 'task-edit-input'
+        taskContainer2.appendChild(dueDate)
+
+        let taskContent = document.createElement('input')
+        taskContent.setAttribute("type", "text");
+        taskContent.placeholder = 'Add a description'
+        taskContent.className = 'task-edit-input'
+        taskContent.id = 'task-content'
+        taskContainer2.appendChild(taskContent)
 
     let main = document.querySelector('main')
     
