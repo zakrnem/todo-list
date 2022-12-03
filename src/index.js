@@ -107,35 +107,39 @@ function taskEdit () {
     taskContainer2.className = 'task-container2'
     taskEdit.appendChild(taskContainer2)
 
-        let taskContent = document.createElement('input')
-        taskContent.setAttribute("type", "text");
-        taskContent.placeholder = 'Add a description'
-        taskContent.className = 'task-edit-input'
-        taskContent.id = 'task-content'
-        taskContainer2.appendChild(taskContent)
+        let taskDescription = document.createElement('input')
+        taskDescription.setAttribute("type", "text");
+        taskDescription.placeholder = 'Add a description'
+        taskDescription.className = 'task-edit-input'
+        taskDescription.id = 'task-description'
+        taskContainer2.appendChild(taskDescription)
 
         let taskContainer3 = document.createElement('div')
         taskContainer3.className = 'task-container3'
         taskContainer2.appendChild(taskContainer3)
 
-            let today = document.createElement('button')
-            today.id = 'today'
-            today.textContent = 'Today'
-            taskContainer3.appendChild(today)
+            let taskContainer4 = document.createElement('div')
+            taskContainer4.className = 'task-container4'
+            taskContainer3.appendChild(taskContainer4)
 
-            let tomorrow = document.createElement('button')
-            today.id = 'tomorrow'
-            tomorrow.textContent = 'Tomorrow'
-            taskContainer3.appendChild(tomorrow)
-            
-            let dueDate = document.createElement('input')
-            dueDate.setAttribute("type", "date")
-            taskContainer3.appendChild(dueDate)
+                    let today = document.createElement('button')
+                    today.id = 'today'
+                    today.textContent = 'Today'
+                    taskContainer4.appendChild(today)
 
-        let taskSubmit = document.createElement('button')
-        taskSubmit.id = 'task-submit'
-        taskSubmit.textContent = 'Submit'
-        taskContainer2.appendChild(taskSubmit)
+                    let tomorrow = document.createElement('button')
+                    today.id = 'tomorrow'
+                    tomorrow.textContent = 'Tomorrow'
+                    taskContainer4.appendChild(tomorrow)
+                    
+                    let dueDate = document.createElement('input')
+                    dueDate.setAttribute("type", "date")
+                    taskContainer4.appendChild(dueDate)
+
+            let taskSubmit = document.createElement('button')
+            taskSubmit.id = 'task-submit'
+            taskSubmit.textContent = 'Submit'
+            taskContainer3.appendChild(taskSubmit)
 
     let main = document.querySelector('main')
     
