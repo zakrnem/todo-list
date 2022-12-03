@@ -73,6 +73,7 @@ main {
 .task-dashboard {
     flex: auto;
     flex-direction: column;
+    padding: 0.75rem 1.5rem;
 }
 
 .task-container1 {
@@ -84,16 +85,15 @@ main {
     font-size: 1.2rem;
     padding: 0.5rem;
     flex:content;
+    margin: 0.75rem 1rem;
 }
 
 input {
     border: none;
-
 }
 
 .task-detail-button {
     width: 2rem;
-    margin: 0.5rem 0.7rem;
     filter: invert(20%) sepia(69%) saturate(6232%) hue-rotate(270deg) brightness(85%) contrast(108%);
 }
 
@@ -104,5 +104,9 @@ input {
 #task-completed {
     width: 2rem;
     height: 2rem;
-    margin: 0.5rem 0.7rem;
+}
+
+.task-container2 {
+    display: flex;
+    align-items: center;
 }
