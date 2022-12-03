@@ -107,8 +107,8 @@ function taskEdit () {
     taskContainer2.className = 'task-container2'
     taskEdit.appendChild(taskContainer2)
 
-        let taskDescription = document.createElement('input')
-        taskDescription.setAttribute("type", "text");
+        let taskDescription = document.createElement('textarea')
+        taskDescription.setAttribute("rows", "8");
         taskDescription.placeholder = 'Add a description'
         taskDescription.className = 'task-edit-input'
         taskDescription.id = 'task-description'

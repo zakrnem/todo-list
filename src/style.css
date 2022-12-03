@@ -6,6 +6,10 @@
 :root {
     --main: #8117de;
     --secondary: #995ad0;
+    --inverse: #7ee821;
+    --inverse-filter: invert(81%) sepia(86%) saturate(512%) hue-rotate(32deg) brightness(95%) contrast(92%);
+    --white-filter: invert(86%) sepia(100%) saturate(1764%) hue-rotate(182deg) brightness(130%) contrast(100%);
+    --border-radius: 7px;
   }
 
 * {
@@ -33,11 +37,11 @@ header {
 
 .header-icon {
     height: 3rem;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(256deg) brightness(106%) contrast(101%);
+    filter: var(--white-filter)
 }
 
 .header-icon:hover {
-    filter: invert(82%) sepia(33%) saturate(1048%) hue-rotate(37deg) brightness(94%) contrast(98%);
+    filter: var(--inverse-filter)
 }
 
 .sidebar {
@@ -109,4 +113,34 @@ input {
 .task-container2 {
     display: flex;
     gap: 1rem;
+    margin-top: 1rem;
+}
+
+#task-description {
+    padding: 0.5rem;
+    flex: content;
+    font-size: 1.1rem;
+}
+
+.task-container3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.task-container4 {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.task-container4 > * {
+    padding: 0.6rem 0.5rem;
+    border-radius: var(--border-radius);
+}
+
+#task-submit {
+    border-radius: var(--border-radius);
+    padding: 0.7rem 1.5rem;
+    width: fit-content;
 }
