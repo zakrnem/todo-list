@@ -1,11 +1,11 @@
 Pending:
+    Refactor taskEdit()
     Style sidebar
     Make buttons work
         Hide/show task detail
         Add new task
         Hide/show sidebar
     Remove header bottom margin
-    Separate functions into new files
     Add footer
     Create dashboard function
     

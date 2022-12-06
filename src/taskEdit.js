@@ -1,6 +1,6 @@
 import { newIcon } from "./newIcon"
 
-export function taskEdit() {
+export function taskEditDOM() {
     let content = document.querySelector('#content')
     let taskEdit = document.createElement('div')
     taskEdit.className = 'task-dashboard'
@@ -49,7 +49,7 @@ export function taskEdit() {
                     taskContainer4.appendChild(today)
 
                     let tomorrow = document.createElement('button')
-                    today.id = 'tomorrow'
+                    tomorrow.id = 'tomorrow'
                     tomorrow.textContent = 'Tomorrow'
                     taskContainer4.appendChild(tomorrow)
                     
