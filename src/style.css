@@ -5,9 +5,13 @@
  */
 :root {
     --main: #8117de;
+    --main-filter: invert(20%) sepia(69%) saturate(6232%) hue-rotate(270deg) brightness(85%) contrast(108%);
     --secondary: #995ad0;
+    --secondary-filter: invert(44%) sepia(17%) saturate(2324%) hue-rotate(230deg) brightness(93%) contrast(85%);
     --inverse: #7ee821;
     --inverse-filter: invert(81%) sepia(86%) saturate(512%) hue-rotate(32deg) brightness(95%) contrast(92%);
+    --inverse-active: #539618;
+    --inverse-active-filter: invert(62%) sepia(65%) saturate(6830%) hue-rotate(64deg) brightness(101%) contrast(81%);
     --white-filter: invert(86%) sepia(100%) saturate(1764%) hue-rotate(182deg) brightness(130%) contrast(100%);
     --border-radius: 7px;
   }
@@ -22,9 +26,9 @@
 header {
     background-color: var(--main);
     box-shadow: 0 5px 5px rgb(178 178 178);
-    padding: 0.75rem 2rem;
+    padding: 1rem 1.5rem;
     display: flex;
-    gap: 0.4rem;
+    gap: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -42,6 +46,16 @@ header {
 
 .header-icon:hover {
     filter: var(--inverse-filter)
+}
+
+.header-icon:active {
+    filter: var(--inverse-active-filter)
+}
+
+.header-search {
+    border-radius: var(--border-radius);
+    flex: content;
+    margin-left: 2rem;
 }
 
 .sidebar {
@@ -90,6 +104,7 @@ main {
     padding: 0.5rem;
     flex:content;
     margin: 0.75rem 1rem;
+    border-radius: var(--border-radius);
 }
 
 input {
@@ -98,11 +113,15 @@ input {
 
 .task-detail-button {
     width: 2rem;
-    filter: invert(20%) sepia(69%) saturate(6232%) hue-rotate(270deg) brightness(85%) contrast(108%);
+    filter: var(--main-filter)
 }
 
 .task-detail-button:hover {
-    filter: invert(54%) sepia(74%) saturate(4301%) hue-rotate(241deg) brightness(87%) contrast(86%);
+    filter: var(--secondary-filter)
+}
+
+.task-detail-button:active {
+    filter: var(--inverse-filter)
 }
 
 #task-completed {
@@ -134,13 +153,30 @@ input {
     gap: 0.3rem;
 }
 
-.task-container4 > * {
+.task-container4 > *,
+#task-submit {
     padding: 0.6rem 0.5rem;
     border-radius: var(--border-radius);
+    background-color: var(--main);
+    border: none;
+}
+
+.task-container4 > *:hover,
+#task-submit:hover {
+    background-color: var(--secondary);
+}
+
+.task-container4 > *:active,
+#task-submit:active {
+    background-color: var(--inverse);
 }
 
 #task-submit {
     border-radius: var(--border-radius);
     padding: 0.7rem 1.5rem;
     width: fit-content;
+}
+
+.task-edit-input {
+    border-radius: var(--border-radius);
 }
