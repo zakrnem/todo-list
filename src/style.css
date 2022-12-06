@@ -6,8 +6,10 @@
 :root {
     --main: #8117de;
     --main-filter: invert(20%) sepia(69%) saturate(6232%) hue-rotate(270deg) brightness(85%) contrast(108%);
-    --secondary: #995ad0;
-    --secondary-filter: invert(44%) sepia(17%) saturate(2324%) hue-rotate(230deg) brightness(93%) contrast(85%);
+    --secondary: #8e31e0;
+    --secondary-filter: invert(22%) sepia(82%) saturate(4698%) hue-rotate(267deg) brightness(92%) contrast(89%);
+    --tertiary: #a364db;
+    --tertiary-filter: invert(47%) sepia(20%) saturate(2775%) hue-rotate(233deg) brightness(94%) contrast(81%);
     --inverse: #7ee821;
     --inverse-filter: invert(81%) sepia(86%) saturate(512%) hue-rotate(32deg) brightness(95%) contrast(92%);
     --inverse-active: #539618;
@@ -59,10 +61,6 @@ header {
     margin-left: 2rem;
 }
 
-.sidebar {
-    border: 2px solid red;
-}
-
 main {
     display: flex;
 }
@@ -71,6 +69,8 @@ main {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    padding: 1rem 0.75rem;
+    margin-right: 1.5rem;
 }
 
 .sidebar-button {
@@ -79,16 +79,26 @@ main {
     flex-direction: row-reverse;
     justify-content: flex-end;
     gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: var(--separator);
 }
 
 .sidebar-icon {
     height: 1.5rem;
+    filter: var(--main-filter)
+}
+
+.sidebar-icon:hover{
+    filter: var(--secondary-filter)
+}
+
+.sidebar-icon:active {
+    filter: var(--tertiary-filter)
 }
 
 .task-dashboard {
     flex: auto;
-    flex-direction: column;
-    padding: 0.75rem 1.5rem;
+    padding: 0.25rem 2rem;
 }
 
 .task-container1 {
@@ -120,7 +130,7 @@ input {
 }
 
 .task-detail-button:active {
-    filter: var(--inverse-filter)
+    filter: var(--tertiary-filter)
 }
 
 #task-completed {
@@ -171,7 +181,7 @@ input {
 
 .task-container4 > *:active,
 #task-submit:active {
-    background-color: var(--inverse);
+    background-color: var(--tertiary);
 }
 
 #task-submit {
