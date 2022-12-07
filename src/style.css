@@ -37,7 +37,8 @@ header {
 
 .header-button,
 .sidebar-button,
-.task-detail-button {
+.task-detail-button,
+.task-delete-button {
     background: none;
 	border: none;
 }
@@ -96,9 +97,13 @@ main {
     filter: var(--tertiary-filter)
 }
 
-.task-dashboard {
+.dashboard {
     flex: auto;
     padding: 0.25rem 2rem;
+}
+
+.task-dashboard {
+    margin-bottom: 3rem;
 }
 
 .task-container1 {
@@ -119,17 +124,24 @@ input {
     border: none;
 }
 
-.task-detail-button {
+.task-detail-button,
+.task-delete-button {
     width: 1.5rem;
     filter: var(--main-filter);
     margin-right: 2rem;
 }
 
-.task-detail-button:hover {
+.task-delete-button {
+    width: 2.2rem;
+}
+
+.task-detail-button:hover,
+.task-delete-button:hover {
     filter: var(--secondary-filter)
 }
 
-.task-detail-button:active {
+.task-detail-button:active,
+.task-delete-button:active {
     filter: var(--tertiary-filter)
 }
 

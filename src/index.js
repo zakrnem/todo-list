@@ -8,13 +8,11 @@ headerDOM()
 import { sidebarDOM } from "./sidebar.js"
 sidebarDOM()
 
-import { taskEditDOM } from "./taskEdit.js"
-taskEditDOM()
-taskEditDOM()
-taskEditDOM()
-
 import { addTaskListener } from "./addTaskListener"
 addTaskListener()
+
+import { removeTaskListener } from './removeTaskListener'
+removeTaskListener()
 
 function dashboardDOM() {
     let content = document.querySelector('#content')

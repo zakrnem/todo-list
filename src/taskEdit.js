@@ -21,9 +21,13 @@ export function taskEditDOM() {
         taskTitle.id = 'task-title'
         taskContainer1.appendChild(taskTitle)
 
-        let taskDetail = newIcon('task-detail-button', 'task-detail-icon',
+        let taskDetail = newIcon('task-detail-button', 'task-detail',
         'down-svgrepo-com.svg', 'task-icon')
         taskContainer1.appendChild(taskDetail)
+
+        let taskDelete = newIcon('task-delete-button', 'task-delete',
+        'delete-svgrepo-com.svg', 'task-icon')
+        taskContainer1.appendChild(taskDelete)
 
     let taskContainer2 = document.createElement('div')
     taskContainer2.className = 'task-container2'
