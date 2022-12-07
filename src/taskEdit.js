@@ -63,41 +63,28 @@ export function taskEditDOM() {
             taskSubmit.textContent = 'Submit'
             taskContainer3.appendChild(taskSubmit)
 
-    
+    appendDOM(taskEdit)
+}
+
+function appendDOM(taskEdit) {
     let container = document.querySelector('.dashboard')    
     let main = document.querySelector('main')
-
+    
     if (container === null) {
         let container = document.createElement('div')
         container.className = 'dashboard'
         container.appendChild(taskEdit)
 
-        if (main === null) {
-            let main = document.createElement('main')
-            main.appendChild(container)
-            content.appendChild(main)
-        }
-        else {
-            main.appendChild(container)
-            content.appendChild(main)
-        }
+        checkMain(main,container)
     }
     else {
         container.appendChild(taskEdit)
-        if (main === null) {
-            let main = document.createElement('main')
-            main.appendChild(container)
-            content.appendChild(main)
-        }
-        else {
-            main.appendChild(container)
-            content.appendChild(main)
-        }
+        
+        checkMain(main,container)
     }
-   
 }
 
-function checkMain() {
+function checkMain(main,container) {
     if (main === null) {
         let main = document.createElement('main')
         main.appendChild(container)
