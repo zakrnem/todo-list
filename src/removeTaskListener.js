@@ -1,8 +1,10 @@
 export function removeTaskListener() {
     document.addEventListener('click', (e) => {
-        let 
+        let dashboard = document.querySelector('.dashboard')
+
         if (e.target.parentElement.id === 'task-delete') {
-            console.log('Task delete')
+            let task = e.target.parentElement.parentElement.parentElement
+            dashboard.removeChild(task)
         }
     })
 }
