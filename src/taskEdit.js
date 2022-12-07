@@ -2,6 +2,7 @@ import { newIcon } from "./newIcon"
 
 export function taskEditDOM() {
     let content = document.querySelector('#content')
+    
     let taskEdit = document.createElement('div')
     taskEdit.className = 'task-dashboard'
 
@@ -62,15 +63,48 @@ export function taskEditDOM() {
             taskSubmit.textContent = 'Submit'
             taskContainer3.appendChild(taskSubmit)
 
-    let main = document.querySelector('main')
     
-   if (main === null) {
+    let container = document.querySelector('.dashboard')    
+    let main = document.querySelector('main')
+
+    if (container === null) {
+        let container = document.createElement('div')
+        container.className = 'dashboard'
+        container.appendChild(taskEdit)
+
+        if (main === null) {
+            let main = document.createElement('main')
+            main.appendChild(container)
+            content.appendChild(main)
+        }
+        else {
+            main.appendChild(container)
+            content.appendChild(main)
+        }
+    }
+    else {
+        container.appendChild(taskEdit)
+        if (main === null) {
+            let main = document.createElement('main')
+            main.appendChild(container)
+            content.appendChild(main)
+        }
+        else {
+            main.appendChild(container)
+            content.appendChild(main)
+        }
+    }
+   
+}
+
+function checkMain() {
+    if (main === null) {
         let main = document.createElement('main')
-        main.appendChild(taskEdit)
+        main.appendChild(container)
         content.appendChild(main)
     }
     else {
-        main.appendChild(taskEdit)
+        main.appendChild(container)
         content.appendChild(main)
     }
 }

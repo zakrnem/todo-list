@@ -10,9 +10,11 @@ sidebarDOM()
 
 import { taskEditDOM } from "./taskEdit.js"
 taskEditDOM()
+taskEditDOM()
+taskEditDOM()
 
-import { addTask } from "./addTask"
-addTask()
+import { addTaskListener } from "./addTaskListener"
+addTaskListener()
 
 function dashboardDOM() {
     let content = document.querySelector('#content')
