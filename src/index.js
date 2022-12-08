@@ -14,6 +14,9 @@ addTaskListener()
 import { removeTaskListener } from './removeTaskListener'
 removeTaskListener()
 
+import { hideTaskDetailListener} from './hideDetailListener'
+hideTaskDetailListener()
+
 function dashboardDOM() {
     let content = document.querySelector('#content')
 
