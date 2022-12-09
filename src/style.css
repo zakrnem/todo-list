@@ -126,9 +126,8 @@ input {
 
 .task-detail-button,
 .task-delete-button {
-    width: 1.5rem;
     filter: var(--main-filter);
-    margin-right: 2rem;
+        
 }
 
 .task-delete-button {

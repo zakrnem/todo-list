@@ -17,6 +17,6 @@ function hideDetail(e) {
 function flipDetailButton(e) {
     if(e.target.parentElement.id === 'task-detail') {
         let detailTarget = e.target.parentElement
-        detailTarget.style.cssText = 'transform: rotate(180deg);transition: transform 1s;'
+        detailTarget.style.cssText = 'transform-box: fill-box; transform-origin: center;transform: rotate(180deg);transition: transform 0.6s;'
     }
 }
