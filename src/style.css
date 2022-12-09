@@ -134,6 +134,10 @@ input {
     width: 2.2rem;
 }
 
+.task-detail-button {
+    transform: rotate(180deg);
+}
+
 .task-detail-button:hover,
 .task-delete-button:hover {
     filter: var(--secondary-filter)
