@@ -1,11 +1,9 @@
 import './style.css';
-import { newTask } from "./newTask.js";
-import { newIcon } from "./newIcon.js"
 
-import { headerDOM } from "./header.js"
+import { headerDOM } from "./header"
 headerDOM()
 
-import { sidebarDOM } from "./sidebar.js"
+import { sidebarDOM } from "./sidebar"
 sidebarDOM()
 
 import { addTaskListener } from "./addTaskListener"
@@ -14,8 +12,8 @@ addTaskListener()
 import { removeTaskListener } from './removeTaskListener'
 removeTaskListener()
 
-import { hideTaskDetailListener} from './hideDetailListener'
-hideTaskDetailListener()
+import { toggleTaskDetail } from './toggleTaskDetail'
+toggleTaskDetail()
 
 function dashboardDOM() {
     let content = document.querySelector('#content')
