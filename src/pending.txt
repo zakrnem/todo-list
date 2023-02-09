@@ -1,4 +1,5 @@
 Pending:
+    fix newTask function, multiple HTML elements can't have the same ID
     storeTaskInput(): store input fields from an individual tasks in a object
     function(): store tasks in a project
     function(): store multiple projects

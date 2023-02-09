@@ -1,6 +1,6 @@
 import { newIcon } from "./newIcon"
 
-export function taskEditDOM() {
+export function taskEditDOM(taskCount) {
     let content = document.querySelector('#content')
     
     let taskEdit = document.createElement('div')
