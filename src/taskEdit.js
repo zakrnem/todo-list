@@ -12,13 +12,13 @@ export function taskEditDOM(taskCount) {
 
         let taskCheck = document.createElement('input')
         taskCheck.setAttribute("type", "checkbox");
-        taskCheck.id = 'task-completed'
+        taskCheck.id = `task-completed${taskCount}`
         taskContainer1.appendChild(taskCheck)
 
         let taskTitle = document.createElement('input')
         taskTitle.setAttribute("type", "text");
         taskTitle.placeholder = 'Title your task'
-        taskTitle.id = 'task-title'
+        taskTitle.id = `task-title${taskCount}`
         taskContainer1.appendChild(taskTitle)
 
         let taskDetail = newIcon('task-detail-button', 'task-detail',
@@ -37,7 +37,7 @@ export function taskEditDOM(taskCount) {
         taskDescription.setAttribute("rows", "8");
         taskDescription.placeholder = 'Add a description'
         taskDescription.className = 'task-edit-input'
-        taskDescription.id = 'task-description'
+        taskDescription.id = `task-description${taskCount}`
         taskContainer2.appendChild(taskDescription)
 
         let taskContainer3 = document.createElement('div')
@@ -49,12 +49,12 @@ export function taskEditDOM(taskCount) {
             taskContainer3.appendChild(taskContainer4)
 
                     let today = document.createElement('button')
-                    today.id = 'today'
+                    today.id = `today${taskCount}`
                     today.textContent = 'Today'
                     taskContainer4.appendChild(today)
 
                     let tomorrow = document.createElement('button')
-                    tomorrow.id = 'tomorrow'
+                    tomorrow.id = `tomorrow${taskCount}`
                     tomorrow.textContent = 'Tomorrow'
                     taskContainer4.appendChild(tomorrow)
                     
@@ -63,7 +63,7 @@ export function taskEditDOM(taskCount) {
                     taskContainer4.appendChild(dueDate)
 
             let taskSubmit = document.createElement('button')
-            taskSubmit.id = 'task-submit'
+            taskSubmit.id = `task-submit${taskCount}`
             taskSubmit.textContent = 'Submit'
             taskContainer3.appendChild(taskSubmit)
 

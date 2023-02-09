@@ -1,7 +1,7 @@
 import { taskEditDOM } from "./taskEdit.js"
 
 export function addTaskListener() {
-    let taskCount = 1
+    let taskCount = 0
     document.addEventListener('click', (e) => {
         if (e.target.id.includes('add-task')
         || (e.target.parentElement.id.includes('add-task'))) {
