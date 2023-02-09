@@ -1,37 +1,6 @@
 Pending:
-    Refactor taskEdit()
-    Style sidebar
-    Make buttons work
-        Hide/show task detail
-        Add new task
-        Hide/show sidebar
-    Remove header bottom margin
+    storeTaskInput(): store input fields from an individual tasks in a object
+    function(): store tasks in a project
+    function(): store multiple projects
+
     Add footer
-    Create dashboard function
-    
-    
-
-Basic Functionality:
-    User inputs task
-    The task needs a constructor
-    The task object has the following parameters:
-        Title
-        Description
-        Due-date
-        Priority
-        Checklist
-    We need to group tasks in different projects
-
-Pseudocode:
-    A function returns an object with the parameters that we need.
-    The user inputs the task parameter in the argument of this function.
-    This task can have no project.
-    So we would have to display all task with no project in the first.
-    If the user decides to specify a new project it'll create a "folder".
-    The task should be editable.    
-
-
-Modules:
-    Task constructor: newTask.js
-    Project constructor: newProject.js
-

@@ -15,12 +15,5 @@ removeTaskListener()
 import { toggleTaskDetail } from './toggleTaskDetail'
 toggleTaskDetail()
 
-function dashboardDOM() {
-    let content = document.querySelector('#content')
-
-    let dashboard = document.createElement('div')
-    dashboard.className = 'dashboard'
-
-    content.appendChild(dashboard)
-}
-
+import { storeTaskInput } from './storeTaskInput';
+storeTaskInput()
