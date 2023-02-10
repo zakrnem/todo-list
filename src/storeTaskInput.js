@@ -13,7 +13,12 @@ export function storeTaskListener() {
     /* Listener for clicks in all the tasks */
     document.addEventListener('click', (e) => {
         if (e.target.className === 'task-title' || 
-        e.target.className === 'task-description') {
+        e.target.className === 'task-description' ||
+        e.target.className === 'task-completed' ||
+        e.target.textContent === 'Today' ||
+        e.target.textContent === 'Tomorrow' ||
+        e.target.type === 'date' ||
+        e.target.className === 'task-submit') {
             console.log('Voilá!')
         }
     })
