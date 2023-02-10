@@ -1,5 +1,6 @@
 import { newIcon } from "./newIcon"
 
+//Creates the DOM for an individual task
 export function taskEditDOM(taskCount) {
     let content = document.querySelector('#content')
     
@@ -73,6 +74,7 @@ export function taskEditDOM(taskCount) {
     appendDOM(taskEdit)
 }
 
+//Appends the container to the DOM
 function appendDOM(taskEdit) {
     let container = document.querySelector('.dashboard')    
     let main = document.querySelector('main')
@@ -91,7 +93,11 @@ function appendDOM(taskEdit) {
     }
 }
 
+/* Checks if the main element exists,
+if it doesn't exists it creates it
+before appending the container to the main element */
 function checkMain(main,container) {
+    //Pending taskEdit #1
     if (main === null) {
         let main = document.createElement('main')
         main.appendChild(container)

@@ -6,3 +6,5 @@ Pending:
     function(): store multiple projects
 
     Add footer
+
+    Pending taskEdit #1: verify if checkMain() is really needed

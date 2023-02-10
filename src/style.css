@@ -180,7 +180,7 @@ input {
 }
 
 .task-container4 > *,
-#task-submit {
+.task-submit {
     padding: 0.6rem 0.5rem;
     border-radius: var(--border-radius);
     background-color: var(--main);
@@ -190,16 +190,16 @@ input {
 }
 
 .task-container4 > *:hover,
-#task-submit:hover {
+.task-submit:hover {
     background-color: var(--secondary);
 }
 
 .task-container4 > *:active,
-#task-submit:active {
+.task-submit:active {
     background-color: var(--tertiary);
 }
 
-#task-submit {
+.task-submit {
     border-radius: var(--border-radius);
     padding: 0.7rem 1.5rem;
     width: fit-content;
