@@ -6,7 +6,7 @@ export function storeTaskInput() {
         
         storedTask(taskTitle, taskDescription)
 
-        /* Get task details input */
+        
     })
 }
 

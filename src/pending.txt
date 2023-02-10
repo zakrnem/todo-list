@@ -8,3 +8,12 @@ Pending:
     Add footer
 
     Pending taskEdit #1: verify if checkMain() is really needed
+
+
+    Get task details input
+        Options:
+        1. Get the inputs for a target.
+            The problem wil be that if a task isn't submitted it won't be stored.
+        2. Store all the task inputs everytime anyone of them is changed.
+            addEventListener for each of the inputs but call a unique function for storage
+            Check all the tasks starting from the botton using the taskCount variable
