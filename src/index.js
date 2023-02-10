@@ -15,5 +15,5 @@ removeTaskListener()
 import { toggleTaskDetail } from './toggleTaskDetail'
 toggleTaskDetail()
 
-import { storeTaskInput } from './storeTaskInput';
-storeTaskInput()
+import { storeTaskListener } from './storeTaskInput';
+storeTaskListener()
