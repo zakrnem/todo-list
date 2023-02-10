@@ -13,12 +13,14 @@ export function taskEditDOM(taskCount) {
         let taskCheck = document.createElement('input')
         taskCheck.setAttribute("type", "checkbox")
         taskCheck.id = `task-completed${taskCount}`
+        taskCheck.className = 'task-completed'
         taskContainer1.appendChild(taskCheck)
 
         let taskTitle = document.createElement('input')
         taskTitle.setAttribute("type", "text")
         taskTitle.placeholder = 'Title your task'
         taskTitle.id = `task-title${taskCount}`
+        taskTitle.className = 'task-title'
         taskContainer1.appendChild(taskTitle)
 
         let taskDetail = newIcon('task-detail-button', `task-detail${taskCount}`,
@@ -36,7 +38,7 @@ export function taskEditDOM(taskCount) {
         let taskDescription = document.createElement('textarea')
         taskDescription.setAttribute("rows", "8")
         taskDescription.placeholder = 'Add a description'
-        taskDescription.className = 'task-edit-input'
+        taskDescription.className = 'task-description'
         taskDescription.id = `task-description${taskCount}`
         taskContainer2.appendChild(taskDescription)
 
@@ -65,6 +67,7 @@ export function taskEditDOM(taskCount) {
             let taskSubmit = document.createElement('button')
             taskSubmit.id = `task-submit${taskCount}`
             taskSubmit.textContent = 'Submit'
+            taskSubmit.className = 'task-submit'
             taskContainer3.appendChild(taskSubmit)
 
     appendDOM(taskEdit)
