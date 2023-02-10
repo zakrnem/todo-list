@@ -11,21 +11,21 @@ export function taskEditDOM(taskCount) {
     taskEdit.appendChild(taskContainer1)
 
         let taskCheck = document.createElement('input')
-        taskCheck.setAttribute("type", "checkbox");
+        taskCheck.setAttribute("type", "checkbox")
         taskCheck.id = `task-completed${taskCount}`
         taskContainer1.appendChild(taskCheck)
 
         let taskTitle = document.createElement('input')
-        taskTitle.setAttribute("type", "text");
+        taskTitle.setAttribute("type", "text")
         taskTitle.placeholder = 'Title your task'
         taskTitle.id = `task-title${taskCount}`
         taskContainer1.appendChild(taskTitle)
 
-        let taskDetail = newIcon('task-detail-button', 'task-detail',
+        let taskDetail = newIcon('task-detail-button', `task-detail${taskCount}`,
         'down-svgrepo-com.svg', 'task-icon')
         taskContainer1.appendChild(taskDetail)
 
-        let taskDelete = newIcon('task-delete-button', 'task-delete',
+        let taskDelete = newIcon('task-delete-button', `task-delete${taskCount}`,
         'delete-svgrepo-com.svg', 'task-icon')
         taskContainer1.appendChild(taskDelete)
 
@@ -34,7 +34,7 @@ export function taskEditDOM(taskCount) {
     taskEdit.appendChild(taskContainer2)
 
         let taskDescription = document.createElement('textarea')
-        taskDescription.setAttribute("rows", "8");
+        taskDescription.setAttribute("rows", "8")
         taskDescription.placeholder = 'Add a description'
         taskDescription.className = 'task-edit-input'
         taskDescription.id = `task-description${taskCount}`
