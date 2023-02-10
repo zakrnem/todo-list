@@ -1,3 +1,4 @@
+import { storeTaskListener } from "./storeTaskInput.js"
 import { taskEditDOM } from "./taskEdit.js"
 
 export function addTaskListener() {
@@ -8,6 +9,7 @@ export function addTaskListener() {
             // console.log(`#${taskCount} task!`)
             taskCount += 1
             taskEditDOM(taskCount)
+            storeTaskListener(taskCount)
         }
     })
 }
