@@ -13,6 +13,7 @@ function getTaskInput(taskCount) {
 export function storeTaskListener(taskCount) {
     /* Listener for clicks in all the tasks */
     //Pending #1
+    //Bug: not storing changes in task description imediatly because the event listener is looking for clicks not typing
     document.addEventListener('click', (e) => {
         if (e.target.className === 'task-title' || 
         e.target.className === 'task-description' ||
@@ -26,6 +27,9 @@ export function storeTaskListener(taskCount) {
     })
 }
 
-function storedTask() {
+function storedTask(taskN, taskTitle, taskDescription) {
  /* Store inputs in different objects */
+ console.log('Task number: ' + taskN + ', Task title: ' + taskTitle + ', Task description: ' + taskDescription)
+ //Pending #2 create objects for new tasks
+ 
 }
