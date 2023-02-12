@@ -4,9 +4,11 @@ function getTaskInput(taskCount) {
         let taskTitle = document.getElementById(`task-title${i}`).value
         let taskDescription = document.getElementById(`task-description${i}`).value
 
-        let task1 = storeTask(i, taskTitle, taskDescription)
-        console.log(task1.getTaskContent())
+        let task = storeTask(i, taskTitle, taskDescription)
+        /* console.log(task) */
+        return task
     }
+    console.log(task)
 }
 
 export function storeTaskListener(taskCount) {
@@ -31,9 +33,9 @@ function storeTask(i, taskTitle, taskDescription) {
         i: i,
         taskTitle: taskTitle,
         taskDescription: taskDescription,
-        getTaskContent() {
+        /* getTaskContent() {
             return 'Task number: ' + i + ', Task title: ' + taskTitle + ', Task description: ' + taskDescription + '.'
-        }
+        } */
     }
  /* Store inputs in different objects 
  console.log('Task number: ' + i + ', Task title: ' + taskTitle + ', Task description: ' + taskDescription)
