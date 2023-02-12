@@ -1,12 +1,11 @@
 //Bring taskCount var
 function getTaskInput(taskCount) {
-    console.log(taskCount)
     for (let i=taskCount; i>0; i--) {
         let taskTitle = document.getElementById(`task-title${i}`).value
         let taskDescription = document.getElementById(`task-description${i}`).value
-        let taskN = 'task' + i
 
-        storedTask(taskN, taskTitle, taskDescription)
+        let task1 = storeTask(i, taskTitle, taskDescription)
+        console.log(task1.getTaskContent())
     }
 }
 
@@ -27,9 +26,19 @@ export function storeTaskListener(taskCount) {
     })
 }
 
-function storedTask(taskN, taskTitle, taskDescription) {
- /* Store inputs in different objects */
- console.log('Task number: ' + taskN + ', Task title: ' + taskTitle + ', Task description: ' + taskDescription)
- //Pending #2 create objects for new tasks
- 
+function storeTask(i, taskTitle, taskDescription) {
+    return {
+        i: i,
+        taskTitle: taskTitle,
+        taskDescription: taskDescription,
+        getTaskContent() {
+            return 'Task number: ' + i + ', Task title: ' + taskTitle + ', Task description: ' + taskDescription + '.'
+        }
+    }
+ /* Store inputs in different objects 
+ console.log('Task number: ' + i + ', Task title: ' + taskTitle + ', Task description: ' + taskDescription)
+ Pending #2 create objects for new tasks
+ If inputs for a task are null don't create a object for that one
+ Or don't allow the creation of a new task if the last one is empty
+ */
 }
