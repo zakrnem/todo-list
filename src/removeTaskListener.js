@@ -7,7 +7,7 @@ export function removeTaskListener() {
 
         if (e.target.parentElement.id.includes('task-delete')) {
             let task = e.target.parentElement.parentElement.parentElement
-            dashboard.removeChild(task)
+            /* dashboard.removeChild(task) */
 
             const taskId = e.target.parentElement.id
             taskIdNumber = parseInt(taskId.replace(/\D/g, ""))
