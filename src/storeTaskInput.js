@@ -1,14 +1,13 @@
 //Bring taskCount var
 function getTaskInput(taskCount) {
+    let task1
     for (let i=taskCount; i>0; i--) {
         let taskTitle = document.getElementById(`task-title${i}`).value
         let taskDescription = document.getElementById(`task-description${i}`).value
 
-        let task = storeTask(i, taskTitle, taskDescription)
-        /* console.log(task) */
-        return task
+        task1 = storeTask(i, taskTitle, taskDescription)
     }
-    console.log(task)
+    console.log(task1)
 }
 
 export function storeTaskListener(taskCount) {
