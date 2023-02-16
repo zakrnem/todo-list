@@ -1,4 +1,4 @@
-import { removeTaskFromObj } from "./storeTaskInput"
+/* import { removeTaskFromObj } from "./storeTaskInput" */
 
 export function removeTaskListener() {
     let taskIdNumber
@@ -7,12 +7,12 @@ export function removeTaskListener() {
 
         if (e.target.parentElement.id.includes('task-delete')) {
             let task = e.target.parentElement.parentElement.parentElement
-            /* dashboard.removeChild(task) */
+            dashboard.removeChild(task)
 
             const taskId = e.target.parentElement.id
             taskIdNumber = parseInt(taskId.replace(/\D/g, ""))
             const task2delete = taskIdNumber-1
-            removeTaskFromObj(task2delete)
+            /* removeTaskFromObj(task2delete) */
         }
     })
 }
