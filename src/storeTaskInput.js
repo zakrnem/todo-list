@@ -27,7 +27,7 @@ export function storeTaskListener(taskCount) {
     function dateInput(e) {
         if (validValues.includes(e.target.textContent) ||
         validValues.includes(e.target.type)) {
-            console.log('Date')
+            taskDate(e)
         }
     }
 
@@ -40,17 +40,24 @@ export function storeTaskListener(taskCount) {
     })
 }
 
-function taskDate() {
+function taskDate(e) {
+    //Get date
+    const fullDate = new Date(); 
+    let nowDate = (fullDate.getMonth()+1)+'/'+fullDate.getDate()+'/'+fullDate.getFullYear()
+    let taskDate = nowDate
+
+    //It would be better to have the date as an object
+
     switch (true) {
         case (e.target.textContent === 'Today'):
-
-            storeTaskInput(taskCount, taskDate)
+            console.log(taskDate)
             break;
         case (e.target.textContent === 'Tomorrow'):
-            storeTaskInput(taskCount, taskDate)
+            taskDate += 1
+            console.log(taskDate)
             break;
         case (e.target.type === 'date'):
-            storeTaskInput(taskCount, taskDate)
+            //Selected date
             break;
     }
 }
