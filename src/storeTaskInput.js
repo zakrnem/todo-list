@@ -16,19 +16,41 @@ function storeTaskInput(taskCount) {
  }
 
 export function storeTaskListener(taskCount) {
-    document.addEventListener('input', (e) => {
-        if (e.target.className === 'task-title' || 
-        e.target.className === 'task-description') {
+    const validValues = ['task-title', 'task-description', 'task-completed',
+    'task-submit', 'Today', 'Tomorrow', 'date']
+    
+    function checkInputs(e) {
+        if (validValues.includes(e.target.className)) {
             storeTaskInput(taskCount)
         }
+    }
+    function dateInput(e) {
+        if (validValues.includes(e.target.textContent) ||
+        validValues.includes(e.target.type)) {
+            console.log('Date')
+        }
+    }
+
+    document.addEventListener('input', (e) => {
+        checkInputs(e)
     })
     document.addEventListener('click', (e) => {
-        if (e.target.className === 'task-completed' ||
-        e.target.textContent === 'Today' ||
-        e.target.textContent === 'Tomorrow' ||
-        e.target.type === 'date' ||
-        e.target.className === 'task-submit') {
-            storeTaskInput(taskCount)
-        }
+        checkInputs(e)
+        dateInput(e)
     })
+}
+
+function taskDate() {
+    switch (true) {
+        case (e.target.textContent === 'Today'):
+
+            storeTaskInput(taskCount, taskDate)
+            break;
+        case (e.target.textContent === 'Tomorrow'):
+            storeTaskInput(taskCount, taskDate)
+            break;
+        case (e.target.type === 'date'):
+            storeTaskInput(taskCount, taskDate)
+            break;
+    }
 }
