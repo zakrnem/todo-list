@@ -43,7 +43,8 @@ export function storeTaskListener(taskCount) {
 function taskDate(e) {
     //Get date
     const fullDate = new Date(); 
-    let nowDate = (fullDate.getMonth()+1)+'/'+fullDate.getDate()+'/'+fullDate.getFullYear()
+    let nowDate = {month: fullDate.getMonth()+1, date: fullDate.getDate(), year: fullDate.getFullYear()}
+    console.log(nowDate)
     let taskDate = nowDate
 
     //It would be better to have the date as an object
