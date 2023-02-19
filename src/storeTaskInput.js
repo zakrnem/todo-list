@@ -1,3 +1,5 @@
+import { taskDate } from "./taskDate"
+
 function storeTaskInput(taskCount) {
     const storedTasks = []
     for (let i=taskCount; i>0; i--) {
@@ -43,27 +45,4 @@ export function storeTaskListener(taskCount) {
         checkInputs(e)
         dateInput(e)
     })
-}
-
-function taskDate(e) {
-    const fullDate = new Date();
-    let nowDate = fullDate.getDate()
-    //if (nowDate length is equal to zero add a zero before the current number)
-    let currentDate = `${fullDate.getFullYear()}-${fullDate.getMonth()+1}-${nowDate}`
-    console.log(currentDate)
-    
-
-    //Make the today & tomorrow buttons change the input type date value
-
-    switch (true) {
-        case (e.target.textContent === 'Today'):
-            let taskCount = parseInt(e.target.id.match(/\d+$/)[0]);
-            let taskDateDisplay = document.getElementById(`date${taskCount}`)
-            taskDateDisplay.value = '2023-02-15'
-            break;
-        case (e.target.textContent === 'Tomorrow'):
-            taskDate = {month: nowDate.month, date: nowDate.date + 1, year: nowDate.year}
-            console.log(e.target.id)
-            break;
-    }
 }
