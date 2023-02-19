@@ -41,24 +41,25 @@ export function storeTaskListener(taskCount) {
 }
 
 function taskDate(e) {
-    //Get date
     const fullDate = new Date(); 
     let nowDate = {month: fullDate.getMonth()+1, date: fullDate.getDate(), year: fullDate.getFullYear()}
-    console.log(nowDate)
     let taskDate = nowDate
+    let dateString
 
-    //It would be better to have the date as an object
 
     switch (true) {
         case (e.target.textContent === 'Today'):
             console.log(taskDate)
             break;
         case (e.target.textContent === 'Tomorrow'):
-            taskDate += 1
+            taskDate = {month: nowDate.month, date: nowDate.date + 1, year: nowDate.year}
             console.log(taskDate)
             break;
-        case (e.target.type === 'date'):
-            //Selected date
+        case (e.target.type === 'date'): //e.target.value
+            dateString = e.target.value
+            let dateParts = dateString.split("-")
+            taskDate = {month: parseInt(dateParts[1]), date: parseInt(dateParts[2]), year: parseInt(dateParts[0])}
+            console.log(taskDate)
             break;
     }
 }
