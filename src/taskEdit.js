@@ -63,6 +63,7 @@ export function taskEditDOM(taskCount) {
                     
                     let dueDate = document.createElement('input')
                     dueDate.setAttribute("type", "date")
+                    dueDate.id = `date${taskCount}`
                     taskContainer4.appendChild(dueDate)
 
             let taskSubmit = document.createElement('button')

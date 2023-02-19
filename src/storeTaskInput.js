@@ -4,9 +4,10 @@ function storeTaskInput(taskCount) {
         let taskTitle = document.getElementById(`task-title${i}`)
         let taskDescription = document.getElementById(`task-description${i}`)
         let taskCompleted = document.getElementById(`task-completed${i}`)
+        let taskDate = document.getElementById(`date${i}`)
 
         if (taskTitle != null) {
-            const newTask = { index: i, title: taskTitle.value, description: taskDescription.value,
+            const newTask = { index: i, title: taskTitle.value, description: taskDescription.value, date: taskDate.value,
             completed: taskCompleted.checked }
             storedTasks.push(newTask)
         }
@@ -44,8 +45,8 @@ function taskDate(e) {
     const fullDate = new Date(); 
     let nowDate = {month: fullDate.getMonth()+1, date: fullDate.getDate(), year: fullDate.getFullYear()}
     let taskDate = nowDate
-    let dateString
 
+    //Make the today & tomorrow buttons change the input type date value
 
     switch (true) {
         case (e.target.textContent === 'Today'):
@@ -56,7 +57,7 @@ function taskDate(e) {
             console.log(taskDate)
             break;
         case (e.target.type === 'date'): //e.target.value
-            dateString = e.target.value
+            let dateString = e.target.value
             let dateParts = dateString.split("-")
             taskDate = {month: parseInt(dateParts[1]), date: parseInt(dateParts[2]), year: parseInt(dateParts[0])}
             console.log(taskDate)
