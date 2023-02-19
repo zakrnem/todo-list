@@ -21,9 +21,6 @@ export function taskDate(e) {
 
     let currentDate = `${fullDate.getFullYear()}-${nowMonth}-${nowDate}`
     let tomorrowDate = `${fullDate.getFullYear()}-${nowMonth}-${tomorrowDayDate}`
-    
-
-    //Make the today & tomorrow buttons change the input type date value
 
     switch (true) {
         case (e.target.textContent === 'Today'):

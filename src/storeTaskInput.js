@@ -8,11 +8,11 @@ function storeTaskInput(taskCount) {
         let taskCompleted = document.getElementById(`task-completed${i}`)
         let taskDate = document.getElementById(`date${i}`)
 
+        if (taskTitle != null) {
             let dateString = taskDate.value
             let dateParts = dateString.split("-")
             taskDate = {month: parseInt(dateParts[1]), date: parseInt(dateParts[2]), year: parseInt(dateParts[0])}
-
-        if (taskTitle != null) {
+            
             const newTask = { index: i, title: taskTitle.value, description: taskDescription.value, date: taskDate,
             completed: taskCompleted.checked }
             storedTasks.push(newTask)
