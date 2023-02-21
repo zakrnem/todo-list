@@ -3,7 +3,7 @@ import './style.css';
 import { headerDOM } from "./header"
 headerDOM()
 
-import { sidebarDOM } from "./sidebar"
+import { sidebarDOM } from "./sidebarDOM"
 sidebarDOM()
 
 import { addTaskListener } from "./taskAddListener"
@@ -17,3 +17,6 @@ toggleTaskDetail()
 
 import { storeTaskListener } from './taskStoreInput';
 storeTaskListener()
+
+import { addProjectListener } from './projectAddListener';
+addProjectListener()
