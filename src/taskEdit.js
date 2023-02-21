@@ -1,9 +1,8 @@
 import { newIcon } from "./newIcon"
+import { appendDOM } from "./appendDOM"
 
 //Creates the DOM for an individual task
-export function taskEditDOM(taskCount) {
-    let content = document.querySelector('#content')
-    
+export function taskEditDOM(taskCount) {    
     let taskEdit = document.createElement('div')
     taskEdit.className = 'task-dashboard'
 
@@ -73,23 +72,4 @@ export function taskEditDOM(taskCount) {
             taskContainer3.appendChild(taskSubmit)
 
     appendDOM(taskEdit)
-}
-
-//Appends the container to the DOM
-function appendDOM(taskEdit) {
-    let container = document.querySelector('.dashboard')    
-    let main = document.querySelector('main')
-
-    if (container === null) {
-        let container = document.createElement('div')
-        container.className = 'dashboard'
-        container.appendChild(taskEdit)
-        main.appendChild(container)
-        content.appendChild(main)
-    }
-    else {
-        container.appendChild(taskEdit)
-        main.appendChild(container)
-        content.appendChild(main)
-    }
 }
