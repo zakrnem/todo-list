@@ -13,6 +13,3 @@ Pending:
 
 
     Add footer
-
-    Pending taskEdit #1: verify if checkMain() is really needed
-    Pending storeTaskInput #1: simplify comparison

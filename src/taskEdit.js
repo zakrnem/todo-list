@@ -79,32 +79,16 @@ export function taskEditDOM(taskCount) {
 function appendDOM(taskEdit) {
     let container = document.querySelector('.dashboard')    
     let main = document.querySelector('main')
-    
+
     if (container === null) {
         let container = document.createElement('div')
         container.className = 'dashboard'
         container.appendChild(taskEdit)
-
-        checkMain(main,container)
-    }
-    else {
-        container.appendChild(taskEdit)
-        
-        checkMain(main,container)
-    }
-}
-
-/* Checks if the main element exists,
-if it doesn't exists it creates it
-before appending the container to the main element */
-function checkMain(main,container) {
-    //Pending taskEdit #1
-    if (main === null) {
-        let main = document.createElement('main')
         main.appendChild(container)
         content.appendChild(main)
     }
     else {
+        container.appendChild(taskEdit)
         main.appendChild(container)
         content.appendChild(main)
     }
