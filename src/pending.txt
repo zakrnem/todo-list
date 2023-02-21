@@ -1,20 +1,18 @@
 Pending:
-    FIXED fix newTask function, multiple HTML elements can't have the same ID
-        fix styling
-    storeTaskInput(): store input fields from an individual tasks in a object
-    function(): store tasks in a project
-    function(): store multiple projects
+    Make the search bar work
+    Make task projects work:
+    Ubuntu Todo style:
+        When opening the app the dashboard will show the "Personal" project by default.
+        The dashboard will have a grid of the different projects.
+        What are we gonna do with the current new task buttons?
+            Create the new task in the personal project.
+                In the future in the last edited project.
+            Just write the DOM for the projects dashboard.
+            Add a button for a new project inside the dashboard.
+
+
 
     Add footer
 
     Pending taskEdit #1: verify if checkMain() is really needed
     Pending storeTaskInput #1: simplify comparison
-
-
-    Get task details input
-        Options:
-        1. Get the inputs for a target.
-            The problem wil be that if a task isn't submitted it won't be stored.
-        2. Store all the task inputs everytime anyone of them is changed.
-            addEventListener for each of the inputs but call a unique function for storage
-            Check all the tasks starting from the botton using the taskCount variable

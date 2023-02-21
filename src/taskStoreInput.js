@@ -18,7 +18,6 @@ function storeTaskInput(taskCount) {
             storedTasks.push(newTask)
         }
     }
-        
     console.log(storedTasks)
  }
 

@@ -6,14 +6,14 @@ headerDOM()
 import { sidebarDOM } from "./sidebar"
 sidebarDOM()
 
-import { addTaskListener } from "./addTaskListener"
+import { addTaskListener } from "./taskAddListener"
 addTaskListener()
 
-import { removeTaskListener } from './removeTaskListener'
+import { removeTaskListener } from './taskRemoveListener'
 removeTaskListener()
 
-import { toggleTaskDetail } from './toggleTaskDetail'
+import { toggleTaskDetail } from './taskToggleDetail'
 toggleTaskDetail()
 
-import { storeTaskListener } from './storeTaskInput';
+import { storeTaskListener } from './taskStoreInput';
 storeTaskListener()

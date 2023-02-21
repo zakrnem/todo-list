@@ -1,4 +1,4 @@
-import { storeTaskListener } from "./storeTaskInput.js"
+import { storeTaskListener } from "./taskStoreInput.js"
 import { taskEditDOM } from "./taskEdit.js"
 
 export function addTaskListener() {
