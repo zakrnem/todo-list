@@ -1,6 +1,6 @@
 import { projectDOM } from "./projectDOM"
 
-export function addProjectListener() {
+export function projectDashboardListener() {
     let projectCount = 0
     document.addEventListener('click', (e) => {
         if (e.target.id.includes('project-button') ||
