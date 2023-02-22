@@ -1,6 +1,7 @@
 import { appendDOM } from "./appendDOM"
+import { newProject } from "./projectNew"
 
-export function projectDOM() {
+export function projectDOM(projectCount) {
     let dashboard = document.createElement('div')
     dashboard.className = 'projects-dashboard'
 
@@ -13,14 +14,7 @@ export function projectDOM() {
     projectsGrid.className = 'projects-grid'
     dashboard.appendChild(projectsGrid)
 
-        let defaultProject = document.createElement('div')
-        defaultProject.id = 'project1'
-        defaultProject.className = 'project'
-        defaultProject.textContent = 'Personal'
-        projectsGrid.appendChild(defaultProject)
-        //Add styling
-
-        //Create projectNew.js?
+        newProject(projectCount, 'Personal')
 
     appendDOM(dashboard)
 }
