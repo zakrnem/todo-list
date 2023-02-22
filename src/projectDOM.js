@@ -1,5 +1,7 @@
 import { appendDOM } from "./appendDOM"
 import { newProject } from "./projectNew"
+import { newProjectListener } from "./projectNewListener"
+newProjectListener()
 
 export function projectDOM(projectCount) {
     let dashboard = document.createElement('div')
@@ -14,7 +16,9 @@ export function projectDOM(projectCount) {
     projectsGrid.className = 'projects-grid'
     dashboard.appendChild(projectsGrid)
 
-        newProject(projectCount, 'Personal')
-
+    document.addEventListener('DOMContentLoaded', () => {
+        newProject(1, 'Personal')
+    })
+ 
     appendDOM(dashboard)
 }

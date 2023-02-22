@@ -1,5 +1,5 @@
 export function newProject(projectCount, projTextCont) {
-    document.addEventListener('DOMContentLoaded', () => {
+        console.log (projectCount != 1)
         let dashboard = document.querySelector('.projects-dashboard')
         let projectsGrid = document.querySelector('.projects-grid')
 
@@ -7,6 +7,12 @@ export function newProject(projectCount, projTextCont) {
         newProject.id = `project${projectCount}`
         newProject.className = 'project'
         newProject.textContent = projTextCont
-        projectsGrid.appendChild(newProject)
-    })
+        
+        if (projectCount === 1) {
+            projectsGrid.appendChild(newProject)
+        }
+        if (projectCount != 1) {
+            projectsGrid.appendChild(newProject)
+            dashboard.appendChild(projectsGrid)
+        }
 }
