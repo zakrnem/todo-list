@@ -20,3 +20,6 @@ storeTaskListener()
 
 import { addProjectListener } from './projectAddListener';
 addProjectListener()
+
+import { projectDOM } from './projectDOM';
+projectDOM()

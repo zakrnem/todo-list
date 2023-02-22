@@ -14,7 +14,7 @@ export function sidebarDOM() {
     'calendar-svgrepo-com.svg', 'sidebar-icon', 'Upcoming Tasks')
     sidebar.appendChild(upcomingButton)
 
-    let projectsButton = newIcon('sidebar-button', 'project',
+    let projectsButton = newIcon('sidebar-button', 'project-button1',
     'stack-svgrepo-com.svg', 'sidebar-icon', 'Projects')
     sidebar.appendChild(projectsButton)
     

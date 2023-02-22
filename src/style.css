@@ -10,6 +10,7 @@
     --secondary-filter: invert(22%) sepia(82%) saturate(4698%) hue-rotate(267deg) brightness(92%) contrast(89%);
     --tertiary: #a364db;
     --tertiary-filter: invert(47%) sepia(20%) saturate(2775%) hue-rotate(233deg) brightness(94%) contrast(81%);
+    --hover: #e6d5f5;
     --inverse: #7ee821;
     --inverse-filter: invert(81%) sepia(86%) saturate(512%) hue-rotate(32deg) brightness(95%) contrast(92%);
     --inverse-active: #539618;
@@ -207,4 +208,32 @@ input {
 
 .task-edit-input {
     border-radius: var(--border-radius);
+}
+
+.projects-dashboard {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+#new-project {
+    padding: 0.75rem 1.5rem;
+}
+
+.projects-grid {
+    display: flex;
+    gap: 1rem;
+}
+
+.project {
+    border: 3px solid var(--main);
+    border-radius: 0.5rem;
+    padding: 4rem 3rem;
+}
+
+.project:hover {
+    background-color: var(--hover);
+    border: 3px solid var(--tertiary);
 }
