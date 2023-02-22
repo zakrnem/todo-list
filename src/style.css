@@ -216,21 +216,36 @@ input {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    font-weight: bolder;
 }
 
 #new-project {
     padding: 0.75rem 1.5rem;
+    background-color: var(--main);
+    color: white;
+    font-weight: bolder;
+    border-radius: 0.7rem;
+    border: none;
+}
+
+#new-project:hover {
+    background-color: var(--secondary);
+}
+
+#new-project:active {
+    background-color: var(--tertiary);
 }
 
 .projects-grid {
     display: flex;
     gap: 1rem;
+    width: 100%;
 }
 
 .project {
     border: 3px solid var(--main);
     border-radius: 0.5rem;
-    padding: 4rem 3rem;
+    padding: 5rem 4rem;
 }
 
 .project:hover {
