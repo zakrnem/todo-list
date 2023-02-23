@@ -1,5 +1,4 @@
 export function newProject(projectCount, projTextCont) {
-        console.log (projectCount != 1)
         let dashboard = document.querySelector('.projects-dashboard')
         let projectsGrid = document.querySelector('.projects-grid')
 
