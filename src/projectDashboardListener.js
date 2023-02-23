@@ -3,14 +3,19 @@ import { projectDOM } from "./projectDOM"
 export function projectDashboardListener() {
     document.addEventListener('click', (e) => {
         if (e.target.id.includes('project-button') ||
-        e.target.parentElement.id.includes('project')) {
+        e.target.parentElement.id.includes('project-button')) {
             projectDOM()
         }
     })
     document.addEventListener('mouseover', (e) => {
-        if (e.target.id.includes('projectN')) {
-            let project2Edit = e.target
-            project2Edit.textContent = 'Voila'
+        if (e.target.id.includes('projectT')) {
+            let titleEdit = document.createElement('input')
+            titleEdit.setAttribute("type", "text")
+            titleEdit.value = e.target.textContent
+            titleEdit.className = 'edit-project-title'
+            
+            e.target.style.display = 'none'
+            e.target.parentElement.appendChild(titleEdit)
         }
     })
     document.addEventListener('dblclick', (e) => {

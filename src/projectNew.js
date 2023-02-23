@@ -5,7 +5,10 @@ export function newProject(projectCount, projTextCont) {
         let newProject = document.createElement('div')
         newProject.id = `projectN${projectCount}`
         newProject.className = 'project'
-        newProject.textContent = projTextCont
+            let projectTitle = document.createElement('p')
+            projectTitle.textContent = projTextCont
+            projectTitle.id = `projectT${projectCount}`
+            newProject.appendChild(projectTitle)
         
         if (projectCount === 1) {
             projectsGrid.appendChild(newProject)
