@@ -5,8 +5,9 @@ export function newProject(projectCount, projTextCont) {
         let newProject = document.createElement('div')
         newProject.id = `projectN${projectCount}`
         newProject.className = 'project'
-            let projectTitle = document.createElement('p')
-            projectTitle.textContent = projTextCont
+            let projectTitle = document.createElement('input')
+            projectTitle.setAttribute("type", "text")
+            projectTitle.value = projTextCont
             projectTitle.id = `projectT${projectCount}`
             newProject.appendChild(projectTitle)
         

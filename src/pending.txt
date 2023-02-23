@@ -10,7 +10,6 @@ Pending:
             Just write the DOM for the projects dashboard.
             Add a button for a new project inside the dashboard.
 
-    When hovering mouse over the project text convert it into a input type text.
-    
+   There is a bug when editing the a project the projectCount keeps increasing
 
     Add footer

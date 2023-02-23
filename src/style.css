@@ -250,12 +250,7 @@ input {
     padding: 0.5rem 1rem;
     display: flex;
     flex-direction: column;
-}
-
-.project > * {
-    width: 100%;
-    padding: .3rem 0;
-    text-align: center;
+    align-items: center;
 }
 
 .project:hover {
@@ -263,8 +258,9 @@ input {
     border: 3px solid var(--tertiary);
 }
 
-.edit-project-title {
-    border: 1px solid black;
-    font-weight: bold;
+.project > * {
+    width: 100%;
+    padding: .3rem 0;
     text-align: center;
+    font-weight: bold;
 }

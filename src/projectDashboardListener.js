@@ -7,16 +7,10 @@ export function projectDashboardListener() {
             projectDOM()
         }
     })
-    document.addEventListener('mouseover', (e) => {
+    document.addEventListener('input', (e) => {
         if (e.target.id.includes('projectT')) {
-            let titleEdit = document.createElement('input')
-            titleEdit.setAttribute("type", "text")
-            titleEdit.value = e.target.textContent
-            titleEdit.className = 'edit-project-title'
-            
-            e.target.style.display = 'none'
-            e.target.parentElement.appendChild(titleEdit)
-        }
+            console.log(e.target.value)
+        } 
     })
     document.addEventListener('dblclick', (e) => {
         if (e.target.id.includes('projectN')) {
