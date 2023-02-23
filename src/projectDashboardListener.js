@@ -7,4 +7,15 @@ export function projectDashboardListener() {
             projectDOM()
         }
     })
+    document.addEventListener('mouseover', (e) => {
+        if (e.target.id.includes('projectN')) {
+            let project2Edit = e.target
+            project2Edit.textContent = 'Voila'
+        }
+    })
+    document.addEventListener('dblclick', (e) => {
+        if (e.target.id.includes('projectN')) {
+            console.log('Open project')
+        }
+    })
 }

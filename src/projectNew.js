@@ -3,7 +3,7 @@ export function newProject(projectCount, projTextCont) {
         let projectsGrid = document.querySelector('.projects-grid')
 
         let newProject = document.createElement('div')
-        newProject.id = `project${projectCount}`
+        newProject.id = `projectN${projectCount}`
         newProject.className = 'project'
         newProject.textContent = projTextCont
         

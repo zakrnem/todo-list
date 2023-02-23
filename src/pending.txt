@@ -10,6 +10,7 @@ Pending:
             Just write the DOM for the projects dashboard.
             Add a button for a new project inside the dashboard.
 
-    Replace projectsGrid display from flex to grid with auto width
+    When hovering mouse over the project text convert it into a input type text.
+    
 
     Add footer
