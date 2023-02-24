@@ -8,7 +8,7 @@ export function addTaskListener() {
         || (e.target.parentElement.id.includes('add-task'))) {
             taskCount += 1
             taskEditDOM(taskCount) //Pushes taskCount number for creating different id's
-            storeTaskListener(taskCount) 
+            storeTaskListener(taskCount) //Pushes taskCount for indexing tasks values in a object
         }
     })
 }

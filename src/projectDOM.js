@@ -9,6 +9,7 @@ export function projectDOM(projectCount) {
 
     let newProjectButtton = document.createElement('button')
     newProjectButtton.id = 'new-project'
+    newProjectButtton.className = 'new-button'
     newProjectButtton.textContent = 'New project'
     dashboard.appendChild(newProjectButtton)
 

@@ -210,7 +210,8 @@ input {
     border-radius: var(--border-radius);
 }
 
-.projects-dashboard {
+.projects-dashboard,
+.edit-project-dash {
     margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -219,7 +220,7 @@ input {
     font-weight: bolder;
 }
 
-#new-project {
+.new-button {
     padding: 0.75rem 1.5rem;
     background-color: var(--main);
     color: white;
@@ -228,11 +229,11 @@ input {
     border: none;
 }
 
-#new-project:hover {
+.new-button:hover {
     background-color: var(--secondary);
 }
 
-#new-project:active {
+.new-button:active {
     background-color: var(--tertiary);
 }
 
