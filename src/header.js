@@ -22,9 +22,9 @@ export function headerDOM() {
     'search-svgrepo-com.svg', 'header-icon')
     header.appendChild(searchButton)
 
-    let plusButton = newIcon('header-button','add-task1',
+  /*   let plusButton = newIcon('header-button','add-task1',
     'plus-svgrepo-com.svg', 'header-icon')
-    header.appendChild(plusButton)
+    header.appendChild(plusButton) */
 
     content.appendChild(header)
 }

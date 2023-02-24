@@ -1,15 +1,11 @@
 Pending:
-    Make the search bar work
+    Make the search bar work.
     Make task projects work:
-    Ubuntu Todo style:
-        When opening the app the dashboard will show the "Personal" project by default.
-        The dashboard will have a grid of the different projects.
-        What are we gonna do with the current new task buttons?
-            Create the new task in the personal project.
-                In the future in the last edited project.
-            Just write the DOM for the projects dashboard.
-            Add a button for a new project inside the dashboard.
+        Fix projectCount bug: when the projectTitle is edited the count increases.
+            One option is to remove the projectCount.
+        Get the personal project to work.
+            One can create tasks inside of it, exit the project and reopen it
+                an the created tasks remain there.
 
-   There is a bug when editing the a project the projectCount keeps increasing
 
     Add footer
