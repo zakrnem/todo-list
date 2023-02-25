@@ -3,7 +3,8 @@ import { newProject } from "./projectNew"
 import { newProjectListener } from "./projectNewListener"
 newProjectListener()
 
-export function projectDOM(projectCount) {
+export function projectDOM(origin) {
+
     let dashboard = document.createElement('div')
     dashboard.className = 'projects-dashboard'
 

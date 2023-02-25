@@ -1,11 +1,13 @@
 import { projectDOM } from "./projectDOM"
 import { projectEdit } from "./projectEdit"
+import { clearDOM } from "./clearDOM"
 
 export function projectDashboardListener() {
     document.addEventListener('click', (e) => {
         if (e.target.id.includes('project-button') ||
         e.target.parentElement.id.includes('project-button')) {
-            projectDOM()
+            clearDOM()
+            projectDOM(1)
         }
     })
     document.addEventListener('input', (e) => {
