@@ -3,8 +3,11 @@ import { appendDOM } from "./appendDOM"
 
 //Creates the DOM for an individual task
 export function taskEditDOM(taskCount) {    
+    let dashboard = document.querySelector('.edit-project-dash')
+
     let taskEdit = document.createElement('div')
-    taskEdit.className = 'task-dashboard'
+    taskEdit.className = 'task-container'
+    dashboard.appendChild(taskEdit)
 
     let taskContainer1 = document.createElement('div')
     taskContainer1.className = 'task-container1'
@@ -71,5 +74,5 @@ export function taskEditDOM(taskCount) {
             taskSubmit.className = 'task-submit'
             taskContainer3.appendChild(taskSubmit)
 
-    appendDOM(taskEdit)
+    appendDOM(dashboard)
 }

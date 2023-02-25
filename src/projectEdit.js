@@ -17,12 +17,6 @@ export function projectEdit() {
     document.addEventListener('DOMContentLoaded', () => {
         newProject(1, 'Personal')
     }) */
-    /* Insert individual project dashboard:
-                    Get the projectT"N" ID and it's title.
-                    Create a DOM with project title at the top.
-                    A return button.
-                    A new task button.
-                    Store created tasks.
-    */
+    
     appendDOM(dashboard)
 }
