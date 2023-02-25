@@ -1,17 +1,17 @@
 import { appendDOM } from "./appendDOM"
 import { clearDOM } from "./clearDOM"
+import { newIcon } from "./newIcon";
 
 export function projectEdit(pjTitle) {
     clearDOM()
 
+    let sidebar = document.querySelector('.sidebar')
+    let returnButton = newIcon('sidebar-button', 'returnB1',
+    'return-back-svgrepo-com.svg', 'sidebar-icon', 'Return')
+    sidebar.appendChild(returnButton)
+
     let dashboard = document.createElement('div')
     dashboard.className = 'edit-project-dash'
-
-    let returnButton = document.createElement('button')
-    returnButton.id = 'returnToProjects'
-    returnButton.className = 'return-button'
-    returnButton.textContent = 'Projects'
-    dashboard.appendChild(returnButton)
 
     let projectTitle = document.createElement('p')
     projectTitle.className = 'project-title'

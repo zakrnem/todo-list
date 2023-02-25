@@ -240,16 +240,6 @@ input {
     background-color: var(--tertiary);
 }
 
-.return-button {
-    border: 3px solid var(--main);
-    padding: var(--button-padding);
-    color: var(--main);
-    font-weight: bolder;
-    border-radius: var(--border-radius);
-    background-color: transparent;
-    align-self: baseline;
-}
-
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(25ch, 1fr));
@@ -297,6 +287,5 @@ input {
 }
 
 .project-title {
-    position: absolute;
-    margin-top: 1rem;
+    font-size: 2rem;
 }
