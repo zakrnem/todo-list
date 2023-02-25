@@ -3,6 +3,8 @@ import { taskEditDOM } from "./taskEdit.js"
 import { storeTaskInput } from "./taskStoreInput.js"
 import { taskDate } from "./taskDate"
 import { toggleDetail } from "./taskToggleDetail.js"
+import { clearDOM } from "./clearDOM.js"
+import { projectDOM } from "./projectDOM.js"
 
 export function taskListener() {
     //Add task
@@ -62,5 +64,15 @@ export function taskListener() {
         let detailTarget = e.target.parentElement
         
         toggleDetail(selectedButton, taskDetail, detailTarget)
+    })
+
+    //Return to projects
+    document.addEventListener('click', (e) => {
+        if (e.target.id.includes('returnB') ||
+        e.target.parentElement.id.includes('returnB')) {
+            clearDOM()
+            projectDOM()
+            //Bug: remove return button from sidebar after returning
+        }
     })
 }
