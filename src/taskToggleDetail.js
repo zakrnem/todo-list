@@ -1,14 +1,4 @@
-export function toggleTaskDetail() {
-    document.addEventListener('click', (e) => {
-        let selectedButton = e.target.parentElement.id
-        let taskDetail = e.target.parentElement.parentElement.nextSibling
-        let detailTarget = e.target.parentElement
-        
-        toggleDetail(selectedButton, taskDetail, detailTarget)
-    })
-}
-
-function toggleDetail(selectedButton, taskDetail, detailTarget) {
+export function toggleDetail(selectedButton, taskDetail, detailTarget) {
     if(selectedButton.includes('task-detail')
     && !detailTarget.outerHTML.includes('rotate')) {
         taskDetail.style.display = 'none'

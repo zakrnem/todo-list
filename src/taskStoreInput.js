@@ -1,6 +1,4 @@
-import { taskDate } from "./taskDate"
-
-function storeTaskInput(taskCount) {
+export function storeTaskInput(taskCount) {
     const storedTasks = []
     for (let i=taskCount; i>0; i--) {
         let taskTitle = document.getElementById(`task-title${i}`)
@@ -20,28 +18,3 @@ function storeTaskInput(taskCount) {
     }
     console.log(storedTasks)
  }
-
-export function storeTaskListener(taskCount) {
-    const validValues = ['task-title', 'task-description', 'task-completed',
-    'task-submit', 'Today', 'Tomorrow', 'date']
-    
-    function checkInputs(e) {
-        if (validValues.includes(e.target.className)) {
-            storeTaskInput(taskCount)
-        }
-    }
-    function dateInput(e) {
-        if (validValues.includes(e.target.textContent) ||
-        validValues.includes(e.target.type)) {
-            taskDate(e)
-        }
-    }
-
-    document.addEventListener('input', (e) => {
-        checkInputs(e)
-    })
-    document.addEventListener('click', (e) => {
-        checkInputs(e)
-        dateInput(e)
-    })
-}
