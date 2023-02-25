@@ -18,8 +18,8 @@ toggleTaskDetail()
 import { storeTaskListener } from './taskStoreInput';
 storeTaskListener()
 
-import { projectDashboardListener } from './projectDashboardListener';
-projectDashboardListener()
+import { projectListener } from './projectListener';
+projectListener()
 
 import { projectDOM } from './projectDOM';
 projectDOM()

@@ -1,7 +1,5 @@
 import { appendDOM } from "./appendDOM"
 import { newProject } from "./projectNew"
-import { newProjectListener } from "./projectNewListener"
-newProjectListener()
 
 export function projectDOM(origin) {
 

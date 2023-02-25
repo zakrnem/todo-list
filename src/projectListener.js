@@ -1,13 +1,14 @@
 import { projectDOM } from "./projectDOM"
 import { projectEdit } from "./projectEdit"
 import { clearDOM } from "./clearDOM"
+import { newProject } from "./projectNew"
 
-export function projectDashboardListener() {
+export function projectListener() {
     document.addEventListener('click', (e) => {
         if (e.target.id.includes('project-button') ||
         e.target.parentElement.id.includes('project-button')) {
             clearDOM()
-            projectDOM(1)
+            projectDOM(1) //Not adding personal project
         }
     })
     document.addEventListener('input', (e) => {
@@ -21,5 +22,14 @@ export function projectDashboardListener() {
             let pjTitle = document.querySelector(`#projectT${projectNumber}`).value
             projectEdit(pjTitle)
         }
+    })
+
+    let projectCount = 2
+    document.addEventListener('click', (e) => {
+        if (e.target.id.includes('new-project')) {
+            newProject(projectCount, `New project #${projectCount}`)
+            //It's adding two projects with one click
+        }
+        projectCount++
     })
 }
