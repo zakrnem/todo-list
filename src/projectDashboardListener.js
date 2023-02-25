@@ -1,6 +1,5 @@
 import { projectDOM } from "./projectDOM"
 import { projectEdit } from "./projectEdit"
-import { clearDOM } from "./clearDOM"
 
 export function projectDashboardListener() {
     document.addEventListener('click', (e) => {
@@ -16,9 +15,9 @@ export function projectDashboardListener() {
     })
     document.addEventListener('dblclick', (e) => {
         if (e.target.id.includes('projectN')) {
-            console.log('Open project')
-            clearDOM()
-            projectEdit()
+            let projectNumber = e.target.id.match(/\d+$/)[0]
+            let pjTitle = document.querySelector(`#projectT${projectNumber}`).value
+            projectEdit(pjTitle)
         }
     })
 }
