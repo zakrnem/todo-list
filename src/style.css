@@ -18,6 +18,8 @@
     --white-filter: invert(86%) sepia(100%) saturate(1764%) hue-rotate(182deg) brightness(130%) contrast(100%);
     --border-radius: 7px;
     --separator: solid 3px #aaaaaa;
+    --button-padding: 0.75rem 1.5rem;
+    --button-border-radius: 0.7rem;
   }
 
 * {
@@ -222,11 +224,11 @@ input {
 }
 
 .new-button {
-    padding: 0.75rem 1.5rem;
+    padding: var(--button-padding);
     background-color: var(--main);
     color: white;
     font-weight: bolder;
-    border-radius: 0.7rem;
+    border-radius: var(--border-radius);
     border: none;
 }
 
@@ -236,6 +238,16 @@ input {
 
 .new-button:active {
     background-color: var(--tertiary);
+}
+
+.return-button {
+    border: 3px solid var(--main);
+    padding: var(--button-padding);
+    color: var(--main);
+    font-weight: bolder;
+    border-radius: var(--border-radius);
+    background-color: transparent;
+    align-self: baseline;
 }
 
 .projects-grid {
@@ -282,4 +294,9 @@ input {
 
 .project-title-edit:active {
     background-color: white;
+}
+
+.project-title {
+    position: absolute;
+    margin-top: 1rem;
 }

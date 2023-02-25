@@ -7,6 +7,12 @@ export function projectEdit(pjTitle) {
     let dashboard = document.createElement('div')
     dashboard.className = 'edit-project-dash'
 
+    let returnButton = document.createElement('button')
+    returnButton.id = 'returnToProjects'
+    returnButton.className = 'return-button'
+    returnButton.textContent = 'Projects'
+    dashboard.appendChild(returnButton)
+
     let projectTitle = document.createElement('p')
     projectTitle.className = 'project-title'
     projectTitle.textContent = pjTitle
