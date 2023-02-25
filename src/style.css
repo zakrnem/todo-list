@@ -25,6 +25,7 @@
     padding: 0;
     font-size: inherit;
     font-family: inherit;
+    user-select: none;
 }
 
 header {
@@ -269,4 +270,16 @@ input {
 .task-container {
     width: 100%;
     margin-bottom: 1rem;
+}
+
+.project-title-edit {
+    background-color: transparent;
+}
+
+.project-title-edit:hover {
+    background-color: white;
+}
+
+.project-title-edit:active {
+    background-color: white;
 }

@@ -9,6 +9,7 @@ export function newProject(projectCount, projTextCont) {
             projectTitle.setAttribute("type", "text")
             projectTitle.value = projTextCont
             projectTitle.id = `projectT${projectCount}`
+            projectTitle.className = 'project-title-edit'
             newProject.appendChild(projectTitle)
         
         if (projectCount === 1) {
