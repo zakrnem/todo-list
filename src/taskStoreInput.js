@@ -1,5 +1,6 @@
-export function storeTaskInput(taskCount) {
-    const storedTasks = []
+export function storeTaskInput(taskCount, storedTasks) {
+    //remove taskCount, get number of elements from the DOM
+
     for (let i=taskCount; i>0; i--) {
         let taskTitle = document.getElementById(`task-title${i}`)
         let taskDescription = document.getElementById(`task-description${i}`)

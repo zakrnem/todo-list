@@ -35,7 +35,7 @@ export function taskListener() {
     })
 
     //Store task listener
-    const validValues = ['task-title', 'task-description', 'task-completed',
+    /* const validValues = ['task-title', 'task-description', 'task-completed',
     'task-submit', 'Today', 'Tomorrow', 'date']
     
     function checkInputs(e) {
@@ -56,7 +56,7 @@ export function taskListener() {
     document.addEventListener('click', (e) => {
         checkInputs(e)
         dateInput(e)
-    })
+    }) */
 
     //Toggle task detail
     document.addEventListener('click', (e) => {
@@ -68,10 +68,12 @@ export function taskListener() {
     })
 
     //Return to projects
+    const storedTasks = []
+    
     document.addEventListener('click', (e) => {
         if (e.target.id.includes('returnB') ||
         e.target.parentElement.id.includes('returnB')) {
-            console.log(storeTaskInput())
+            console.log(storeTaskInput(taskCount, storedTasks))
             clearDOM()
             projectDOM()
         
