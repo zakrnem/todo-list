@@ -16,5 +16,8 @@ export function storeTaskInput(taskCount) {
             storedTasks.push(newTask)
         }
     }
+
+    let projectTitle = document.querySelector('.project-title').textContent
+
     console.log(storedTasks)
  }

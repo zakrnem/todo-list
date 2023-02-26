@@ -4,6 +4,7 @@ import { clearDOM } from "./clearDOM"
 import { newProject } from "./projectNew"
 
 export function projectListener() {
+    //Insert project dashboard
     document.addEventListener('click', (e) => {
         if (e.target.id.includes('project-button') ||
         e.target.parentElement.id.includes('project-button')) {
@@ -12,11 +13,15 @@ export function projectListener() {
             projectDOM(1) //Not adding personal project
         }
     })
+
+    //Get project title
     document.addEventListener('input', (e) => {
         if (e.target.id.includes('projectT')) {
             console.log(e.target.value)
         } 
     })
+
+    //Go to project edit (task creation)
     document.addEventListener('dblclick', (e) => {
         if (e.target.id.includes('projectN')) {
             let projectNumber = e.target.id.match(/\d+$/)[0]
@@ -25,6 +30,7 @@ export function projectListener() {
         }
     })
 
+    //Add a new project
     let projectCount = 2
     document.addEventListener('click', (e) => {
         if (e.target.id.includes('new-project')) {
@@ -33,4 +39,7 @@ export function projectListener() {
         }
         projectCount++
     })
+
+    //Create array here for projects tasks
+    
 }
