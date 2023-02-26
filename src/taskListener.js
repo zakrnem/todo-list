@@ -5,6 +5,7 @@ import { taskDate } from "./taskDate"
 import { toggleDetail } from "./taskToggleDetail.js"
 import { clearDOM } from "./clearDOM.js"
 import { projectDOM } from "./projectDOM.js"
+import { storedProjects } from "./projectListener"
 
 export function taskListener() {
     //Add task
@@ -70,6 +71,7 @@ export function taskListener() {
     document.addEventListener('click', (e) => {
         if (e.target.id.includes('returnB') ||
         e.target.parentElement.id.includes('returnB')) {
+            console.log(storeTaskInput())
             clearDOM()
             projectDOM()
         

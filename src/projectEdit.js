@@ -2,7 +2,7 @@ import { appendDOM } from "./appendDOM"
 import { clearDOM } from "./clearDOM"
 import { newIcon } from "./newIcon";
 
-export function projectEdit(pjTitle) {
+export function projectEdit(pjTitle, storedProjects) {
     clearDOM()
 
     let sidebar = document.querySelector('.sidebar')

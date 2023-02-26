@@ -7,7 +7,7 @@ export function projectListener() {
     //Insert project dashboard
     document.addEventListener('click', (e) => {
         if (e.target.id.includes('project-button') ||
-        e.target.parentElement.id.includes('project-button')) {
+            e.target.parentElement.id.includes('project-button')) {
             //Bug in the if statement after removing return button
             clearDOM()
             projectDOM(1) //Not adding personal project
@@ -18,7 +18,7 @@ export function projectListener() {
     document.addEventListener('input', (e) => {
         if (e.target.id.includes('projectT')) {
             console.log(e.target.value)
-        } 
+        }
     })
 
     //Go to project edit (task creation)
@@ -26,7 +26,7 @@ export function projectListener() {
         if (e.target.id.includes('projectN')) {
             let projectNumber = e.target.id.match(/\d+$/)[0]
             let pjTitle = document.querySelector(`#projectT${projectNumber}`).value
-            projectEdit(pjTitle)
+            projectEdit(pjTitle, storedProjects)
         }
     })
 
@@ -40,6 +40,11 @@ export function projectListener() {
         projectCount++
     })
 
-    //Create array here for projects tasks
-    
+}
+
+const projectsObj = []
+
+export function storedProjects(storedTasks) {
+    projectsObj.push(storedTasks)
+    console.log(projectsObj)
 }

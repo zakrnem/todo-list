@@ -17,7 +17,7 @@ export function storeTaskInput(taskCount) {
         }
     }
 
-    let projectTitle = document.querySelector('.project-title').textContent
+    //let projectTitle = document.querySelector('.project-title').textContent
 
-    console.log(storedTasks)
+    return storedTasks
  }
