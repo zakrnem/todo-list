@@ -1,6 +1,6 @@
-export function storeTaskInput(taskCount, storedTasks) {
-    //remove taskCount, get number of elements from the DOM
-
+export function storeTaskInput(storedTasks) {
+    let taskCount = document.querySelectorAll('.task-container').length
+    
     for (let i=taskCount; i>0; i--) {
         let taskTitle = document.getElementById(`task-title${i}`)
         let taskDescription = document.getElementById(`task-description${i}`)
@@ -19,6 +19,6 @@ export function storeTaskInput(taskCount, storedTasks) {
     }
 
     //let projectTitle = document.querySelector('.project-title').textContent
-
+    //Not storing the tasks for the 2nd project
     return storedTasks
  }

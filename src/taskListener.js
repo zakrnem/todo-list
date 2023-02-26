@@ -34,30 +34,6 @@ export function taskListener() {
         }
     })
 
-    //Store task listener
-    /* const validValues = ['task-title', 'task-description', 'task-completed',
-    'task-submit', 'Today', 'Tomorrow', 'date']
-    
-    function checkInputs(e) {
-        if (validValues.includes(e.target.className)) {
-            storeTaskInput(taskCount)
-        }
-    }
-    function dateInput(e) {
-        if (validValues.includes(e.target.textContent) ||
-        validValues.includes(e.target.type)) {
-            taskDate(e)
-        }
-    }
-
-    document.addEventListener('input', (e) => {
-        checkInputs(e)
-    })
-    document.addEventListener('click', (e) => {
-        checkInputs(e)
-        dateInput(e)
-    }) */
-
     //Toggle task detail
     document.addEventListener('click', (e) => {
         let selectedButton = e.target.parentElement.id
@@ -69,13 +45,13 @@ export function taskListener() {
 
     //Return to projects
     const storedTasks = []
-    
     document.addEventListener('click', (e) => {
         if (e.target.id.includes('returnB') ||
         e.target.parentElement.id.includes('returnB')) {
-            console.log(storeTaskInput(taskCount, storedTasks))
+            console.log(storeTaskInput(storedTasks))
             clearDOM()
             projectDOM()
+            taskCount = 0
         
             let sidebar = document.querySelector('.sidebar')
             let returnButton = document.querySelector('#returnB1')
