@@ -18,7 +18,5 @@ export function storeTaskInput(storedTasks) {
         }
     }
 
-    //let projectTitle = document.querySelector('.project-title').textContent
-    //Not storing the tasks for the 2nd project
     return storedTasks
  }

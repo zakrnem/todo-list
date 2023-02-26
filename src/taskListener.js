@@ -48,7 +48,11 @@ export function taskListener() {
     document.addEventListener('click', (e) => {
         if (e.target.id.includes('returnB') ||
         e.target.parentElement.id.includes('returnB')) {
-            console.log(storeTaskInput(storedTasks))
+            let projectTitle = document.querySelector('.project-title').textContent
+            const projTasks = {tile: projectTitle, tasks: storeTaskInput(storedTasks)}
+            console.log(projTasks)
+            //the title is changing whith every new project
+            //it should store the title for the past ones
             clearDOM()
             projectDOM()
             taskCount = 0
