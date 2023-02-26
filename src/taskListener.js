@@ -72,7 +72,10 @@ export function taskListener() {
         e.target.parentElement.id.includes('returnB')) {
             clearDOM()
             projectDOM()
-            //Bug: remove return button from sidebar after returning
+        
+            let sidebar = document.querySelector('.sidebar')
+            let returnButton = document.querySelector('#returnB1')
+            sidebar.removeChild(returnButton)
         }
     })
 }

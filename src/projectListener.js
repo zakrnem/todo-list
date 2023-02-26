@@ -7,6 +7,7 @@ export function projectListener() {
     document.addEventListener('click', (e) => {
         if (e.target.id.includes('project-button') ||
         e.target.parentElement.id.includes('project-button')) {
+            //Bug in the if statement after removing return button
             clearDOM()
             projectDOM(1) //Not adding personal project
         }
