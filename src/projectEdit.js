@@ -1,6 +1,7 @@
 import { appendDOM } from "./appendDOM"
 import { clearDOM } from "./clearDOM"
 import { newIcon } from "./newIcon";
+import { taskDate } from "./taskDate"
 
 export function projectEdit(pjTitle, storedProjects) {
     clearDOM()
@@ -25,4 +26,12 @@ export function projectEdit(pjTitle, storedProjects) {
     dashboard.appendChild(newTaskButtton)
     
     appendDOM(dashboard)
+
+    //Gets date buttons working
+    document.addEventListener('click', (e) => {
+        if (e.target.id.includes('today') ||
+        e.target.id.includes('tomorrow')) {
+            taskDate(e)
+        }
+    })
 }

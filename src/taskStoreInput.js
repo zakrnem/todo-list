@@ -16,8 +16,6 @@ export function storeTaskInput(storedTasks) {
             completed: taskCompleted.checked }
             storedTasks.push(newTask)
         }
-
-        //task date buttons not working (today & tomorrow)
     }
 
     return storedTasks

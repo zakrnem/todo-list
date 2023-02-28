@@ -1,10 +1,9 @@
-import { storeTaskListener } from "./taskStoreInput.js"
-import { taskEditDOM } from "./taskEdit.js"
-import { storeTaskInput } from "./taskStoreInput.js"
-import { taskDate } from "./taskDate"
-import { toggleDetail } from "./taskToggleDetail.js"
-import { clearDOM } from "./clearDOM.js"
-import { projectDOM } from "./projectDOM.js"
+import { storeTaskListener } from "./taskStoreInput"
+import { taskEditDOM } from "./taskEdit"
+import { storeTaskInput } from "./taskStoreInput"
+import { toggleDetail } from "./taskToggleDetail"
+import { clearDOM } from "./clearDOM"
+import { projectDOM } from "./projectDOM"
 
 export function taskListener() {
     //Add task
@@ -43,7 +42,6 @@ export function taskListener() {
     })
 
     //Return to projects
-    
     const storedProjects = []
     document.addEventListener('click', (e) => {
         if (e.target.id.includes('returnB') ||
@@ -53,7 +51,7 @@ export function taskListener() {
             const projTasks = {title: projectTitle, tasks: storeTaskInput(storedTasks)}
             storedProjects.push(projTasks)
             console.log(storedProjects)
-            
+
             clearDOM()
             projectDOM()
             taskCount = 0
