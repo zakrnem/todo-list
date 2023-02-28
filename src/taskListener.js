@@ -5,7 +5,6 @@ import { taskDate } from "./taskDate"
 import { toggleDetail } from "./taskToggleDetail.js"
 import { clearDOM } from "./clearDOM.js"
 import { projectDOM } from "./projectDOM.js"
-import { storedProjects } from "./projectListener"
 
 export function taskListener() {
     //Add task
@@ -45,12 +44,14 @@ export function taskListener() {
 
     //Return to projects
     const storedTasks = []
+    const storedProjects = []
     document.addEventListener('click', (e) => {
         if (e.target.id.includes('returnB') ||
         e.target.parentElement.id.includes('returnB')) {
             let projectTitle = document.querySelector('.project-title').textContent
-            const projTasks = {tile: projectTitle, tasks: storeTaskInput(storedTasks)}
-            console.log(projTasks)
+            const projTasks = {title: projectTitle, tasks: storeTaskInput(storedTasks)}
+            storedProjects.push(projTasks)
+            console.log(storedProjects)
             //the title is changing whith every new project
             //it should store the title for the past ones
             clearDOM()

@@ -14,13 +14,6 @@ export function projectListener() {
         }
     })
 
-    //Get project title
-    document.addEventListener('input', (e) => {
-        if (e.target.id.includes('projectT')) {
-            console.log(e.target.value)
-        }
-    })
-
     //Go to project edit (task creation)
     document.addEventListener('dblclick', (e) => {
         if (e.target.id.includes('projectN')) {
@@ -35,7 +28,6 @@ export function projectListener() {
     document.addEventListener('click', (e) => {
         if (e.target.id.includes('new-project')) {
             newProject(projectCount, `New project #${projectCount}`)
-            //It's adding two projects with one click
         }
         projectCount++
     })
