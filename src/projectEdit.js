@@ -2,9 +2,11 @@ import { appendDOM } from "./appendDOM"
 import { clearDOM } from "./clearDOM"
 import { newIcon } from "./newIcon";
 import { taskDate } from "./taskDate"
+import { taskListener } from "./taskListener"
 
-export function projectEdit(pjTitle, storedProjects) {
+export function projectEdit(pjTitle) {
     clearDOM()
+    taskListener()
 
     let sidebar = document.querySelector('.sidebar')
     let returnButton = newIcon('sidebar-button', 'returnB1',
