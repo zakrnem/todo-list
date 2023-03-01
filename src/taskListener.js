@@ -6,13 +6,13 @@ import { clearDOM } from "./clearDOM"
 import { projectDOM } from "./projectDOM"
 
 export function taskListener() {
-    
+    let content = document.querySelector('#content')
     let taskCount = 0
     let taskIdNumber
     
     const storedProjects = []
 
-    document.addEventListener('click', (e) => {
+    content.addEventListener('click', (e) => {
         let taskDash = document.querySelector('.edit-project-dash')
 
         if (taskDash != null) {

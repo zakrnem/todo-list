@@ -1,32 +1,16 @@
 Pending:
-    Make return button work.
-        Depending on the current dashboard.
-    Unify listeners in one f()
     Make the search bar work.
     Make task projects work:
-        Fix projectCount bug: when the projectTitle is edited the count increases.
-            One option is to remove the projectCount.
         Get the personal project to work.
             One can create tasks inside of it, exit the project and reopen it
                 an the created tasks remain there.
-
-
     Add footer
 
-    Project edit pseudocode:
-    Insert individual project dashboard:
-                    Get the projectT"N" ID and it's title.
-                    Create a DOM with project title at the top.
-                    A return button.
-                    A new task button.
-                    Store created tasks.
-
 Bugs:
-    taskListener
-        When clicking outside the task dashboard ('.edit-project-dash')
-            console error: Cannot read properties of null (reading 'id').
-
     taskDate
         At the end of a month the tomorrow button isn't working because
             it produces a invalidad date format.
     
+    projectDOM
+        Won't add personal project the 2nd time because the DOMContentLoaded listener
+            doesn't activate

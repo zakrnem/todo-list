@@ -17,6 +17,8 @@ export function projectDOM(origin) {
     dashboard.appendChild(projectsGrid)
 
     document.addEventListener('DOMContentLoaded', () => {
+        //This listeners doesn't works the second time the projectDOM
+        //is called
         newProject(1, 'Personal')
     })
  
