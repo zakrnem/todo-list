@@ -25,9 +25,7 @@ Bugs:
     taskListener
         When clicking outside the task dashboard ('.edit-project-dash')
             console error: Cannot read properties of null (reading 'id').
-        The taskCount is increasing when adding tasks in projectEdit dashboard
-            or clicking buttons in this dashboard.
-            
+
     taskDate
         At the end of a month the tomorrow button isn't working because
             it produces a invalidad date format.

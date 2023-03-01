@@ -16,7 +16,6 @@ export function taskListener() {
         let taskDash = document.querySelector('.edit-project-dash')
 
         if (taskDash != null) {
-            console.log(e.target)
             //Add task
             if (e.target.id.includes('add-task')) {
                 taskCount += 1

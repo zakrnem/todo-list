@@ -6,20 +6,18 @@ import { newProject } from "./projectNew"
 export function projectListener() {
     let projectCount = 2
     document.addEventListener('click', (e) => {
-        if (e.target.id != '') {
-            //Insert project dashboard
-            if (e.target.id.includes('project-button') ||
-            e.target.parentElement.id.includes('project-button')) {
-            clearDOM()
-            projectDOM(1) //Not adding personal project
-            //It doesn't add it because it's added in the projectDOM() only once
-            }
+        //Insert project dashboard
+        if (e.target.id.includes('project-button') ||
+        e.target.parentElement.id.includes('project-button')) {
+        clearDOM()
+        projectDOM(1) //Not adding personal project
+        //It doesn't add it because it's added in the projectDOM() only once
+        }
 
-            //Add a new project
-            if (e.target.id.includes('new-project')) {
-                newProject(projectCount, `New project #${projectCount}`)
-                projectCount++
-            }
+        //Add a new project
+        if (e.target.id.includes('new-project')) {
+            newProject(projectCount, `New project #${projectCount}`)
+            projectCount++
         }
     })
     
