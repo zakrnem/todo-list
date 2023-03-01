@@ -6,6 +6,9 @@ headerDOM()
 import { sidebarDOM } from "./sidebarDOM"
 sidebarDOM()
 
+import { taskListener } from "./taskListener"
+taskListener()
+
 import { projectListener } from './projectListener';
 projectListener()
 

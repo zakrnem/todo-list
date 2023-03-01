@@ -2,11 +2,10 @@ import { appendDOM } from "./appendDOM"
 import { clearDOM } from "./clearDOM"
 import { newIcon } from "./newIcon";
 import { taskDate } from "./taskDate"
-import { taskListener } from "./taskListener"
+
 
 export function projectEdit(pjTitle) {
     clearDOM()
-    taskListener()
 
     let sidebar = document.querySelector('.sidebar')
     let returnButton = newIcon('sidebar-button', 'returnB1',
@@ -29,7 +28,6 @@ export function projectEdit(pjTitle) {
     
     appendDOM(dashboard)
 
-    //Gets date buttons working
     document.addEventListener('click', (e) => {
         if (e.target.id.includes('today') ||
         e.target.id.includes('tomorrow')) {
