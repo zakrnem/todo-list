@@ -4,6 +4,7 @@ import { storeTaskInput } from "./taskStoreInput"
 import { toggleDetail } from "./taskToggleDetail"
 import { clearDOM } from "./clearDOM"
 import { projectDOM } from "./projectDOM"
+import { newProject } from "./projectNew"
 
 export function taskListener() {
     let content = document.querySelector('#content')
@@ -51,7 +52,10 @@ export function taskListener() {
 
                 clearDOM()
                 projectDOM()
-                //newProject(projectCount, storedProjects[projectCount-1].title)
+
+                let projectCount = 1
+                newProject(projectCount, storedProjects[projectCount-1].title)
+
                 taskCount = 0
             
                 let sidebar = document.querySelector('.sidebar')
