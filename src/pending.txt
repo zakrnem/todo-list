@@ -5,6 +5,8 @@ Pending:
         The first step is making this functionality work, edit the "Personal Project"
             and after returning it must appear in the "Projects Dashboard".
 
+    Projects button not working from task dashboard
+
 
     Make the search bar work.
     Make task projects work:

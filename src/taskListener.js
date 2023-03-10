@@ -47,14 +47,20 @@ export function taskListener() {
                 const storedTasks = []
                 let projectTitle = document.querySelector('.project-title').textContent
                 const projTasks = {title: projectTitle, tasks: storeTaskInput(storedTasks)}
+                //Check if the project title already exists, so we don't duplicate them
                 storedProjects.push(projTasks)
                 console.log(storedProjects)
 
                 clearDOM()
                 projectDOM()
 
-                let projectCount = 1
-                newProject(projectCount, storedProjects[projectCount-1].title)
+                //Get actual projectCount
+                let projectCount = storedProjects.length
+                console.log(projectCount)
+                //For loop for inserting multiple stored projects
+                for (; projectCount>0; projectCount--) {
+                    newProject(projectCount, storedProjects[projectCount-1].title)
+                }
 
                 taskCount = 0
             
@@ -64,6 +70,5 @@ export function taskListener() {
             }
         }
     })
-
     return storedProjects
 }

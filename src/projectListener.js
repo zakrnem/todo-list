@@ -24,7 +24,7 @@ export function projectListener() {
         //Add a new project
         if (e.target.id.includes('new-project')) {
             newProject(++projectCount, `New project #${projectCount}`)
-            //projectCount++
+            projectCount++
         }
     })
     
@@ -35,5 +35,5 @@ export function projectListener() {
             let pjTitle = document.querySelector(`#projectT${projectNumber}`).value
             projectEdit(pjTitle)
         }
-    }) 
+    })
 }
