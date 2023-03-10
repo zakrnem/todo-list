@@ -10,14 +10,15 @@ export function projectListener() {
     let storedProjects = taskListener()
 
     //Insert project dashboard initially
-    //projectDOM(projectCount, storedProjects[projectCount-1].title)
+    projectDOM(projectCount, storedProjects[projectCount-1].title)
 
     content.addEventListener('click', (e) => {
         //Insert project dashboard
         if (e.target.id.includes('project-button') ||
         e.target.parentElement.id.includes('project-button')) {
-        //clearDOM()
-        projectDOM(projectCount, storedProjects[projectCount-1].title)
+        clearDOM()
+        projectDOM()
+        newProject(projectCount, storedProjects[projectCount-1].title)
         }
 
         //Add a new project

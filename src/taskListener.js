@@ -51,6 +51,7 @@ export function taskListener() {
 
                 clearDOM()
                 projectDOM()
+                //newProject(projectCount, storedProjects[projectCount-1].title)
                 taskCount = 0
             
                 let sidebar = document.querySelector('.sidebar')
