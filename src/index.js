@@ -12,5 +12,5 @@ taskListener()
 import { projectListener } from './projectListener';
 projectListener()
 
-import { projectDOM } from './projectDOM';
-projectDOM()
+/* import { projectDOM } from './projectDOM';
+projectDOM() */

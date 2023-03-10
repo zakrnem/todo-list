@@ -10,7 +10,9 @@ export function taskListener() {
     let taskCount = 0
     let taskIdNumber
     
-    const storedProjects = []
+    const storedProjects = [
+        {title: 'Personal', tasks: {}}
+    ]
 
     content.addEventListener('click', (e) => {
         let taskDash = document.querySelector('.edit-project-dash')
@@ -57,4 +59,6 @@ export function taskListener() {
             }
         }
     })
+
+    return storedProjects
 }

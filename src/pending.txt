@@ -1,4 +1,11 @@
 Pending:
+    Make personal project work:
+        Store created projects in an array
+        The first item in this array will be the "Personal Project"
+        The first step is making this functionality work, edit the "Personal Project"
+            and after returning it must appear in the "Projects Dashboard".
+
+
     Make the search bar work.
     Make task projects work:
         Get the personal project to work.
@@ -14,3 +21,5 @@ Bugs:
     projectDOM
         Won't add personal project the 2nd time because the DOMContentLoaded listener
             doesn't activate
+
+

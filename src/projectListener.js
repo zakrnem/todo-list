@@ -2,23 +2,28 @@ import { projectDOM } from "./projectDOM"
 import { projectEdit } from "./projectEdit"
 import { clearDOM } from "./clearDOM"
 import { newProject } from "./projectNew"
+import { taskListener } from "./taskListener"
 
 export function projectListener() {
     let content = document.querySelector('#content')
-    let projectCount = 2
+    let projectCount = 1
+    let storedProjects = taskListener()
+
+    //Insert project dashboard initially
+    //projectDOM(projectCount, storedProjects[projectCount-1].title)
 
     content.addEventListener('click', (e) => {
         //Insert project dashboard
         if (e.target.id.includes('project-button') ||
         e.target.parentElement.id.includes('project-button')) {
-        clearDOM()
-        projectDOM(1)
+        //clearDOM()
+        projectDOM(projectCount, storedProjects[projectCount-1].title)
         }
 
         //Add a new project
         if (e.target.id.includes('new-project')) {
-            newProject(projectCount, `New project #${projectCount}`)
-            projectCount++
+            newProject(++projectCount, `New project #${projectCount}`)
+            //projectCount++
         }
     })
     

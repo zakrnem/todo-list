@@ -1,7 +1,7 @@
 import { appendDOM } from "./appendDOM"
 import { newProject } from "./projectNew"
 
-export function projectDOM(origin) {
+export function projectDOM(count, title) {
 
     let dashboard = document.createElement('div')
     dashboard.className = 'projects-dashboard'
@@ -16,11 +16,10 @@ export function projectDOM(origin) {
     projectsGrid.className = 'projects-grid'
     dashboard.appendChild(projectsGrid)
 
+    //This listener isn't activating after the page has been loaded
     document.addEventListener('DOMContentLoaded', () => {
-        //This listeners doesn't works the second time the projectDOM
-        //is called
-        newProject(1, 'Personal')
+        newProject(count, title)
     })
- 
+
     appendDOM(dashboard)
 }
