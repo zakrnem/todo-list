@@ -50,15 +50,19 @@ export function taskListener() {
                 const projTasks = {title: projectTitle, tasks: storeTaskInput(storedTasks)}
 
                 //Check all proj title, if there isn't one with the same name create a new one
+                //Check failing for the 2nd project onwards
                 for (let key in storedProjects) {
                     if (storedProjects[key].title === projectTitle) {
                         storedProjects[key] = projTasks
+                        projectCount = storedProjects.length
                         break;
                     } else {
                         storedProjects.push(projTasks)
+                        projectCount = storedProjects.length
                     }
                 }
-
+                
+                console.log(projectCount)
                 console.log(storedProjects)
 
                 clearDOM()

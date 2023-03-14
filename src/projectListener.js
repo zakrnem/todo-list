@@ -24,7 +24,6 @@ export function projectListener() {
         //Add a new project
         if (e.target.id.includes('new-project')) {
             newProject(++projectCount, `New project #${projectCount}`)
-            projectCount++
         }
     })
     
