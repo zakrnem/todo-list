@@ -5,7 +5,6 @@ Pending:
         The first step is making this functionality work, edit the "Personal Project"
             and after returning it must appear in the "Projects Dashboard".
 
-    Projects button not working from task dashboard
 
 
     Make the search bar work.
@@ -19,9 +18,5 @@ Bugs:
     taskDate
         At the end of a month the tomorrow button isn't working because
             it produces a invalidad date format.
-    
-    projectDOM
-        Won't add personal project the 2nd time because the DOMContentLoaded listener
-            doesn't activate
 
 
