@@ -1,4 +1,6 @@
 Pending:
+    Create f() for storedProjects check (taskListener.js line 54).
+    Create f() for creating pre-filled tasks with the parameters of the storedProjects object. 
     Make personal project work:
         Store created projects in an array
         The first item in this array will be the "Personal Project"

@@ -5,6 +5,7 @@ import { toggleDetail } from "./taskToggleDetail"
 import { clearDOM } from "./clearDOM"
 import { projectDOM } from "./projectDOM"
 import { newProject } from "./projectNew"
+import { newTask } from "./taskNew"
 
 export function taskListener() {
     let content = document.querySelector('#content')
@@ -22,7 +23,8 @@ export function taskListener() {
             //Add task
             if (e.target.id.includes('add-task')) {
                 taskCount += 1
-                taskEditDOM(taskCount) //Pushes taskCount number for creating different id's
+                //taskEditDOM(taskCount) //Pushes taskCount number for creating different id's
+                newTask(taskCount, true, 'Toyota', 'Corolla', '2001-11-01')
             }
 
             //Remove task
@@ -50,6 +52,8 @@ export function taskListener() {
                 const projTasks = {title: projectTitle, tasks: storeTaskInput(storedTasks)}
 
                 //Check all proj title, if there isn't one with the same name create a new one
+                //If it already exists store new values
+                //PENDING: Create f() for this
                 let found
                 for (let key in storedProjects) {
                     if (storedProjects[key].title === projectTitle) {
@@ -64,7 +68,6 @@ export function taskListener() {
                 }
                 
                 console.log(storedProjects)
-
                 clearDOM()
                 projectDOM()
 
@@ -74,7 +77,6 @@ export function taskListener() {
                 }
 
                 taskCount = 0
-            
                 let sidebar = document.querySelector('.sidebar')
                 let returnButton = document.querySelector('#returnB1')
                 sidebar.removeChild(returnButton)
