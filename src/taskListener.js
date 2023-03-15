@@ -1,5 +1,4 @@
 import { storeTaskListener } from "./taskStoreInput"
-import { taskEditDOM } from "./taskEdit"
 import { storeTaskInput } from "./taskStoreInput"
 import { toggleDetail } from "./taskToggleDetail"
 import { clearDOM } from "./clearDOM"
@@ -23,8 +22,8 @@ export function taskListener() {
             //Add task
             if (e.target.id.includes('add-task')) {
                 taskCount += 1
-                //taskEditDOM(taskCount) //Pushes taskCount number for creating different id's
-                newTask(taskCount, true, 'Toyota', 'Corolla', '2001-11-01')
+                newTask(taskCount) //Pushes taskCount number for creating different id's
+                //newTask(taskCount, true, 'Toyota', 'Corolla', '2001-11-01')
             }
 
             //Remove task

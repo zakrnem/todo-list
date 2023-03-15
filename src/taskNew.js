@@ -2,7 +2,12 @@ import { newIcon } from "./newIcon"
 import { appendDOM } from "./appendDOM"
 
 //Creates the DOM for an individual task
-export function newTask(taskCount, tskCheck, tskTitle, tskDescrip, tskDate) {    
+export function newTask(taskCount, tskCheck, tskTitle, tskDescrip, tskDate) {
+    if (tskTitle === undefined) {
+        tskTitle = ''
+        tskDescrip = ''
+    }
+
     let dashboard = document.querySelector('.edit-project-dash')
 
     let taskEdit = document.createElement('div')
