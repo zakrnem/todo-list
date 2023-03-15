@@ -1,20 +1,16 @@
-import { storeTaskListener } from "./taskStoreInput"
-import { storeTaskInput } from "./taskStoreInput"
 import { toggleDetail } from "./taskToggleDetail"
 import { clearDOM } from "./clearDOM"
 import { projectDOM } from "./projectDOM"
 import { newProject } from "./projectNew"
 import { newTask } from "./taskNew"
+import { storeTaskInput } from "./taskStoreInput"
+import { projectStorage } from "./projectStorage"
 
 export function taskListener() {
     let content = document.querySelector('#content')
     let taskCount = 0
     let taskIdNumber
     
-    const storedProjects = [
-        {title: 'Personal', tasks: {}}
-    ]
-
     content.addEventListener('click', (e) => {
         let taskDash = document.querySelector('.edit-project-dash')
 
@@ -47,31 +43,18 @@ export function taskListener() {
             e.target.parentElement.id.includes('returnB')) {
                 const storedTasks = []
                 let projectTitle = document.querySelector('.project-title').textContent
-                let projectCount = storedProjects.length
                 const projTasks = {title: projectTitle, tasks: storeTaskInput(storedTasks)}
 
-                //Check all proj title, if there isn't one with the same name create a new one
-                //If it already exists store new values
-                //PENDING: Create f() for this
-                let found
-                for (let key in storedProjects) {
-                    if (storedProjects[key].title === projectTitle) {
-                        storedProjects[key] = projTasks
-                        projectCount = storedProjects.length
-                        found = true
-                    }
-                }
-                if (found !== true) {
-                    storedProjects.push(projTasks)
-                    projectCount = storedProjects.length
-                }
-                
-                console.log(storedProjects)
+                let storedProjects = projectStorage(storedTasks, projectTitle, projTasks)
+                //console.log(projectStorage())
+
                 clearDOM()
                 projectDOM()
 
+                let projectCount = storedProjects.length
                 //For loop for inserting multiple stored projects
                 for (; projectCount>0; projectCount--) {
+                    console.log(projectCount)
                     newProject(projectCount, storedProjects[projectCount-1].title)
                 }
 
@@ -82,5 +65,4 @@ export function taskListener() {
             }
         }
     })
-    return storedProjects
 }

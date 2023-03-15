@@ -8,3 +8,6 @@ sidebarDOM()
 
 import { projectListener } from './projectListener';
 projectListener()
+
+import { taskListener } from './taskListener';
+taskListener()
