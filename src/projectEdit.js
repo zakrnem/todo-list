@@ -2,7 +2,6 @@ import { appendDOM } from "./appendDOM"
 import { clearDOM } from "./clearDOM"
 import { newIcon } from "./newIcon";
 import { taskDate } from "./taskDate"
-import { storedPj } from "./taskListener";
 
 
 export function projectEdit(pjTitle) {
@@ -29,6 +28,8 @@ export function projectEdit(pjTitle) {
 
     //const storedProjects = storedPj()
     //console.log(storedPj())
+
+    
 
     /* for (let key in storedProjects) {
         if (storedProjects[key].title === projectTitle) {

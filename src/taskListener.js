@@ -4,7 +4,7 @@ import { projectDOM } from "./projectDOM"
 import { newProject } from "./projectNew"
 import { newTask } from "./taskNew"
 import { storeTaskInput } from "./taskStoreInput"
-import { projectStorage } from "./projectStorage"
+import { projectStorage, storageDisplay } from "./projectStorage"
 
 export function taskListener() {
     let content = document.querySelector('#content')
@@ -41,21 +41,21 @@ export function taskListener() {
             //Return to projects
             if (e.target.id.includes('returnB') ||
             e.target.parentElement.id.includes('returnB')) {
-                const storedTasks = []
+                const storedTasks = [] //Will be filled with the inputs of an individual task
                 let projectTitle = document.querySelector('.project-title').textContent
                 const projTasks = {title: projectTitle, tasks: storeTaskInput(storedTasks)}
+                //Is the array of all the tasks of one project
 
-                let storedProjects = projectStorage(storedTasks, projectTitle, projTasks)
-                //console.log(projectStorage())
+                projectStorage(storedTasks, projectTitle, projTasks) //Stores the tasks of one project
+                //console.log(storageDisplay())
 
                 clearDOM()
                 projectDOM()
 
-                let projectCount = storedProjects.length
+                let projectCount = storageDisplay().length
                 //For loop for inserting multiple stored projects
                 for (; projectCount>0; projectCount--) {
-                    console.log(projectCount)
-                    newProject(projectCount, storedProjects[projectCount-1].title)
+                    newProject(projectCount, storageDisplay()[projectCount-1].title)
                 }
 
                 taskCount = 0

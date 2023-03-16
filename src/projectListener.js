@@ -2,14 +2,17 @@ import { projectDOM } from "./projectDOM"
 import { projectEdit } from "./projectEdit"
 import { clearDOM } from "./clearDOM"
 import { newProject } from "./projectNew"
-import { projectStorage } from "./projectStorage"
-
-
+import { storageDisplay } from "./projectStorage"
 
 export function projectListener() {
     let content = document.querySelector('#content')
-    let projectCount = 1
-    let storedProjects = projectStorage()
+
+    const storedProjects = [
+        {title: 'Personal', tasks: {}}
+    ]
+    let projectCount = storedProjects.length
+    storageDisplay(storedProjects)
+    console.log(storageDisplay())
 
     //Insert project dashboard initially
     projectDOM(projectCount, storedProjects[projectCount-1].title)

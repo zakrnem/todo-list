@@ -1,4 +1,5 @@
 export function storeTaskInput(storedTasks) {
+    //Gets the tasks inputs from the DOM
     let taskCount = document.querySelectorAll('.task-container').length
     
     for (let i=taskCount; i>0; i--) {
