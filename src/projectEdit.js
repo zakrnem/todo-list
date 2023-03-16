@@ -1,10 +1,12 @@
 import { appendDOM } from "./appendDOM"
 import { clearDOM } from "./clearDOM"
 import { newIcon } from "./newIcon";
+import { projectStorage } from "./projectStorage";
 import { taskDate } from "./taskDate"
+import { newTask } from "./taskNew";
 
 
-export function projectEdit(pjTitle) {
+export function projectEdit(projTitle) {
     clearDOM()
 
     let sidebar = document.querySelector('.sidebar')
@@ -17,7 +19,7 @@ export function projectEdit(pjTitle) {
 
     let projectTitle = document.createElement('p')
     projectTitle.className = 'project-title'
-    projectTitle.textContent = pjTitle
+    projectTitle.textContent = projTitle
     dashboard.appendChild(projectTitle)
 
     let newTaskButtton = document.createElement('button')
@@ -26,16 +28,16 @@ export function projectEdit(pjTitle) {
     newTaskButtton.textContent = 'New task'
     dashboard.appendChild(newTaskButtton)
 
-    //const storedProjects = storedPj()
-    //console.log(storedPj())
-
-    
-
-    /* for (let key in storedProjects) {
-        if (storedProjects[key].title === projectTitle) {
-            console.log('Voilá!')
+    let storedProjects = projectStorage('read')
+    for (let key in storedProjects) {
+        if (storedProjects[key].title === projTitle) {
+            //Not working
+            let tskCheck = storedProjects[key].completed
+            let tskDescrip = storedProjects[key].description
+            let tskDate = storedProjects[key].date
+            newTask(key, tskCheck, projTitle, tskDescrip, tskDate)
         }
-    } */
+    }
     
     appendDOM(dashboard)
 

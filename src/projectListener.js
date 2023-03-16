@@ -33,8 +33,8 @@ export function projectListener() {
         //Go to project edit (task creation)
         if (e.target.id.includes('projectN')) {
             let projectNumber = e.target.id.match(/\d+$/)[0]
-            let pjTitle = document.querySelector(`#projectT${projectNumber}`).value
-            projectEdit(pjTitle)
+            let projTitle = document.querySelector(`#projectT${projectNumber}`).value
+            projectEdit(projTitle)
         }
     })
 }

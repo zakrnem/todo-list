@@ -9,13 +9,11 @@ export function projectStorage(typeOfOperation, projTitle, projTasks) {
                 storedProjects[key] = projTasks
                 let projectCount = storedProjects.length
                 found = true
-                //console.log('Found')
             }
         }
         if (found !== true) {
             storedProjects.push(projTasks)
             let projectCount = storedProjects.length
-            //console.log('Not found')
         }
     }
 }
