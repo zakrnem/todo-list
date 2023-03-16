@@ -1,33 +1,24 @@
-export function projectStorage(storedTasks, projectTitle, projTasks) {
-    //let storedProjects = storageDisplay()
-    //console.log(storedProjects)
-    //console.log(storageDisplay())
-    let found
+export function projectStorage(typeOfOperation, projTitle, projTasks) {
+    const storedProjects = [
+        {title: 'Personal', tasks: {}}
+    ]
 
-    //Check existing projects title
-    /* for (let key in storedProjects) {
-        if (storedProjects[key].title === projectTitle) {
-            storedProjects[key] = projTasks
-            let projectCount = storedProjects.length
-            found = true
-            console.log('Found')
+    if (typeOfOperation === 'read') {
+        return storedProjects
+    }
+    if (typeOfOperation === 'write') {
+        for (let key in storedProjects) {
+            if (storedProjects[key].title === projTitle) {
+                storedProjects[key] = projTasks
+                let projectCount = storedProjects.length
+                found = true
+                console.log('Found')
+            }
         }
-    }
-    if (found !== true) {
-        storedProjects.push(projTasks)
-        let projectCount = storedProjects.length
-        console.log('Not found')
-    }
-    console.log(storedProjects)
-    storageDisplay(storedProjects) */
-}
-
-export function storageDisplay(storeObject, displayStorage) {
-    if (storeObject !== null) {
-        //return storeObject
-        displayStorage = storeObject
-    }
-    else if (storeObject === null) {
-        return displayStorage
+        if (found !== true) {
+            storedProjects.push(projTasks)
+            let projectCount = storedProjects.length
+            console.log('Not found')
+        }
     }
 }
