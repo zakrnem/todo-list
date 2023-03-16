@@ -8,7 +8,7 @@ export function projectListener() {
     let content = document.querySelector('#content')
 
     let storedProjects = projectStorage('read')
-    console.log(storedProjects)
+    //console.log(storedProjects)
     let projectCount = storedProjects.length
 
     //Insert project dashboard initially
