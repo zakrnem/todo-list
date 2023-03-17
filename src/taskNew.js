@@ -3,6 +3,14 @@ import { appendDOM } from "./appendDOM"
 
 //Creates the DOM for an individual task
 export function newTask(taskCount, tskCheck, tskTitle, tskDescrip, tskDate) {
+    let stringDate
+    if (tskDate != undefined) {
+        stringDate = `${tskDate.year}-0${tskDate.month}-${tskDate.date}`
+        //Can I store the date in a more practical way?
+        console.log(stringDate)
+    }
+    
+
     if (tskTitle === undefined) {
         tskTitle = ''
         tskDescrip = ''
@@ -74,7 +82,7 @@ export function newTask(taskCount, tskCheck, tskTitle, tskDescrip, tskDate) {
                     let dueDate = document.createElement('input')
                     dueDate.setAttribute("type", "date")
                     dueDate.id = `date${taskCount}`
-                    dueDate.value = tskDate
+                    dueDate.value = stringDate
                     taskContainer4.appendChild(dueDate)
 
             let taskSubmit = document.createElement('button')

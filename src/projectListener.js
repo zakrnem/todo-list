@@ -39,9 +39,10 @@ export function projectListener() {
 
             for (let key in storedProjects) {
                 if (storedProjects[key].title === projTitle) {
+                    //Checks if the selected project exists on storage
                     let taskCount = storedProjects[key].tasks.length
                     for (let key2 in storedProjects[key].tasks) {
-                        console.log(storedProjects[key].tasks[key2])
+                        //Adds the properties of the stored tasks for a project to the DOM
                         let tskTitle = storedProjects[key].tasks[key2].title
                         let tskCheck = storedProjects[key].tasks[key2].completed
                         let tskDescrip = storedProjects[key].tasks[key2].description
