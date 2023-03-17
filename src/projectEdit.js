@@ -1,7 +1,7 @@
 import { appendDOM } from "./appendDOM"
 import { clearDOM } from "./clearDOM"
 import { newIcon } from "./newIcon";
-import { projectStorage } from "./projectStorage";
+//import { projectStorage } from "./projectStorage";
 import { taskDate } from "./taskDate"
 import { newTask } from "./taskNew";
 
@@ -28,17 +28,7 @@ export function projectEdit(projTitle) {
     newTaskButtton.textContent = 'New task'
     dashboard.appendChild(newTaskButtton)
 
-    let storedProjects = projectStorage('read')
-    for (let key in storedProjects) {
-        if (storedProjects[key].title === projTitle) {
-            //Not working
-            let tskCheck = storedProjects[key].completed
-            let tskDescrip = storedProjects[key].description
-            let tskDate = storedProjects[key].date
-            newTask(key, tskCheck, projTitle, tskDescrip, tskDate)
-        }
-    }
-    
+       
     appendDOM(dashboard)
 
     document.addEventListener('click', (e) => {

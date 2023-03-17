@@ -3,6 +3,7 @@ import { projectEdit } from "./projectEdit"
 import { clearDOM } from "./clearDOM"
 import { newProject } from "./projectNew"
 import { projectStorage } from "./projectStorage"
+import { newTask } from "./taskNew"
 
 export function projectListener() {
     let content = document.querySelector('#content')
@@ -35,6 +36,20 @@ export function projectListener() {
             let projectNumber = e.target.id.match(/\d+$/)[0]
             let projTitle = document.querySelector(`#projectT${projectNumber}`).value
             projectEdit(projTitle)
+
+            for (let key in storedProjects) {
+                if (storedProjects[key].title === projTitle) {
+                    let taskCount = storedProjects[key].tasks.length
+                    for (let key2 in storedProjects[key].tasks) {
+                        console.log(storedProjects[key].tasks[key2])
+                        let tskTitle = storedProjects[key].tasks[key2].title
+                        let tskCheck = storedProjects[key].tasks[key2].completed
+                        let tskDescrip = storedProjects[key].tasks[key2].description
+                        let tskDate = storedProjects[key].tasks[key2].date
+                        newTask(key, tskCheck, tskTitle, tskDescrip, tskDate)
+                    } 
+                }
+            }
         }
     })
 }
