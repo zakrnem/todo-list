@@ -4,32 +4,38 @@ export function taskDate(e) {
     let taskCount = parseInt(e.target.id.match(/\d+$/)[0]);
     let taskDateDisplay = document.getElementById(`date${taskCount}`) 
     
-    const fullDate = new Date();
-
-    let nowDate = fullDate.getDate().toString()
-    if (nowDate.length === 1) {
-        nowDate = 0 + nowDate
+    const currentDate = new Date();
+    let todayDate = currentDate.getDate().toString()
+    if (todayDate.length === 1) {
+        todayDate = 0 + todayDate
     }
+    let todayMonth = (currentDate.getMonth()+1).toString()
+    if (todayMonth.length === 1) {
+        todayMonth = 0 + todayMonth
+    }
+    let todayYear = currentDate.getFullYear()
+    let currentDateString = `${todayYear}-${todayMonth}-${todayDate}`
 
-    let tomorrowDayDate = (parseInt(nowDate)+1).toString()
-    if (tomorrowDayDate.length === 1) {
+
+    const tomorrowDate = new Date();
+    tomorrowDate.setDate(tomorrowDate.getDate()+1)
+    let tomorrowDayDate = tomorrowDate.getDate().toString()
+    if (tomorrowDayDate.toString().length === 1) {
         tomorrowDayDate = 0 + tomorrowDayDate
     }
-
-    let nowMonth = (fullDate.getMonth()+1).toString()
-    if (nowMonth.length === 1) {
-        nowMonth = 0 + nowMonth
+    let tomorrowMonth = (tomorrowDate.getMonth()+1).toString()
+    if (tomorrowMonth.length === 1) {
+        tomorrowMonth = 0 + tomorrowMonth
     }
-
-    let currentDate = `${fullDate.getFullYear()}-${nowMonth}-${nowDate}`
-    let tomorrowDate = `${fullDate.getFullYear()}-${nowMonth}-${tomorrowDayDate}`
+    let tomorrowYear = tomorrowDate.getFullYear()    
+    let tomorrowDateString = `${tomorrowYear}-${tomorrowMonth}-${tomorrowDayDate}`
 
     switch (true) {
         case (e.target.textContent === 'Today'):
-            taskDateDisplay.value = currentDate
+            taskDateDisplay.value = currentDateString
             break;
         case (e.target.textContent === 'Tomorrow'):
-            taskDateDisplay.value = tomorrowDate
+            taskDateDisplay.value = tomorrowDateString
             break;
     }
 }

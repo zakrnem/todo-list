@@ -5,12 +5,16 @@ import { appendDOM } from "./appendDOM"
 export function newTask(taskCount, tskCheck, tskTitle, tskDescrip, tskDate) {
     let stringDate
     if (tskDate != undefined) {
-        stringDate = `${tskDate.year}-0${tskDate.month}-${tskDate.date}`
-        //Can I store the date in a more practical way?
+        if (tskDate.month.toString().length === 1) {
+            tskDate.month = `0${tskDate.month}`
+        }
+        if (tskDate.date.toString().length === 1) {
+            tskDate.date = `0${tskDate.date}`
+        }
+        stringDate = `${tskDate.year}-${tskDate.month}-${tskDate.date}`
         console.log(stringDate)
     }
     
-
     if (tskTitle === undefined) {
         tskTitle = ''
         tskDescrip = ''
