@@ -1,22 +1,75 @@
 Pending:
-    Make personal project work:
-        Store created projects in an array
-        The first item in this array will be the "Personal Project"
-        The first step is making this functionality work, edit the "Personal Project"
-            and after returning it must appear in the "Projects Dashboard".
-
-
-
+    Add a project delete button.
     Make the search bar work.
-    Make task projects work:
-        Get the personal project to work.
-            One can create tasks inside of it, exit the project and reopen it
-                an the created tasks remain there.
+    Make the upcoming tasks button work.
     Add footer
+    Implement "date-fns"
+    Implement "local-storage"
 
 Bugs:
-    taskDate
-        At the end of a month the tomorrow button isn't working because
-            it produces a invalidad date format.
+    When editing a project name that has content it creates a new project.
+        When double clicking on it, it enters on the project with the unmodified title.
+        We're currently identifying existing projects by their title.
+        If we could identify them by an id this wouldn't happen.
+        We need to store the project ID in the storedProject[]
+        But this could affect our current logic for the projectCount variable that assigns
+            the IDs in the DOM.
+        Because it's adding ID's according to the number of projects on the dashboard,
+            and they can change depending on which was the last project edited.
+        So this part of the logic must change now the ID's on the DOM must assigned according
+            to the properties stored in the object.
+
+Considering this object:
+[
+    {
+        "title": "Personal",
+        "tasks": [
+            {
+                "index": 1,
+                "title": "Candy",
+                "description": "",
+                "date": {
+                    "month": null,
+                    "date": null,
+                    "year": null
+                },
+                "completed": false
+            }
+        ]
+    },
+    {
+        "title": "New project #2",
+        "tasks": [
+            {
+                "index": 1,
+                "title": "tgjr",
+                "description": "",
+                "date": {
+                    "month": null,
+                    "date": null,
+                    "year": null
+                },
+                "completed": false
+            }
+        ]
+    },
+    {
+        "title": "New project #3",
+        "tasks": [
+            {
+                "index": 1,
+                "title": "Candy",
+                "description": "",
+                "date": {
+                    "month": null,
+                    "date": null,
+                    "year": null
+                },
+                "completed": false
+            }
+        ]
+    }
+]
+We must add a ID propertie to each project.
 
 
