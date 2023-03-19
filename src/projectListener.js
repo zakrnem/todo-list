@@ -9,7 +9,6 @@ export function projectListener() {
     let content = document.querySelector('#content')
 
     let storedProjects = projectStorage('read')
-    //console.log(storedProjects)
     let projectCount = storedProjects.length
 
     //Insert project dashboard initially
@@ -47,7 +46,8 @@ export function projectListener() {
                         let tskCheck = storedProjects[key].tasks[key2].completed
                         let tskDescrip = storedProjects[key].tasks[key2].description
                         let tskDate = storedProjects[key].tasks[key2].date
-                        newTask(key, tskCheck, tskTitle, tskDescrip, tskDate)
+                        let tskCount = parseInt(key2)+1
+                        newTask(tskCount, tskCheck, tskTitle, tskDescrip, tskDate)
                     } 
                 }
             }

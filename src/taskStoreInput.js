@@ -18,6 +18,5 @@ export function storeTaskInput(storedTasks) {
             storedTasks.push(newTask)
         }
     }
-
     return storedTasks
  }

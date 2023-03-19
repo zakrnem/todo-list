@@ -12,7 +12,6 @@ export function newTask(taskCount, tskCheck, tskTitle, tskDescrip, tskDate) {
             tskDate.date = `0${tskDate.date}`
         }
         stringDate = `${tskDate.year}-${tskDate.month}-${tskDate.date}`
-        console.log(stringDate)
     }
     
     if (tskTitle === undefined) {
