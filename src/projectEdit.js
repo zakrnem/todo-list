@@ -1,12 +1,11 @@
 import { appendDOM } from "./appendDOM"
 import { clearDOM } from "./clearDOM"
 import { newIcon } from "./newIcon";
-//import { projectStorage } from "./projectStorage";
 import { taskDate } from "./taskDate"
 import { newTask } from "./taskNew";
 
 
-export function projectEdit(projTitle) {
+export function projectEdit(projTitle, projID) {
     clearDOM()
 
     let sidebar = document.querySelector('.sidebar')
@@ -20,6 +19,7 @@ export function projectEdit(projTitle) {
     let projectTitle = document.createElement('p')
     projectTitle.className = 'project-title'
     projectTitle.textContent = projTitle
+    projectTitle.id = projID
     dashboard.appendChild(projectTitle)
 
     let newTaskButtton = document.createElement('button')

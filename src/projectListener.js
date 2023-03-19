@@ -33,12 +33,12 @@ export function projectListener() {
     content.addEventListener('dblclick', (e) => {
         //Go to project edit (task creation)
         if (e.target.id.includes('projectN')) {
-            let projectNumber = e.target.id.match(/\d+$/)[0]
-            let projTitle = document.querySelector(`#projectT${projectNumber}`).value
-            projectEdit(projTitle)
+            let projectIDnumber = e.target.id.match(/\d+$/)[0]
+            let projTitle = document.querySelector(`#projectT${projectIDnumber}`).value
+            projectEdit(projTitle, projectIDnumber)
 
             for (let key in storedProjects) {
-                if (storedProjects[key].title === projTitle) {
+                if (storedProjects[key].id === projectIDnumber) {
                     //Checks if the selected project exists on storage
                     let taskCount = storedProjects[key].tasks.length
                     for (let key2 in storedProjects[key].tasks) {

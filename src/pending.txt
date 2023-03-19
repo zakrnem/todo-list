@@ -70,6 +70,6 @@ Considering this object:
         ]
     }
 ]
-We must add a ID propertie to each project.
+We must add a ID property to each project.
 
 
