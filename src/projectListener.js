@@ -27,6 +27,12 @@ export function projectListener() {
         if (e.target.id.includes('new-project')) {
             newProject(++projectCount, `New project #${projectCount}`)
         }
+
+        if (e.target.className === 'remove-project') {
+            let project2delete = e.target.parentElement
+            let projectsGrid = document.querySelector('.projects-grid')
+            projectsGrid.removeChild(project2delete)
+        }
     })
     
     content.addEventListener('dblclick', (e) => {

@@ -1,75 +1,12 @@
 Pending:
     Add a project delete button.
-    Make the search bar work.
+        When hovering the project box add a delete button in the bottom.
     Make the upcoming tasks button work.
+        Check all tasks in all projects and sort them by date.
+        Display the task's project next to the title.
+    Make the search bar work.
     Add footer
     Implement "date-fns"
     Implement "local-storage"
-
-Bugs:
-    When editing a project name that has content it creates a new project.
-        When double clicking on it, it enters on the project with the unmodified title.
-        We're currently identifying existing projects by their title.
-        If we could identify them by an id this wouldn't happen.
-        We need to store the project ID in the storedProject[]
-        But this could affect our current logic for the projectCount variable that assigns
-            the IDs in the DOM.
-        Because it's adding ID's according to the number of projects on the dashboard,
-            and they can change depending on which was the last project edited.
-        So this part of the logic must change now the ID's on the DOM must assigned according
-            to the properties stored in the object.
-
-Considering this object:
-[
-    {
-        "title": "Personal",
-        "tasks": [
-            {
-                "index": 1,
-                "title": "Candy",
-                "description": "",
-                "date": {
-                    "month": null,
-                    "date": null,
-                    "year": null
-                },
-                "completed": false
-            }
-        ]
-    },
-    {
-        "title": "New project #2",
-        "tasks": [
-            {
-                "index": 1,
-                "title": "tgjr",
-                "description": "",
-                "date": {
-                    "month": null,
-                    "date": null,
-                    "year": null
-                },
-                "completed": false
-            }
-        ]
-    },
-    {
-        "title": "New project #3",
-        "tasks": [
-            {
-                "index": 1,
-                "title": "Candy",
-                "description": "",
-                "date": {
-                    "month": null,
-                    "date": null,
-                    "year": null
-                },
-                "completed": false
-            }
-        ]
-    }
-]
-We must add a ID property to each project.
 
 
