@@ -17,6 +17,7 @@ export function newProject(projectCount, projTextCont) {
             let deleteProject = document.createElement('img')
             deleteProject.src = `./img/remove-svgrepo-com.svg`
             deleteProject.className = 'remove-project'
+            deleteProject.id = `projectD${projectCount}`
             newProject.appendChild(deleteProject)
         
         projectsGrid.appendChild(newProject)

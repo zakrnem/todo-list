@@ -29,9 +29,10 @@ export function projectListener() {
         }
 
         if (e.target.className === 'remove-project') {
-            let project2delete = e.target.parentElement
             let projectsGrid = document.querySelector('.projects-grid')
-            projectsGrid.removeChild(project2delete)
+            projectsGrid.removeChild(e.target.parentElement)
+            let projectIDnumber = e.target.id.match(/\d+$/)[0]
+            projectStorage('delete', projectIDnumber)
         }
     })
     
