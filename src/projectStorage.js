@@ -16,7 +16,10 @@ export function projectStorage(typeOfOperation, projID, projTasks) {
             let projectCount = storedProjects.length
         }
         for (let key in storedProjects) {
-            storedProjects[key].id = parseInt(key)+1
+            let itemIndex = parseInt(key)
+            if (storedProjects[itemIndex].id != itemIndex+1) {
+                storedProjects[itemIndex].id = itemIndex+1
+            }
         }
     }
     if (typeOfOperation === 'delete') {

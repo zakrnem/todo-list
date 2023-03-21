@@ -4,7 +4,7 @@ import { projectDOM } from "./projectDOM"
 import { newProject } from "./projectNew"
 import { newTask } from "./taskNew"
 import { storeTaskInput } from "./taskStoreInput"
-import { projectStorage, storageDisplay } from "./projectStorage"
+import { projectStorage } from "./projectStorage"
 
 export function taskListener() {
     let content = document.querySelector('#content')
@@ -19,7 +19,6 @@ export function taskListener() {
             if (e.target.id.includes('add-task')) {
                 taskCount += 1
                 newTask(taskCount) //Pushes taskCount number for creating different id's
-                //newTask(taskCount, true, 'Toyota', 'Corolla', '2001-11-01')
             }
 
             //Remove task
@@ -43,7 +42,7 @@ export function taskListener() {
             e.target.parentElement.id.includes('returnB')) {
                 const storedTasks = [] //Will be filled with the inputs of an individual task
                 let projectTitle = document.querySelector('.project-title').textContent
-                let projectID = parseInt(document.querySelector('.project-title').id)
+                let projectID = document.querySelector('.project-title').id
                 const projectTasks = {title: projectTitle, tasks: storeTaskInput(storedTasks), id: projectID}
                 //Array of all the tasks of one project
 

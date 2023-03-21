@@ -292,11 +292,11 @@ input {
     font-size: 2rem;
 }
 
-.remove-project {
+.delete-project {
     height: 1.5rem;
 }
 
-.remove-project:hover {
+.delete-project:hover {
     filter: var(--main-filter);
     height: 2rem;
     transition: height var(--transition-time);

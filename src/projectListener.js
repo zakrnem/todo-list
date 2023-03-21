@@ -4,6 +4,7 @@ import { clearDOM } from "./clearDOM"
 import { newProject } from "./projectNew"
 import { projectStorage } from "./projectStorage"
 import { newTask } from "./taskNew"
+import { upcomingTasks } from "./upcomingTasks"
 
 export function projectListener() {
     let content = document.querySelector('#content')
@@ -28,11 +29,18 @@ export function projectListener() {
             newProject(++projectCount, `New project #${projectCount}`)
         }
 
-        if (e.target.className === 'remove-project') {
+        //Delete project
+        if (e.target.className === 'delete-project') {
             let projectsGrid = document.querySelector('.projects-grid')
             projectsGrid.removeChild(e.target.parentElement)
             let projectIDnumber = e.target.id.match(/\d+$/)[0]
             projectStorage('delete', projectIDnumber)
+        }
+
+        //Upcoming tasks
+        if (e.target.id.includes('upcoming') ||
+        e.target.parentElement.id.includes('upcoming')) {
+            upcomingTasks()
         }
     })
     
