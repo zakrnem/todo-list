@@ -2,8 +2,7 @@ Pending:
     Make the upcoming tasks button work.
         Check all tasks in all projects and sort them by date.
             Use a for loop inside a for loop to print all the tasks in an array.
-            We would have to add a project property to the current storedPJ[].items .
-            This will be useful for displaying the project that is corresponds when sorting the pj's.
+            Display the project title in each tasks for differentiate them.
             For each item we need to convert the date array into a number that represents the date.
                 How to convert a date into a number.
             Then we will be able to sort the tasks using this number.

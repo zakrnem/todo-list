@@ -8,11 +8,11 @@ import { projectStorage } from "./projectStorage"
 
 export function taskListener() {
     let content = document.querySelector('#content')
-    let taskCount = 0
     let taskIdNumber
     
     content.addEventListener('click', (e) => {
         let taskDash = document.querySelector('.edit-project-dash')
+        let taskCount = document.querySelectorAll('.task-container').length
 
         if (taskDash != null) {
             //Add task
