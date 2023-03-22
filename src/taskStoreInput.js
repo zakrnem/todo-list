@@ -1,22 +1,24 @@
 export function storeTaskInput(storedTasks) {
     //Gets the tasks inputs from the DOM
-    let taskCount = document.querySelectorAll('.task-container').length
+    let tasksNodeList = document.querySelectorAll('.task-container')
+    let tasksArray = Array.from(tasksNodeList)
     
-    for (let i=taskCount; i>0; i--) {
-        let taskTitle = document.getElementById(`task-title${i}`)
-        let taskDescription = document.getElementById(`task-description${i}`)
-        let taskCompleted = document.getElementById(`task-completed${i}`)
-        let taskDate = document.getElementById(`date${i}`)
+    for (let key in tasksArray) {
+        let taskTitle = tasksArray[key].querySelector(`.task-title`)
+        let taskDescription = tasksArray[key].querySelector(`.task-description`)
+        let taskCompleted = tasksArray[key].querySelector(`.task-completed`)
+        let taskDate = tasksArray[key].querySelector(`.task-date`)
 
         if (taskTitle != null) {
             let dateString = taskDate.value
             let dateParts = dateString.split("-")
             taskDate = {month: parseInt(dateParts[1]), date: parseInt(dateParts[2]), year: parseInt(dateParts[0])}
             
-            const newTask = { index: i, title: taskTitle.value, description: taskDescription.value, date: taskDate,
+            const projectTasks = { index: key, title: taskTitle.value, description: taskDescription.value, date: taskDate,
             completed: taskCompleted.checked }
-            storedTasks.push(newTask)
+            storedTasks.push(projectTasks)
         }
     }
     return storedTasks
  }
+ 

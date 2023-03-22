@@ -3,7 +3,7 @@ export function projectStorage(typeOfOperation, projID, projTasks) {
         return storedProjects
     }
     if (typeOfOperation === 'write') {
-        console.log(projTasks)
+        //console.log(projTasks)
         let found
         for (let key in storedProjects) {
             if (storedProjects[key].id == projID) {

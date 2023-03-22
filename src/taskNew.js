@@ -84,6 +84,7 @@ export function newTask(taskCount, tskCheck, tskTitle, tskDescrip, tskDate) {
                     
                     let dueDate = document.createElement('input')
                     dueDate.setAttribute("type", "date")
+                    dueDate.className = 'task-date'
                     dueDate.id = `date${taskCount}`
                     dueDate.value = stringDate
                     taskContainer4.appendChild(dueDate)
