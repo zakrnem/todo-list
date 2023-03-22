@@ -2,5 +2,6 @@ import { projectStorage } from "./projectStorage";
 
 export function upcomingTasks() {
     let storedProjects = projectStorage('read')
-    console.log(storedProjects.flat(2))
+    let flattened = storedProjects.flatMap(item => item.tasks);
+    console.log(flattened)
 }

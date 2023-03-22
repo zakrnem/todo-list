@@ -2,6 +2,7 @@ export function storeTaskInput(storedTasks) {
     //Gets the tasks inputs from the DOM
     let tasksNodeList = document.querySelectorAll('.task-container')
     let tasksArray = Array.from(tasksNodeList)
+    let projectTitle = document.querySelector('.project-title').textContent
     
     for (let key in tasksArray) {
         let taskTitle = tasksArray[key].querySelector(`.task-title`)
@@ -14,7 +15,7 @@ export function storeTaskInput(storedTasks) {
             let dateParts = dateString.split("-")
             taskDate = {month: parseInt(dateParts[1]), date: parseInt(dateParts[2]), year: parseInt(dateParts[0])}
             
-            const projectTasks = { title: taskTitle.value, description: taskDescription.value, date: taskDate,
+            const projectTasks = { project: projectTitle, title: taskTitle.value, description: taskDescription.value, date: taskDate,
             completed: taskCompleted.checked }
             storedTasks.push(projectTasks)
         }

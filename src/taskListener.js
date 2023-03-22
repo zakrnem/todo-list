@@ -52,6 +52,7 @@ export function taskListener() {
                 projectDOM()
 
                 let storedProjects = projectStorage('read')
+                console.log('Stored Projects:')
                 console.log(storedProjects)
                 let projectCount = storedProjects.length
                 //For loop for inserting multiple stored projects
