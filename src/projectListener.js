@@ -52,7 +52,7 @@ export function projectListener() {
             projectEdit(projTitle, projectIDnumber)
 
             for (let key in storedProjects) {
-                if (storedProjects[key].id === projectIDnumber) {
+                if (storedProjects[key].id == projectIDnumber) {
                     //Checks if the selected project exists on storage
                     let taskCount = storedProjects[key].tasks.length
                     for (let key2 in storedProjects[key].tasks) {
@@ -63,7 +63,7 @@ export function projectListener() {
                         let tskDate = storedProjects[key].tasks[key2].date
                         let tskCount = parseInt(key2)+1
                         newTask(tskCount, tskCheck, tskTitle, tskDescrip, tskDate)
-                    } 
+                    }
                 }
             }
         }

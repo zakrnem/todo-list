@@ -14,7 +14,7 @@ export function storeTaskInput(storedTasks) {
             let dateParts = dateString.split("-")
             taskDate = {month: parseInt(dateParts[1]), date: parseInt(dateParts[2]), year: parseInt(dateParts[0])}
             
-            const projectTasks = { index: key, title: taskTitle.value, description: taskDescription.value, date: taskDate,
+            const projectTasks = { title: taskTitle.value, description: taskDescription.value, date: taskDate,
             completed: taskCompleted.checked }
             storedTasks.push(projectTasks)
         }

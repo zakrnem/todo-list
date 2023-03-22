@@ -8,11 +8,11 @@ import { projectStorage } from "./projectStorage"
 
 export function taskListener() {
     let content = document.querySelector('#content')
+    let taskCount = 0
     let taskIdNumber
     
     content.addEventListener('click', (e) => {
         let taskDash = document.querySelector('.edit-project-dash')
-        let taskCount = document.querySelectorAll('.task-container').length
 
         if (taskDash != null) {
             //Add task
@@ -21,7 +21,7 @@ export function taskListener() {
                 newTask(taskCount) //Pushes taskCount number for creating different id's
             }
 
-            //Delete task
+            //Remove task
             if (e.target.parentElement.id.includes('task-delete')) {
                 let task = e.target.parentElement.parentElement.parentElement
                 taskDash.removeChild(task)
@@ -52,7 +52,7 @@ export function taskListener() {
                 projectDOM()
 
                 let storedProjects = projectStorage('read')
-                //console.log(storedProjects)
+                console.log(storedProjects)
                 let projectCount = storedProjects.length
                 //For loop for inserting multiple stored projects
                 for (; projectCount>0; projectCount--) {

@@ -2,7 +2,6 @@ import { appendDOM } from "./appendDOM"
 import { clearDOM } from "./clearDOM"
 import { newIcon } from "./newIcon";
 import { taskDate } from "./taskDate"
-import { newTask } from "./taskNew";
 
 
 export function projectEdit(projTitle, projID) {

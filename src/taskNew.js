@@ -31,7 +31,6 @@ export function newTask(taskCount, tskCheck, tskTitle, tskDescrip, tskDate) {
 
         let taskCheck = document.createElement('input')
         taskCheck.setAttribute("type", "checkbox")
-        taskCheck.id = `task-completed${taskCount}`
         taskCheck.className = 'task-completed'
         taskCheck.checked = tskCheck
         taskContainer1.appendChild(taskCheck)
@@ -39,7 +38,6 @@ export function newTask(taskCount, tskCheck, tskTitle, tskDescrip, tskDate) {
         let taskTitle = document.createElement('input')
         taskTitle.setAttribute("type", "text")
         taskTitle.placeholder = 'Title your task'
-        taskTitle.id = `task-title${taskCount}`
         taskTitle.className = 'task-title'
         taskTitle.value = tskTitle
         taskContainer1.appendChild(taskTitle)
@@ -60,7 +58,6 @@ export function newTask(taskCount, tskCheck, tskTitle, tskDescrip, tskDate) {
         taskDescription.setAttribute("rows", "8")
         taskDescription.placeholder = 'Add a description'
         taskDescription.className = 'task-description'
-        taskDescription.id = `task-description${taskCount}`
         taskDescription.value = tskDescrip
         taskContainer2.appendChild(taskDescription)
 
@@ -90,7 +87,7 @@ export function newTask(taskCount, tskCheck, tskTitle, tskDescrip, tskDate) {
                     taskContainer4.appendChild(dueDate)
 
             let taskSubmit = document.createElement('button')
-            taskSubmit.id = `task-submit${taskCount}`
+
             taskSubmit.textContent = 'Submit'
             taskSubmit.className = 'task-submit'
             taskContainer3.appendChild(taskSubmit)
