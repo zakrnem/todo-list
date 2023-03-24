@@ -29,41 +29,28 @@ export function projectStorage(typeOfOperation, projID, projTasks) {
 }
 
 const storedProjects = [
-    {title: 'Personal', tasks: {}, id: 1}
-        /* {
-            "title": "Fiat",
+        {
+            "title": "Daihatsu",
             "tasks": [
                 {
-                    "project": "Fiat",
-                    "title": "500",
+                    "project": "Daihatsu",
+                    "title": "Terios",
                     "description": "",
-                    "date": {
-                        "month": 2,
-                        "date": 2,
-                        "year": 2021
-                    },
+                    "date": "2003-03-23",
+                    "completed": true
+                },
+                {
+                    "project": "Daihatsu",
+                    "title": "Sirion",
+                    "description": "",
+                    "date": "1811-03-24",
                     "completed": false
                 },
                 {
-                    "project": "Fiat",
-                    "title": "Uno",
+                    "project": "Daihatsu",
+                    "title": "Charade",
                     "description": "",
-                    "date": {
-                        "month": 2,
-                        "date": 13,
-                        "year": 2019
-                    },
-                    "completed": false
-                },
-                {
-                    "project": "Fiat",
-                    "title": "Punto",
-                    "description": "",
-                    "date": {
-                        "month": 1,
-                        "date": 4,
-                        "year": 2017
-                    },
+                    "date": "2005-04-05",
                     "completed": false
                 }
             ],
@@ -74,66 +61,46 @@ const storedProjects = [
             "tasks": [
                 {
                     "project": "Suzuki",
-                    "title": "Jimny",
-                    "description": "",
-                    "date": {
-                        "month": 3,
-                        "date": 22,
-                        "year": 2023
-                    },
-                    "completed": false
-                },
-                {
-                    "project": "Suzuki",
-                    "title": "Swift",
-                    "description": "",
-                    "date": {
-                        "month": 3,
-                        "date": 23,
-                        "year": 2023
-                    },
-                    "completed": false
-                },
-                {
-                    "project": "Suzuki",
                     "title": "Ignis",
                     "description": "",
-                    "date": {
-                        "month": 6,
-                        "date": 28,
-                        "year": 2023
-                    },
+                    "date": "2001-03-01",
                     "completed": false
+                },
+                {
+                    "project": "Suzuki",
+                    "title": "Cultus",
+                    "description": "",
+                    "date": "1999-03-31",
+                    "completed": true
                 }
             ],
             "id": "2"
         },
         {
-            "title": "Hyundai",
+            "title": "Mazda",
             "tasks": [
                 {
-                    "project": "Hyundai",
-                    "title": "i30",
+                    "project": "Mazda",
+                    "title": "323",
                     "description": "",
-                    "date": {
-                        "month": 3,
-                        "date": 1,
-                        "year": 2023
-                    },
+                    "date": "2007-06-07",
+                    "completed": true
+                },
+                {
+                    "project": "Mazda",
+                    "title": "Protegé",
+                    "description": "",
+                    "date": "2003-04-13",
                     "completed": false
                 },
                 {
-                    "project": "Hyundai",
-                    "title": "i10",
+                    "project": "Mazda",
+                    "title": "626",
                     "description": "",
-                    "date": {
-                        "month": 12,
-                        "date": 7,
-                        "year": 2022
-                    },
+                    "date": "2004-02-07",
                     "completed": false
                 }
             ],
             "id": "3"
-        } */
+        }
     ]
