@@ -10,12 +10,8 @@ export function storeTaskInput(storedTasks) {
         let taskCompleted = tasksArray[key].querySelector(`.task-completed`)
         let taskDate = tasksArray[key].querySelector(`.task-date`)
 
-        if (taskTitle != null) {
-            let dateString = taskDate.value
-            let dateParts = dateString.split("-")
-            taskDate = {month: parseInt(dateParts[1]), date: parseInt(dateParts[2]), year: parseInt(dateParts[0])}
-            
-            const projectTasks = { project: projectTitle, title: taskTitle.value, description: taskDescription.value, date: taskDate,
+        if (taskTitle != null) {           
+            const projectTasks = { project: projectTitle, title: taskTitle.value, description: taskDescription.value, date: taskDate.value,
             completed: taskCompleted.checked }
             storedTasks.push(projectTasks)
         }

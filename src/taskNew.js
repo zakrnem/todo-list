@@ -3,17 +3,6 @@ import { appendDOM } from "./appendDOM"
 
 //Creates the DOM for an individual task
 export function newTask(taskCount, tskCheck, tskTitle, tskDescrip, tskDate) {
-    let stringDate
-    if (tskDate != undefined) {
-        if (tskDate.month.toString().length === 1) {
-            tskDate.month = `0${tskDate.month}`
-        }
-        if (tskDate.date.toString().length === 1) {
-            tskDate.date = `0${tskDate.date}`
-        }
-        stringDate = `${tskDate.year}-${tskDate.month}-${tskDate.date}`
-    }
-    
     if (tskTitle === undefined) {
         tskTitle = ''
         tskDescrip = ''
@@ -83,7 +72,7 @@ export function newTask(taskCount, tskCheck, tskTitle, tskDescrip, tskDate) {
                     dueDate.setAttribute("type", "date")
                     dueDate.className = 'task-date'
                     dueDate.id = `date${taskCount}`
-                    dueDate.value = stringDate
+                    dueDate.value = tskDate
                     taskContainer4.appendChild(dueDate)
 
             let taskSubmit = document.createElement('button')
