@@ -215,7 +215,8 @@ input {
 }
 
 .projects-dashboard,
-.edit-project-dash {
+.edit-project-dash,
+.upcoming-dash {
     margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -288,7 +289,8 @@ input {
     background-color: white;
 }
 
-.project-title {
+.project-title,
+.upcoming-title {
     font-size: 2rem;
 }
 
