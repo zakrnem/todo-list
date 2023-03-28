@@ -312,8 +312,22 @@ input {
 
 .tasks-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(25ch, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(50ch, 1fr));
     width: 90%;
     gap: 1rem;
+}
+
+.upcoming-container > * {
+    font-weight: normal;
+}
+
+.upcoming-container:hover {
+    background-color: var(--hover)
+}
+
+.upcoming-task-title {
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
 }
 

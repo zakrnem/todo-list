@@ -16,10 +16,7 @@ export function upcomingTasksDOM() {
     clearDOM()
 
     let sidebar = document.querySelector('.sidebar')
-    let returnButton = newIcon('sidebar-button', 'returnB1',
-    'return-back-svgrepo-com.svg', 'sidebar-icon', 'Return')
-    sidebar.appendChild(returnButton)
-
+    
     let dashboard = document.createElement('div')
     dashboard.className = 'upcoming-dash'
 
@@ -53,21 +50,23 @@ function displayUpcomingTask(tskCompletion, tskTitle, tskDate, tskProject) {
     taskContainer.className = 'upcoming-container'
     tasksGrid.appendChild(taskContainer)
 
-        let taskDate = document.createElement('div')
-        taskDate.className = 'task-date'
-        taskDate.textContent = 'Date: ' + tskDate
-        taskContainer.appendChild(taskDate)
-
         let taskTitle = document.createElement('div')
         taskTitle.className = 'upcoming-task-title'
-        taskTitle.textContent = 'Title: ' + tskTitle
+        taskTitle.textContent = tskTitle
         taskContainer.appendChild(taskTitle)
+
+        let taskDate = document.createElement('input')
+        taskDate.setAttribute("type", "date")
+        taskDate.value = tskDate
+        taskDate.className = 'task-date'
+        taskContainer.appendChild(taskDate)
 
         let taskProject = document.createElement('div')
         taskProject.className = 'task-project'
         taskProject.textContent = 'Project: ' + tskProject
         taskContainer.appendChild(taskProject)
 
+        //Add if statement for changing text content
         let taskCompletion = document.createElement('div')
         taskCompletion.className = 'task-completion'
         taskCompletion.textContent = 'Status: ' + tskCompletion

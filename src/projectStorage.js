@@ -34,21 +34,21 @@ const storedProjects = [
             "tasks": [
                 {
                     "project": "Daihatsu",
-                    "title": "Terios",
+                    "title": "Review expenses logging from the last month",
                     "description": "",
                     "date": "2003-03-23",
                     "completed": true
                 },
                 {
                     "project": "Daihatsu",
-                    "title": "Sirion",
+                    "title": "Study javascript array methods",
                     "description": "",
                     "date": "1811-03-24",
                     "completed": false
                 },
                 {
                     "project": "Daihatsu",
-                    "title": "Charade",
+                    "title": "Buy clothes for the holidays",
                     "description": "",
                     "date": "2005-04-05",
                     "completed": false
