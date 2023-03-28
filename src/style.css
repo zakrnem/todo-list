@@ -249,7 +249,8 @@ input {
     width: 100%;
 }
 
-.project {
+.project,
+.upcoming-container {
     border: 3px solid var(--main);
     border-radius: 0.5rem;
     height: 10rem;
@@ -257,6 +258,11 @@ input {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.project {
     justify-content: space-between;
 }
 
@@ -303,3 +309,11 @@ input {
     height: 2rem;
     transition: height var(--transition-time);
 }
+
+.tasks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25ch, 1fr));
+    width: 90%;
+    gap: 1rem;
+}
+

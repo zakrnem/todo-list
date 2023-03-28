@@ -28,6 +28,10 @@ export function upcomingTasksDOM() {
     title.textContent = 'Upcoming tasks'
     dashboard.appendChild(title)
 
+    let tasksGrid = document.createElement('div')
+    tasksGrid.className = 'tasks-grid'
+    dashboard.appendChild(tasksGrid)
+
     appendDOM(dashboard)
 
     let sortedTasks = upcomingTasks()
@@ -43,17 +47,19 @@ export function upcomingTasksDOM() {
 }
 
 function displayUpcomingTask(tskCompletion, tskTitle, tskDate, tskProject) {
-    let dashboard = document.querySelector('.upcoming-dash')
-
+    let tasksGrid = document.querySelector('.tasks-grid')
+        
     let taskContainer = document.createElement('div')
-    taskContainer.className = 'task-container'
+    taskContainer.className = 'upcoming-container'
+    tasksGrid.appendChild(taskContainer)
+
         let taskDate = document.createElement('div')
         taskDate.className = 'task-date'
         taskDate.textContent = 'Date: ' + tskDate
         taskContainer.appendChild(taskDate)
 
         let taskTitle = document.createElement('div')
-        taskTitle.className = 'task-title'
+        taskTitle.className = 'upcoming-task-title'
         taskTitle.textContent = 'Title: ' + tskTitle
         taskContainer.appendChild(taskTitle)
 
@@ -66,7 +72,4 @@ function displayUpcomingTask(tskCompletion, tskTitle, tskDate, tskProject) {
         taskCompletion.className = 'task-completion'
         taskCompletion.textContent = 'Status: ' + tskCompletion
         taskContainer.appendChild(taskCompletion)
-
-    dashboard.appendChild(taskContainer)
-    appendDOM(dashboard)
 }
