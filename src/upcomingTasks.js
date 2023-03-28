@@ -3,17 +3,16 @@ import { clearDOM } from "./clearDOM";
 import { newIcon } from "./newIcon";
 import { appendDOM } from "./appendDOM";
 
-export function upcomingTasks() {
+function upcomingTasks() {
     let storedProjects = projectStorage('read')
     let flattened = storedProjects.flatMap(item => item.tasks);
     flattened.sort((a, b) => (a.date > b.date) ? 1 : -1)
-    console.log(flattened)
 
-    upcomingTasksDOM()
+    return flattened
 }
 
 
-function upcomingTasksDOM() {
+export function upcomingTasksDOM() {
     clearDOM()
 
     let sidebar = document.querySelector('.sidebar')
@@ -30,10 +29,20 @@ function upcomingTasksDOM() {
     dashboard.appendChild(title)
 
     appendDOM(dashboard)
-    displayUpcomingTask('Completed', 'Test', '2023-27-03')
+
+    let sortedTasks = upcomingTasks()
+    //console.log(sortedTasks)
+    for (let key in sortedTasks) {
+        let tskCompletion = sortedTasks[key].completed
+        let tskTitle = sortedTasks[key].title
+        let tskDate = sortedTasks[key].date
+        let tskProject = sortedTasks[key].project
+
+        displayUpcomingTask(tskCompletion, tskTitle, tskDate, tskProject)
+    }
 }
 
-function displayUpcomingTask(tskCompletion, tskTitle, tskDate) {
+function displayUpcomingTask(tskCompletion, tskTitle, tskDate, tskProject) {
     let dashboard = document.querySelector('.upcoming-dash')
 
     let taskContainer = document.createElement('div')
@@ -48,6 +57,11 @@ function displayUpcomingTask(tskCompletion, tskTitle, tskDate) {
         taskTitle.textContent = 'Title: ' + tskTitle
         taskContainer.appendChild(taskTitle)
 
+        let taskProject = document.createElement('div')
+        taskProject.className = 'task-project'
+        taskProject.textContent = 'Project: ' + tskProject
+        taskContainer.appendChild(taskProject)
+
         let taskCompletion = document.createElement('div')
         taskCompletion.className = 'task-completion'
         taskCompletion.textContent = 'Status: ' + tskCompletion
@@ -55,15 +69,4 @@ function displayUpcomingTask(tskCompletion, tskTitle, tskDate) {
 
     dashboard.appendChild(taskContainer)
     appendDOM(dashboard)
-
-    /*
-    We should just display tasks that are uncompleted
-    The following properties should be displayed:
-        Title
-        Completion
-        Date
-    They will change color when hovering above them
-    When double-clicking them the corresponding project will be opened
-    So they'll uneditable on the upcoming tasks dashboard
-    */
 }

@@ -4,7 +4,7 @@ import { clearDOM } from "./clearDOM"
 import { newProject } from "./projectNew"
 import { projectStorage } from "./projectStorage"
 import { newTask } from "./taskNew"
-import { upcomingTasks } from "./upcomingTasks"
+import { upcomingTasksDOM } from "./upcomingTasks"
 
 export function projectListener() {
     let content = document.querySelector('#content')
@@ -40,7 +40,7 @@ export function projectListener() {
         //Upcoming tasks
         if (e.target.id.includes('upcoming') ||
         e.target.parentElement.id.includes('upcoming')) {
-            upcomingTasks()
+            upcomingTasksDOM()
         }
     })
     
