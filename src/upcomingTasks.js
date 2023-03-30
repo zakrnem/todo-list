@@ -2,6 +2,7 @@ import { projectStorage } from "./projectStorage";
 import { clearDOM } from "./clearDOM";
 import { newIcon } from "./newIcon";
 import { appendDOM } from "./appendDOM";
+import { footer } from "./footer"
 
 function upcomingTasks() {
     let storedProjects = projectStorage('read')
@@ -30,6 +31,7 @@ export function upcomingTasksDOM() {
     dashboard.appendChild(tasksGrid)
 
     appendDOM(dashboard)
+    footer()
 
     let sortedTasks = upcomingTasks()
     //console.log(sortedTasks)

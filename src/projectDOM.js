@@ -1,5 +1,6 @@
 import { appendDOM } from "./appendDOM"
 import { newProject } from "./projectNew"
+import { footer } from "./footer"
 
 export function projectDOM(count, title) {
 
@@ -21,4 +22,5 @@ export function projectDOM(count, title) {
     })
 
     appendDOM(dashboard)
+    footer()
 }

@@ -5,6 +5,7 @@ import { newProject } from "./projectNew"
 import { projectStorage } from "./projectStorage"
 import { newTask } from "./taskNew"
 import { upcomingTasksDOM } from "./upcomingTasks"
+import { footer } from "./footer"
 
 export function projectListener() {
     let content = document.querySelector('#content')
@@ -66,6 +67,7 @@ export function projectListener() {
                     }
                 }
             }
+            footer()
         }
     })
 }

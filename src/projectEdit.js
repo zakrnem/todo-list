@@ -3,7 +3,6 @@ import { clearDOM } from "./clearDOM"
 import { newIcon } from "./newIcon";
 import { taskDate } from "./taskDate"
 
-
 export function projectEdit(projTitle, projID) {
     clearDOM()
 
@@ -26,7 +25,6 @@ export function projectEdit(projTitle, projID) {
     newTaskButtton.className = 'new-button'
     newTaskButtton.textContent = 'New task'
     dashboard.appendChild(newTaskButtton)
-
        
     appendDOM(dashboard)
 
