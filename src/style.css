@@ -259,7 +259,7 @@ input {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.2rem;
 }
 
 .project {
@@ -331,3 +331,18 @@ input {
     font-weight: bold;
 }
 
+.upcoming-task-info {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.upcoming-container2,
+.upcoming-container1 {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.upcoming-container2 {
+    text-align: end;
+}

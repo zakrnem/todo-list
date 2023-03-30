@@ -44,6 +44,13 @@ export function upcomingTasksDOM() {
 }
 
 function displayUpcomingTask(tskCompletion, tskTitle, tskDate, tskProject) {
+    if (tskCompletion) {
+        tskCompletion = 'Completed task'
+    }
+    else {
+        tskCompletion = 'Uncompleted task'
+    }
+
     let tasksGrid = document.querySelector('.tasks-grid')
         
     let taskContainer = document.createElement('div')
@@ -55,20 +62,42 @@ function displayUpcomingTask(tskCompletion, tskTitle, tskDate, tskProject) {
         taskTitle.textContent = tskTitle
         taskContainer.appendChild(taskTitle)
 
-        let taskDate = document.createElement('input')
-        taskDate.setAttribute("type", "date")
-        taskDate.value = tskDate
-        taskDate.className = 'task-date'
-        taskContainer.appendChild(taskDate)
+        let taskInfo = document.createElement('div')
+        taskInfo.className = 'upcoming-task-info'
+        taskContainer.appendChild(taskInfo)
 
-        let taskProject = document.createElement('div')
-        taskProject.className = 'task-project'
-        taskProject.textContent = 'Project: ' + tskProject
-        taskContainer.appendChild(taskProject)
+            let container1 = document.createElement('div')
+            container1.className = 'upcoming-container1'
+            taskInfo.appendChild(container1)
 
-        //Add if statement for changing text content
-        let taskCompletion = document.createElement('div')
-        taskCompletion.className = 'task-completion'
-        taskCompletion.textContent = 'Status: ' + tskCompletion
-        taskContainer.appendChild(taskCompletion)
+                let dateTitle = document.createElement('p')
+                dateTitle.textContent = 'Date:'
+                container1.appendChild(dateTitle)
+
+                let projectTitle = document.createElement('p')
+                projectTitle.textContent = 'Project:'
+                container1.appendChild(projectTitle)
+
+                let completionTitle = document.createElement('p')
+                completionTitle.textContent = 'Status:'
+                container1.appendChild(completionTitle)
+            
+            let container2 = document.createElement('div')
+            container2.className = 'upcoming-container2'
+            taskInfo.appendChild(container2)
+
+                let taskDate = document.createElement('p')
+                taskDate.textContent = tskDate
+                taskDate.className = 'task-date'
+                container2.appendChild(taskDate)
+
+                let taskProject = document.createElement('p')
+                taskProject.className = 'task-project'
+                taskProject.textContent = tskProject
+                container2.appendChild(taskProject)
+
+                let taskCompletion = document.createElement('p')
+                taskCompletion.className = 'task-completion'
+                taskCompletion.textContent = tskCompletion
+                container2.appendChild(taskCompletion)
 }
