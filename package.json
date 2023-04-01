@@ -4,7 +4,10 @@
   "description": "Live preview: https://zakrnem.github.io/todo-list/",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "react-app-rewired test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
@@ -16,11 +19,22 @@
     "url": "https://github.com/zakrnem/todo-list/issues"
   },
   "homepage": "https://github.com/zakrnem/todo-list#readme",
-  "devDependencies": {
-    "css-loader": "^6.7.2",
+  "dependencies": {
+    "core-js": "^3.29.1",
+    "css-loader": "^6.7.3",
+    "inspector": "^0.5.0",
+    "jest-worker": "^29.5.0",
+    "loader-runner": "^4.3.0",
     "source-map-loader": "^4.0.1",
-    "style-loader": "^3.3.1",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.0"
+    "style-loader": "^3.3.2",
+    "terser-webpack-plugin": "^5.3.7",
+    "webpack": "^5.77.0"
+  },
+  "browser": {
+    "child_process": false
+  },
+  "devDependencies": {
+    "webpack-bundle-analyzer": "^4.8.0",
+    "webpack-cli": "^5.0.1"
   }
 }

@@ -69,5 +69,8 @@ export function projectListener() {
             }
             footer()
         }
+        else if (e.target.id.includes('upcoming')) {
+            console.log('Open corresponding project')
+        }
     })
 }
