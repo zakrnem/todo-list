@@ -1,5 +1,4 @@
 import { clearDOM } from "./clearDOM";
-import { newIcon } from "./newIcon";
 import { appendDOM } from "./appendDOM";
 import { footer } from "./footer"
 import { displayUpcomingTask } from "./upcomingDisplay";

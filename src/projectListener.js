@@ -3,9 +3,8 @@ import { projectEdit } from "./projectEdit"
 import { clearDOM } from "./clearDOM"
 import { newProject } from "./projectNew"
 import { projectStorage } from "./projectStorage"
-import { newTask } from "./taskNew"
 import { upcomingTasksDOM } from "./upcomingDOM"
-import { footer } from "./footer"
+import { insertStoredTasks} from "./projectInsertStorage"
 
 export function projectListener() {
     let content = document.querySelector('#content')
@@ -46,32 +45,20 @@ export function projectListener() {
     })
     
     content.addEventListener('dblclick', (e) => {
+        let projectIDnumber
+        let projTitle
         //Go to project edit (task creation)
         if (e.target.id.includes('projectN')) {
-            let projectIDnumber = e.target.id.match(/\d+$/)[0]
-            let projTitle = document.querySelector(`#projectT${projectIDnumber}`).value
+            projectIDnumber = e.target.id.match(/\d+$/)[0]
+            projTitle = document.querySelector(`#projectT${projectIDnumber}`).value
             projectEdit(projTitle, projectIDnumber)
-
-            for (let key in storedProjects) {
-                if (storedProjects[key].id == projectIDnumber) {
-                    //Checks if the selected project exists on storage
-                    let taskCount = storedProjects[key].tasks.length
-                    for (let key2 in storedProjects[key].tasks) {
-                        //Adds the properties of the stored tasks for a project to the DOM
-                        let tskTitle = storedProjects[key].tasks[key2].title
-                        let tskCheck = storedProjects[key].tasks[key2].completed
-                        let tskDescrip = storedProjects[key].tasks[key2].description
-                        let tskDate = storedProjects[key].tasks[key2].date
-                        let tskCount = parseInt(key2)+1
-                        newTask(tskCount, tskCheck, tskTitle, tskDescrip, tskDate)
-                    }
-                }
-            }
-            footer()
+            insertStoredTasks(projectIDnumber)
         }
         if (e.target.id.includes('upcomingT')) {
-            let pjID = e.target.id.match(/\d+$/)[0]
-            console.log(`Opens project #${pjID}`)
+            projectIDnumber = e.target.id.match(/\d+$/)[0]
+            projTitle = document.querySelector(`#upcomingT-pj${projectIDnumber}`).textContent
+            projectEdit(projTitle, projectIDnumber)
+            insertStoredTasks(projectIDnumber)
         }
     })
 }
