@@ -1,4 +1,5 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/style.css":
@@ -7,7 +8,6 @@
   \*************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -28,49 +28,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, "/* @font-face {\n    font-family: para
 
 /***/ }),
 
-/***/ "./node_modules/inspector sync recursive":
-/*!**************************************!*\
-  !*** ./node_modules/inspector/ sync ***!
-  \**************************************/
-/***/ ((module) => {
-
-function webpackEmptyContext(req) {
-	var e = new Error("Cannot find module '" + req + "'");
-	e.code = 'MODULE_NOT_FOUND';
-	throw e;
-}
-webpackEmptyContext.keys = () => ([]);
-webpackEmptyContext.resolve = webpackEmptyContext;
-webpackEmptyContext.id = "./node_modules/inspector sync recursive";
-module.exports = webpackEmptyContext;
-
-/***/ }),
-
-/***/ "./node_modules/loader-runner/lib sync recursive":
-/*!**********************************************!*\
-  !*** ./node_modules/loader-runner/lib/ sync ***!
-  \**********************************************/
-/***/ ((module) => {
-
-function webpackEmptyContext(req) {
-	var e = new Error("Cannot find module '" + req + "'");
-	e.code = 'MODULE_NOT_FOUND';
-	throw e;
-}
-webpackEmptyContext.keys = () => ([]);
-webpackEmptyContext.resolve = webpackEmptyContext;
-webpackEmptyContext.id = "./node_modules/loader-runner/lib sync recursive";
-module.exports = webpackEmptyContext;
-
-/***/ }),
-
 /***/ "./src/app.js":
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header */ "./src/header.js");
@@ -99,7 +62,6 @@ __webpack_require__.r(__webpack_exports__);
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "appendDOM": () => (/* binding */ appendDOM)
@@ -130,7 +92,6 @@ function appendDOM(taskEdit) {
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "clearDOM": () => (/* binding */ clearDOM)
@@ -152,7 +113,6 @@ function clearDOM() {
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "footer": () => (/* binding */ footer)
@@ -173,7 +133,6 @@ function footer() {
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "headerDOM": () => (/* binding */ headerDOM)
@@ -218,7 +177,6 @@ function headerDOM() {
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "newIcon": () => (/* binding */ newIcon)
@@ -244,7 +202,6 @@ function newIcon(className, id, imgSrc, iconClass, buttonText) {
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "projectDOM": () => (/* binding */ projectDOM)
@@ -287,7 +244,6 @@ function projectDOM(count, title) {
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "projectEdit": () => (/* binding */ projectEdit)
@@ -342,7 +298,6 @@ function projectEdit(projTitle, projID) {
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "projectListener": () => (/* binding */ projectListener)
@@ -396,8 +351,8 @@ function projectListener() {
         }
 
         //Upcoming tasks
-        if (e.target.id.includes('upcoming') ||
-        e.target.parentElement.id.includes('upcoming')) {
+        if (e.target.id.includes('upcomingB') ||
+        e.target.parentElement.id.includes('upcomingB')) {
             (0,_upcomingTasks__WEBPACK_IMPORTED_MODULE_6__.upcomingTasksDOM)()
         }
     })
@@ -437,7 +392,6 @@ function projectListener() {
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "newProject": () => (/* binding */ newProject)
@@ -476,7 +430,6 @@ function newProject(projectCount, projTextCont) {
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "projectStorage": () => (/* binding */ projectStorage)
@@ -604,7 +557,6 @@ const storedProjects = [
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "sidebarDOM": () => (/* binding */ sidebarDOM)
@@ -618,7 +570,7 @@ function sidebarDOM() {
     let sidebar = document.createElement('div')
     sidebar.className = 'sidebar'
 
-    let upcomingButton = (0,_newIcon__WEBPACK_IMPORTED_MODULE_0__.newIcon)('sidebar-button', 'upcoming',
+    let upcomingButton = (0,_newIcon__WEBPACK_IMPORTED_MODULE_0__.newIcon)('sidebar-button', 'upcomingB',
     'calendar-svgrepo-com.svg', 'sidebar-icon', 'Upcoming Tasks')
     sidebar.appendChild(upcomingButton)
 
@@ -639,7 +591,6 @@ function sidebarDOM() {
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "taskDate": () => (/* binding */ taskDate)
@@ -694,7 +645,6 @@ function taskDate(e) {
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "taskListener": () => (/* binding */ taskListener)
@@ -718,8 +668,6 @@ function taskListener() {
     let content = document.querySelector('#content')
     let taskCount = 0
     let taskIdNumber
-
-    console.log('Hey')
     
     content.addEventListener('click', (e) => {
         let taskDash = document.querySelector('.edit-project-dash')
@@ -787,7 +735,6 @@ function taskListener() {
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "newTask": () => (/* binding */ newTask)
@@ -888,7 +835,6 @@ function newTask(taskCount, tskCheck, tskTitle, tskDescrip, tskDate) {
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "storeTaskInput": () => (/* binding */ storeTaskInput)
@@ -924,7 +870,6 @@ function storeTaskInput(storedTasks) {
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "toggleDetail": () => (/* binding */ toggleDetail)
@@ -951,7 +896,6 @@ function toggleDetail(selectedButton, taskDetail, detailTarget) {
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "upcomingTasksDOM": () => (/* binding */ upcomingTasksDOM)
@@ -961,9 +905,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _newIcon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./newIcon */ "./src/newIcon.js");
 /* harmony import */ var _appendDOM__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./appendDOM */ "./src/appendDOM.js");
 /* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./footer */ "./src/footer.js");
-/* harmony import */ var webpack__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! webpack */ "./node_modules/webpack/lib/index.js");
-/* harmony import */ var webpack__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(webpack__WEBPACK_IMPORTED_MODULE_5__);
-
 
 
 
@@ -981,6 +922,13 @@ function upcomingTasks() {
 
 function upcomingTasksDOM() {
     (0,_clearDOM__WEBPACK_IMPORTED_MODULE_1__.clearDOM)()
+
+    document.addEventListener('dblclick', (e) => {
+        if (e.target.id.includes('upcomingT')) {
+            let pjID = e.target.id.match(/\d+$/)[0]
+            console.log(`Open project #${pjID}`)
+        }
+    })
 
     let sidebar = document.querySelector('.sidebar')
     
@@ -1000,7 +948,7 @@ function upcomingTasksDOM() {
     ;(0,_footer__WEBPACK_IMPORTED_MODULE_4__.footer)()
 
     let sortedTasks = upcomingTasks()
-    //console.log(sortedTasks)
+    console.log(sortedTasks)
     for (let key in sortedTasks) {
         let tskCompletion = sortedTasks[key].completed
         let tskTitle = sortedTasks[key].title
@@ -1024,60 +972,60 @@ function displayUpcomingTask(tskCompletion, tskTitle, tskDate, tskProject, tskID
         
     let taskContainer = document.createElement('div')
     taskContainer.className = 'upcoming-container'
-    taskContainer.id = `upcomingC${tskID}`
+    taskContainer.id = `upcomingT-container${tskID}`
     tasksGrid.appendChild(taskContainer)
 
         let taskTitle = document.createElement('div')
         taskTitle.className = 'upcoming-task-title'
-        taskTitle.id = `upcomingT${tskID}`
+        taskTitle.id = `upcomingT-title${tskID}`
         taskTitle.textContent = tskTitle
         taskContainer.appendChild(taskTitle)
 
         let taskInfo = document.createElement('div')
         taskInfo.className = 'upcoming-task-info'
-        taskInfo.id = `upcomingI${tskID}`
+        taskInfo.id = `upcomingT-info${tskID}`
         taskContainer.appendChild(taskInfo)
 
             let container1 = document.createElement('div')
             container1.className = 'upcoming-container1'
-            container1.id = `upcomingCI${tskID}`
+            container1.id = `upcomingT-containerI${tskID}`
             taskInfo.appendChild(container1)
 
                 let dateTitle = document.createElement('p')
                 dateTitle.textContent = 'Date:'
-                dateTitle.id = `upcomingDT${tskID}`
+                dateTitle.id = `upcomingT-date-title${tskID}`
                 container1.appendChild(dateTitle)
 
                 let projectTitle = document.createElement('p')
                 projectTitle.textContent = 'Project:'
-                projectTitle.id = `upcomingPT${tskID}`
+                projectTitle.id = `upcomingT-pj-title${tskID}`
                 container1.appendChild(projectTitle)
 
                 let completionTitle = document.createElement('p')
                 completionTitle.textContent = 'Status:'
-                completionTitle.id = `upcomingCT${tskID}`
+                completionTitle.id = `upcomingT-completion-title${tskID}`
                 container1.appendChild(completionTitle)
             
             let container2 = document.createElement('div')
             container2.className = 'upcoming-container2'
-            container2.id = `upcomingCII${tskID}`
+            container2.id = `upcomingT-containerII${tskID}`
             taskInfo.appendChild(container2)
 
                 let taskDate = document.createElement('p')
                 taskDate.textContent = tskDate
                 taskDate.className = 'task-date'
-                taskDate.id = `upcomingD${tskID}`
+                taskDate.id = `upcomingT-date${tskID}`
                 container2.appendChild(taskDate)
 
                 let taskProject = document.createElement('p')
                 taskProject.className = 'task-project'
-                taskProject.id = `upcomingP${tskID}`
+                taskProject.id = `upcomingT-pj${tskID}`
                 taskProject.textContent = tskProject
                 container2.appendChild(taskProject)
 
                 let taskCompletion = document.createElement('p')
                 taskCompletion.className = 'task-completion'
-                taskCompletion.id = `upcomingC${tskID}`
+                taskCompletion.id = `upcomingT-completion${tskID}`
                 taskCompletion.textContent = tskCompletion
                 container2.appendChild(taskCompletion)
 }
@@ -1090,7 +1038,6 @@ function displayUpcomingTask(tskCompletion, tskTitle, tskDate, tskProject, tskID
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1137,809 +1084,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
-/***/ }),
-
-/***/ "./node_modules/terser-webpack-plugin/dist sync recursive":
-/*!*******************************************************!*\
-  !*** ./node_modules/terser-webpack-plugin/dist/ sync ***!
-  \*******************************************************/
-/***/ ((module) => {
-
-function webpackEmptyContext(req) {
-	var e = new Error("Cannot find module '" + req + "'");
-	e.code = 'MODULE_NOT_FOUND';
-	throw e;
-}
-webpackEmptyContext.keys = () => ([]);
-webpackEmptyContext.resolve = webpackEmptyContext;
-webpackEmptyContext.id = "./node_modules/terser-webpack-plugin/dist sync recursive";
-module.exports = webpackEmptyContext;
-
-/***/ }),
-
-/***/ "./node_modules/terser-webpack-plugin/node_modules/jest-worker/build/base sync recursive":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/terser-webpack-plugin/node_modules/jest-worker/build/base/ sync ***!
-  \**************************************************************************************/
-/***/ ((module) => {
-
-function webpackEmptyContext(req) {
-	var e = new Error("Cannot find module '" + req + "'");
-	e.code = 'MODULE_NOT_FOUND';
-	throw e;
-}
-webpackEmptyContext.keys = () => ([]);
-webpackEmptyContext.resolve = webpackEmptyContext;
-webpackEmptyContext.id = "./node_modules/terser-webpack-plugin/node_modules/jest-worker/build/base sync recursive";
-module.exports = webpackEmptyContext;
-
-/***/ }),
-
-/***/ "./node_modules/terser-webpack-plugin/node_modules/jest-worker/build/workers sync recursive":
-/*!*****************************************************************************************!*\
-  !*** ./node_modules/terser-webpack-plugin/node_modules/jest-worker/build/workers/ sync ***!
-  \*****************************************************************************************/
-/***/ ((module) => {
-
-function webpackEmptyContext(req) {
-	var e = new Error("Cannot find module '" + req + "'");
-	e.code = 'MODULE_NOT_FOUND';
-	throw e;
-}
-webpackEmptyContext.keys = () => ([]);
-webpackEmptyContext.resolve = webpackEmptyContext;
-webpackEmptyContext.id = "./node_modules/terser-webpack-plugin/node_modules/jest-worker/build/workers sync recursive";
-module.exports = webpackEmptyContext;
-
-/***/ }),
-
-/***/ "./node_modules/terser-webpack-plugin/node_modules/jest-worker/build sync recursive":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/terser-webpack-plugin/node_modules/jest-worker/build/ sync ***!
-  \*********************************************************************************/
-/***/ ((module) => {
-
-function webpackEmptyContext(req) {
-	var e = new Error("Cannot find module '" + req + "'");
-	e.code = 'MODULE_NOT_FOUND';
-	throw e;
-}
-webpackEmptyContext.keys = () => ([]);
-webpackEmptyContext.resolve = webpackEmptyContext;
-webpackEmptyContext.id = "./node_modules/terser-webpack-plugin/node_modules/jest-worker/build sync recursive";
-module.exports = webpackEmptyContext;
-
-/***/ }),
-
-/***/ "./node_modules/webpack/hot sync recursive ^\\.\\/lazy\\-compilation\\-.*\\.js$":
-/*!************************************************************************!*\
-  !*** ./node_modules/webpack/hot/ sync ^\.\/lazy\-compilation\-.*\.js$ ***!
-  \************************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-var map = {
-	"./lazy-compilation-node.js": "./node_modules/webpack/hot/lazy-compilation-node.js",
-	"./lazy-compilation-web.js": "./node_modules/webpack/hot/lazy-compilation-web.js"
-};
-
-
-function webpackContext(req) {
-	var id = webpackContextResolve(req);
-	return __webpack_require__(id);
-}
-function webpackContextResolve(req) {
-	if(!__webpack_require__.o(map, req)) {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
-	}
-	return map[req];
-}
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = "./node_modules/webpack/hot sync recursive ^\\.\\/lazy\\-compilation\\-.*\\.js$";
-
-/***/ }),
-
-/***/ "./node_modules/webpack/lib/serialization sync recursive":
-/*!******************************************************!*\
-  !*** ./node_modules/webpack/lib/serialization/ sync ***!
-  \******************************************************/
-/***/ ((module) => {
-
-function webpackEmptyContext(req) {
-	var e = new Error("Cannot find module '" + req + "'");
-	e.code = 'MODULE_NOT_FOUND';
-	throw e;
-}
-webpackEmptyContext.keys = () => ([]);
-webpackEmptyContext.resolve = webpackEmptyContext;
-webpackEmptyContext.id = "./node_modules/webpack/lib/serialization sync recursive";
-module.exports = webpackEmptyContext;
-
-/***/ }),
-
-/***/ "?3465":
-/*!**********************!*\
-  !*** path (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?8b61":
-/*!************************!*\
-  !*** stream (ignored) ***!
-  \************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?c80c":
-/*!************************!*\
-  !*** stream (ignored) ***!
-  \************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?4f38":
-/*!**********************!*\
-  !*** path (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?daa0":
-/*!**********************!*\
-  !*** path (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?b752":
-/*!************************!*\
-  !*** pnpapi (ignored) ***!
-  \************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?ff26":
-/*!************************!*\
-  !*** assert (ignored) ***!
-  \************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?269e":
-/*!************************!*\
-  !*** assert (ignored) ***!
-  \************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?309e":
-/*!***************************!*\
-  !*** constants (ignored) ***!
-  \***************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?cbdb":
-/*!********************!*\
-  !*** fs (ignored) ***!
-  \********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?e654":
-/*!************************!*\
-  !*** stream (ignored) ***!
-  \************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?7d11":
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?dd1d":
-/*!********************!*\
-  !*** fs (ignored) ***!
-  \********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?d0b8":
-/*!**********************!*\
-  !*** http (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?3cc0":
-/*!**********************!*\
-  !*** path (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?ecf0":
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?04c2":
-/*!********************!*\
-  !*** fs (ignored) ***!
-  \********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?9145":
-/*!*********************!*\
-  !*** url (ignored) ***!
-  \*********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?4d82":
-/*!************************!*\
-  !*** stream (ignored) ***!
-  \************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?cfb0":
-/*!**********************!*\
-  !*** path (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?4ef1":
-/*!************************!*\
-  !*** buffer (ignored) ***!
-  \************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?a5de":
-/*!***************************!*\
-  !*** @swc/core (ignored) ***!
-  \***************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?83af":
-/*!****************************************!*\
-  !*** @swc/core/package.json (ignored) ***!
-  \****************************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?f093":
-/*!*************************!*\
-  !*** esbuild (ignored) ***!
-  \*************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?38be":
-/*!**************************************!*\
-  !*** esbuild/package.json (ignored) ***!
-  \**************************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?fc3b":
-/*!********************!*\
-  !*** os (ignored) ***!
-  \********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?1464":
-/*!**********************!*\
-  !*** path (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?10af":
-/*!***************************!*\
-  !*** uglify-js (ignored) ***!
-  \***************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?4edc":
-/*!****************************************!*\
-  !*** uglify-js/package.json (ignored) ***!
-  \****************************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?6d01":
-/*!**********************!*\
-  !*** path (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?154b":
-/*!*******************************!*\
-  !*** child_process (ignored) ***!
-  \*******************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?1695":
-/*!**********************!*\
-  !*** path (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?cde0":
-/*!************************!*\
-  !*** stream (ignored) ***!
-  \************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?4585":
-/*!********************************!*\
-  !*** worker_threads (ignored) ***!
-  \********************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?c0be":
-/*!********************!*\
-  !*** os (ignored) ***!
-  \********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?feb3":
-/*!********************************!*\
-  !*** worker_threads (ignored) ***!
-  \********************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?9ebe":
-/*!********************!*\
-  !*** fs (ignored) ***!
-  \********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?2f71":
-/*!********************!*\
-  !*** os (ignored) ***!
-  \********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?002f":
-/*!**********************!*\
-  !*** path (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?9a98":
-/*!**********************!*\
-  !*** http (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?4dd1":
-/*!***********************!*\
-  !*** https (ignored) ***!
-  \***********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?e3a4":
-/*!**********************!*\
-  !*** path (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?ed64":
-/*!********************!*\
-  !*** fs (ignored) ***!
-  \********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?a2bb":
-/*!**********************!*\
-  !*** path (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?ddee":
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?e626":
-/*!*********************!*\
-  !*** url (ignored) ***!
-  \*********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?17bd":
-/*!**********************!*\
-  !*** http (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?8af2":
-/*!***********************!*\
-  !*** https (ignored) ***!
-  \***********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?9268":
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?3581":
-/*!********************!*\
-  !*** vm (ignored) ***!
-  \********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?d8cb":
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?284c":
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?cd17":
-/*!**********************!*\
-  !*** http (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?0f7b":
-/*!***********************!*\
-  !*** https (ignored) ***!
-  \***********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?06a5":
-/*!**********************!*\
-  !*** path (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?0db4":
-/*!*********************!*\
-  !*** url (ignored) ***!
-  \*********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?efdd":
-/*!**********************!*\
-  !*** zlib (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?bf39":
-/*!************************!*\
-  !*** buffer (ignored) ***!
-  \************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?0d96":
-/*!************************!*\
-  !*** stream (ignored) ***!
-  \************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?8c71":
-/*!**********************!*\
-  !*** zlib (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?9dd6":
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?c7f2":
-/*!************************!*\
-  !*** crypto (ignored) ***!
-  \************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?d9c2":
-/*!**********************!*\
-  !*** path (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?e852":
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?1bfb":
-/*!************************!*\
-  !*** module (ignored) ***!
-  \************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?6559":
-/*!**********************!*\
-  !*** path (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?8c64":
-/*!*****************************!*\
-  !*** querystring (ignored) ***!
-  \*****************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?dcf1":
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/***/ (() => {
-
-/* (ignored) */
-
 /***/ })
 
 /******/ 	});
@@ -1957,15 +1101,12 @@ module.exports = webpackEmptyContext;
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
 /******/ 			id: moduleId,
-/******/ 			loaded: false,
+/******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -1973,9 +1114,6 @@ module.exports = webpackEmptyContext;
 /******/ 	
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = __webpack_modules__;
-/******/ 	
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = __webpack_module_cache__;
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/chunk loaded */
@@ -2034,18 +1172,6 @@ module.exports = webpackEmptyContext;
 /******/ 		};
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/global */
-/******/ 	(() => {
-/******/ 		__webpack_require__.g = (function() {
-/******/ 			if (typeof globalThis === 'object') return globalThis;
-/******/ 			try {
-/******/ 				return this || new Function('return this')();
-/******/ 			} catch (e) {
-/******/ 				if (typeof window === 'object') return window;
-/******/ 			}
-/******/ 		})();
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -2059,15 +1185,6 @@ module.exports = webpackEmptyContext;
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/node module decorator */
-/******/ 	(() => {
-/******/ 		__webpack_require__.nmd = (module) => {
-/******/ 			module.paths = [];
-/******/ 			if (!module.children) module.children = [];
-/******/ 			return module;
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -2131,9 +1248,9 @@ module.exports = webpackEmptyContext;
 /******/ 	
 /************************************************************************/
 /******/ 	
-/******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors"], () => (__webpack_require__("./src/app.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	

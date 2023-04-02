@@ -6,7 +6,7 @@ export function sidebarDOM() {
     let sidebar = document.createElement('div')
     sidebar.className = 'sidebar'
 
-    let upcomingButton = newIcon('sidebar-button', 'upcoming',
+    let upcomingButton = newIcon('sidebar-button', 'upcomingB',
     'calendar-svgrepo-com.svg', 'sidebar-icon', 'Upcoming Tasks')
     sidebar.appendChild(upcomingButton)
 

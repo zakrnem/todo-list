@@ -1,15 +1,4 @@
 Pending:
-    Make the upcoming tasks button work.
-        Check all tasks in all projects and sort them by date.
-            Use a for loop inside a for loop to print all the tasks in an array.
-            Display the project title in each tasks for differentiate them.
-            For each item we need to convert the date array into a number that represents the date.
-                How to convert a date into a number.
-            Then we will be able to sort the tasks using this number.
-                How to sort items in an array
-        Display the task's project next to the title.
-
-
     //upcomingTasks.js//
     When double-clicking them the corresponding project will be opened
     So they'll uneditable on the upcoming tasks dashboard

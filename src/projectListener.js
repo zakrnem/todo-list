@@ -39,8 +39,8 @@ export function projectListener() {
         }
 
         //Upcoming tasks
-        if (e.target.id.includes('upcoming') ||
-        e.target.parentElement.id.includes('upcoming')) {
+        if (e.target.id.includes('upcomingB') ||
+        e.target.parentElement.id.includes('upcomingB')) {
             upcomingTasksDOM()
         }
     })

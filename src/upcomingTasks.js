@@ -3,7 +3,6 @@ import { clearDOM } from "./clearDOM";
 import { newIcon } from "./newIcon";
 import { appendDOM } from "./appendDOM";
 import { footer } from "./footer"
-import { container } from "webpack";
 
 function upcomingTasks() {
     let storedProjects = projectStorage('read')
@@ -16,6 +15,13 @@ function upcomingTasks() {
 
 export function upcomingTasksDOM() {
     clearDOM()
+
+    document.addEventListener('dblclick', (e) => {
+        if (e.target.id.includes('upcomingT')) {
+            let pjID = e.target.id.match(/\d+$/)[0]
+            console.log(`Open project #${pjID}`)
+        }
+    })
 
     let sidebar = document.querySelector('.sidebar')
     
@@ -35,7 +41,7 @@ export function upcomingTasksDOM() {
     footer()
 
     let sortedTasks = upcomingTasks()
-    //console.log(sortedTasks)
+    console.log(sortedTasks)
     for (let key in sortedTasks) {
         let tskCompletion = sortedTasks[key].completed
         let tskTitle = sortedTasks[key].title
@@ -59,60 +65,60 @@ function displayUpcomingTask(tskCompletion, tskTitle, tskDate, tskProject, tskID
         
     let taskContainer = document.createElement('div')
     taskContainer.className = 'upcoming-container'
-    taskContainer.id = `upcomingC${tskID}`
+    taskContainer.id = `upcomingT-container${tskID}`
     tasksGrid.appendChild(taskContainer)
 
         let taskTitle = document.createElement('div')
         taskTitle.className = 'upcoming-task-title'
-        taskTitle.id = `upcomingT${tskID}`
+        taskTitle.id = `upcomingT-title${tskID}`
         taskTitle.textContent = tskTitle
         taskContainer.appendChild(taskTitle)
 
         let taskInfo = document.createElement('div')
         taskInfo.className = 'upcoming-task-info'
-        taskInfo.id = `upcomingI${tskID}`
+        taskInfo.id = `upcomingT-info${tskID}`
         taskContainer.appendChild(taskInfo)
 
             let container1 = document.createElement('div')
             container1.className = 'upcoming-container1'
-            container1.id = `upcomingCI${tskID}`
+            container1.id = `upcomingT-containerI${tskID}`
             taskInfo.appendChild(container1)
 
                 let dateTitle = document.createElement('p')
                 dateTitle.textContent = 'Date:'
-                dateTitle.id = `upcomingDT${tskID}`
+                dateTitle.id = `upcomingT-date-title${tskID}`
                 container1.appendChild(dateTitle)
 
                 let projectTitle = document.createElement('p')
                 projectTitle.textContent = 'Project:'
-                projectTitle.id = `upcomingPT${tskID}`
+                projectTitle.id = `upcomingT-pj-title${tskID}`
                 container1.appendChild(projectTitle)
 
                 let completionTitle = document.createElement('p')
                 completionTitle.textContent = 'Status:'
-                completionTitle.id = `upcomingCT${tskID}`
+                completionTitle.id = `upcomingT-completion-title${tskID}`
                 container1.appendChild(completionTitle)
             
             let container2 = document.createElement('div')
             container2.className = 'upcoming-container2'
-            container2.id = `upcomingCII${tskID}`
+            container2.id = `upcomingT-containerII${tskID}`
             taskInfo.appendChild(container2)
 
                 let taskDate = document.createElement('p')
                 taskDate.textContent = tskDate
                 taskDate.className = 'task-date'
-                taskDate.id = `upcomingD${tskID}`
+                taskDate.id = `upcomingT-date${tskID}`
                 container2.appendChild(taskDate)
 
                 let taskProject = document.createElement('p')
                 taskProject.className = 'task-project'
-                taskProject.id = `upcomingP${tskID}`
+                taskProject.id = `upcomingT-pj${tskID}`
                 taskProject.textContent = tskProject
                 container2.appendChild(taskProject)
 
                 let taskCompletion = document.createElement('p')
                 taskCompletion.className = 'task-completion'
-                taskCompletion.id = `upcomingC${tskID}`
+                taskCompletion.id = `upcomingT-completion${tskID}`
                 taskCompletion.textContent = tskCompletion
                 container2.appendChild(taskCompletion)
 }
