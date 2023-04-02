@@ -34,6 +34,7 @@
     "child_process": false
   },
   "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
     "webpack-bundle-analyzer": "^4.8.0",
     "webpack-cli": "^5.0.1"
   }

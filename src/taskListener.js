@@ -10,6 +10,8 @@ export function taskListener() {
     let content = document.querySelector('#content')
     let taskCount = 0
     let taskIdNumber
+
+    console.log('Hey')
     
     content.addEventListener('click', (e) => {
         let taskDash = document.querySelector('.edit-project-dash')

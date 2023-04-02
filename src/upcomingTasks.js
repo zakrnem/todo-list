@@ -95,20 +95,24 @@ function displayUpcomingTask(tskCompletion, tskTitle, tskDate, tskProject, tskID
             
             let container2 = document.createElement('div')
             container2.className = 'upcoming-container2'
+            container2.id = `upcomingCII${tskID}`
             taskInfo.appendChild(container2)
 
                 let taskDate = document.createElement('p')
                 taskDate.textContent = tskDate
                 taskDate.className = 'task-date'
+                taskDate.id = `upcomingD${tskID}`
                 container2.appendChild(taskDate)
 
                 let taskProject = document.createElement('p')
                 taskProject.className = 'task-project'
+                taskProject.id = `upcomingP${tskID}`
                 taskProject.textContent = tskProject
                 container2.appendChild(taskProject)
 
                 let taskCompletion = document.createElement('p')
                 taskCompletion.className = 'task-completion'
+                taskCompletion.id = `upcomingC${tskID}`
                 taskCompletion.textContent = tskCompletion
                 container2.appendChild(taskCompletion)
 }

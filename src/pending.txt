@@ -11,18 +11,11 @@ Pending:
 
 
     //upcomingTasks.js//
-    We should just display tasks that are uncompleted
-    The following properties should be displayed:
-        Title
-        Completion
-        Date
-    They will change color when hovering above them
     When double-clicking them the corresponding project will be opened
     So they'll uneditable on the upcoming tasks dashboard
     
 
     Make the search bar work.
-    Add footer
     Implement "date-fns"
     Implement "local-storage"
 
