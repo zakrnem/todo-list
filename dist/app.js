@@ -308,7 +308,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _projectNew__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./projectNew */ "./src/projectNew.js");
 /* harmony import */ var _projectStorage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./projectStorage */ "./src/projectStorage.js");
 /* harmony import */ var _taskNew__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./taskNew */ "./src/taskNew.js");
-/* harmony import */ var _upcomingTasks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./upcomingTasks */ "./src/upcomingTasks.js");
+/* harmony import */ var _upcomingDOM__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./upcomingDOM */ "./src/upcomingDOM.js");
 /* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./footer */ "./src/footer.js");
 
 
@@ -353,7 +353,7 @@ function projectListener() {
         //Upcoming tasks
         if (e.target.id.includes('upcomingB') ||
         e.target.parentElement.id.includes('upcomingB')) {
-            (0,_upcomingTasks__WEBPACK_IMPORTED_MODULE_6__.upcomingTasksDOM)()
+            (0,_upcomingDOM__WEBPACK_IMPORTED_MODULE_6__.upcomingTasksDOM)()
         }
     })
     
@@ -380,6 +380,10 @@ function projectListener() {
                 }
             }
             (0,_footer__WEBPACK_IMPORTED_MODULE_7__.footer)()
+        }
+        if (e.target.id.includes('upcomingT')) {
+            let pjID = e.target.id.match(/\d+$/)[0]
+            console.log(`Opens project #${pjID}`)
         }
     })
 }
@@ -890,45 +894,31 @@ function toggleDetail(selectedButton, taskDetail, detailTarget) {
 
 /***/ }),
 
-/***/ "./src/upcomingTasks.js":
-/*!******************************!*\
-  !*** ./src/upcomingTasks.js ***!
-  \******************************/
+/***/ "./src/upcomingDOM.js":
+/*!****************************!*\
+  !*** ./src/upcomingDOM.js ***!
+  \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "upcomingTasksDOM": () => (/* binding */ upcomingTasksDOM)
 /* harmony export */ });
-/* harmony import */ var _projectStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projectStorage */ "./src/projectStorage.js");
-/* harmony import */ var _clearDOM__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./clearDOM */ "./src/clearDOM.js");
-/* harmony import */ var _newIcon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./newIcon */ "./src/newIcon.js");
-/* harmony import */ var _appendDOM__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./appendDOM */ "./src/appendDOM.js");
-/* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./footer */ "./src/footer.js");
+/* harmony import */ var _clearDOM__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./clearDOM */ "./src/clearDOM.js");
+/* harmony import */ var _newIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./newIcon */ "./src/newIcon.js");
+/* harmony import */ var _appendDOM__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./appendDOM */ "./src/appendDOM.js");
+/* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./footer */ "./src/footer.js");
+/* harmony import */ var _upcomingDisplay__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./upcomingDisplay */ "./src/upcomingDisplay.js");
+/* harmony import */ var _upcomingObject__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./upcomingObject */ "./src/upcomingObject.js");
 
 
 
 
 
-
-function upcomingTasks() {
-    let storedProjects = (0,_projectStorage__WEBPACK_IMPORTED_MODULE_0__.projectStorage)('read')
-    let flattened = storedProjects.flatMap(item => item.tasks);
-    flattened.sort((a, b) => (a.date > b.date) ? 1 : -1)
-
-    return flattened
-}
 
 
 function upcomingTasksDOM() {
-    (0,_clearDOM__WEBPACK_IMPORTED_MODULE_1__.clearDOM)()
-
-    document.addEventListener('dblclick', (e) => {
-        if (e.target.id.includes('upcomingT')) {
-            let pjID = e.target.id.match(/\d+$/)[0]
-            console.log(`Open project #${pjID}`)
-        }
-    })
+    (0,_clearDOM__WEBPACK_IMPORTED_MODULE_0__.clearDOM)()
 
     let sidebar = document.querySelector('.sidebar')
     
@@ -944,11 +934,11 @@ function upcomingTasksDOM() {
     tasksGrid.className = 'tasks-grid'
     dashboard.appendChild(tasksGrid)
 
-    ;(0,_appendDOM__WEBPACK_IMPORTED_MODULE_3__.appendDOM)(dashboard)
-    ;(0,_footer__WEBPACK_IMPORTED_MODULE_4__.footer)()
+    ;(0,_appendDOM__WEBPACK_IMPORTED_MODULE_2__.appendDOM)(dashboard)
+    ;(0,_footer__WEBPACK_IMPORTED_MODULE_3__.footer)()
 
-    let sortedTasks = upcomingTasks()
-    console.log(sortedTasks)
+    let sortedTasks = (0,_upcomingObject__WEBPACK_IMPORTED_MODULE_5__.upcomingTasksObject)()
+    //console.log(sortedTasks)
     for (let key in sortedTasks) {
         let tskCompletion = sortedTasks[key].completed
         let tskTitle = sortedTasks[key].title
@@ -956,10 +946,22 @@ function upcomingTasksDOM() {
         let tskProject = sortedTasks[key].project
         let tskID = sortedTasks[key].id
 
-        displayUpcomingTask(tskCompletion, tskTitle, tskDate, tskProject, tskID)
+        ;(0,_upcomingDisplay__WEBPACK_IMPORTED_MODULE_4__.displayUpcomingTask)(tskCompletion, tskTitle, tskDate, tskProject, tskID)
     }
 }
 
+/***/ }),
+
+/***/ "./src/upcomingDisplay.js":
+/*!********************************!*\
+  !*** ./src/upcomingDisplay.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "displayUpcomingTask": () => (/* binding */ displayUpcomingTask)
+/* harmony export */ });
 function displayUpcomingTask(tskCompletion, tskTitle, tskDate, tskProject, tskID) {
     if (tskCompletion) {
         tskCompletion = 'Completed task'
@@ -1028,6 +1030,29 @@ function displayUpcomingTask(tskCompletion, tskTitle, tskDate, tskProject, tskID
                 taskCompletion.id = `upcomingT-completion${tskID}`
                 taskCompletion.textContent = tskCompletion
                 container2.appendChild(taskCompletion)
+}
+
+/***/ }),
+
+/***/ "./src/upcomingObject.js":
+/*!*******************************!*\
+  !*** ./src/upcomingObject.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "upcomingTasksObject": () => (/* binding */ upcomingTasksObject)
+/* harmony export */ });
+/* harmony import */ var _projectStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projectStorage */ "./src/projectStorage.js");
+
+
+function upcomingTasksObject() {
+    let storedProjects = (0,_projectStorage__WEBPACK_IMPORTED_MODULE_0__.projectStorage)('read')
+    let flattened = storedProjects.flatMap(item => item.tasks);
+    flattened.sort((a, b) => (a.date > b.date) ? 1 : -1)
+
+    return flattened
 }
 
 /***/ }),

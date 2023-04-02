@@ -4,7 +4,7 @@ import { clearDOM } from "./clearDOM"
 import { newProject } from "./projectNew"
 import { projectStorage } from "./projectStorage"
 import { newTask } from "./taskNew"
-import { upcomingTasksDOM } from "./upcomingTasks"
+import { upcomingTasksDOM } from "./upcomingDOM"
 import { footer } from "./footer"
 
 export function projectListener() {
@@ -68,6 +68,10 @@ export function projectListener() {
                 }
             }
             footer()
+        }
+        if (e.target.id.includes('upcomingT')) {
+            let pjID = e.target.id.match(/\d+$/)[0]
+            console.log(`Opens project #${pjID}`)
         }
     })
 }
