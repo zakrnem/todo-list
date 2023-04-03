@@ -264,7 +264,7 @@ function projectEdit(projTitle, projID) {
     (0,_clearDOM__WEBPACK_IMPORTED_MODULE_1__.clearDOM)()
 
     let sidebar = document.querySelector('.sidebar')
-    let returnButton = (0,_newIcon__WEBPACK_IMPORTED_MODULE_2__.newIcon)('sidebar-button', 'returnB1',
+    let returnButton = (0,_newIcon__WEBPACK_IMPORTED_MODULE_2__.newIcon)('sidebar-button', 'return-pj-edit',
     'return-back-svgrepo-com.svg', 'sidebar-icon', 'Return')
     sidebar.appendChild(returnButton)
 
@@ -427,6 +427,15 @@ function projectListener() {
         e.target.parentElement.id.includes('upcomingB')) {
             (0,_upcomingDOM__WEBPACK_IMPORTED_MODULE_5__.upcomingTasksDOM)()
         }
+
+        //Return button
+        if (e.target.id.includes('return-upcoming') ||
+            e.target.parentElement.id.includes('return-upcoming')) {
+                (0,_clearDOM__WEBPACK_IMPORTED_MODULE_2__.clearDOM)()
+                ;(0,_projectDOM__WEBPACK_IMPORTED_MODULE_0__.projectDOM)()
+                ;(0,_projectInsertProjects__WEBPACK_IMPORTED_MODULE_8__.insertStoredProjects)()
+                ;(0,_returnButtonRemove__WEBPACK_IMPORTED_MODULE_7__.removeReturnButton)()                
+            }
     })
     
     content.addEventListener('dblclick', (e) => {
@@ -444,6 +453,7 @@ function projectListener() {
             projTitle = document.querySelector(`#upcomingT-pj${projectIDnumber}`).textContent
             ;(0,_projectEdit__WEBPACK_IMPORTED_MODULE_1__.projectEdit)(projTitle, projectIDnumber)
             ;(0,_projectInsertTasks__WEBPACK_IMPORTED_MODULE_6__.insertStoredTasks)(projectIDnumber)
+            ;(0,_returnButtonRemove__WEBPACK_IMPORTED_MODULE_7__.removeReturnButton)()
         }
     })
 }
@@ -627,7 +637,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function removeReturnButton() {
     let sidebar = document.querySelector('.sidebar')
-    let returnButton = document.querySelector('#returnB1')
+    let returnButton = document.querySelector('[id*="return"]')
     if (returnButton != null) {
         sidebar.removeChild(returnButton)
     }
@@ -784,8 +794,8 @@ function taskListener() {
             ;(0,_taskToggleDetail__WEBPACK_IMPORTED_MODULE_0__.toggleDetail)(selectedButton, taskDetail, detailTarget)
 
             //Return to projects
-            if (e.target.id.includes('returnB') ||
-            e.target.parentElement.id.includes('returnB')) {
+            if (e.target.id.includes('return-pj-edit') ||
+            e.target.parentElement.id.includes('return-pj-edit')) {
                 const storedTasks = [] //Will be filled with the inputs of an individual task
                 let projectTitle = document.querySelector('.project-title').textContent
                 let projectID = document.querySelector('.project-title').id
@@ -798,7 +808,6 @@ function taskListener() {
                 ;(0,_projectInsertProjects__WEBPACK_IMPORTED_MODULE_7__.insertStoredProjects)()
                 ;(0,_returnButtonRemove__WEBPACK_IMPORTED_MODULE_8__.removeReturnButton)()
                 taskCount = 0
-                
             }
         }
     })
@@ -997,7 +1006,7 @@ function upcomingTasksDOM() {
     ;(0,_returnButtonRemove__WEBPACK_IMPORTED_MODULE_6__.removeReturnButton)()
 
     let sidebar = document.querySelector('.sidebar')
-    let returnButton = (0,_newIcon__WEBPACK_IMPORTED_MODULE_5__.newIcon)('sidebar-button', 'returnB1',
+    let returnButton = (0,_newIcon__WEBPACK_IMPORTED_MODULE_5__.newIcon)('sidebar-button', 'return-upcoming-tsk',
     'return-back-svgrepo-com.svg', 'sidebar-icon', 'Return')
     sidebar.appendChild(returnButton)
     
