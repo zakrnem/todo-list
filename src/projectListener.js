@@ -7,6 +7,7 @@ import { upcomingTasksDOM } from "./upcomingDOM"
 import { insertStoredTasks} from "./projectInsertTasks"
 import { removeReturnButton } from "./returnButtonRemove"
 import { insertStoredProjects } from "./projectInsertProjects"
+import { storePreviousDashboard } from "./previousDashboard"
 
 export function projectListener() {
     let content = document.querySelector('#content')
@@ -52,7 +53,8 @@ export function projectListener() {
                 clearDOM()
                 projectDOM()
                 insertStoredProjects()
-                removeReturnButton()                
+                removeReturnButton()
+                console.log(storePreviousDashboard('read'))
             }
     })
     

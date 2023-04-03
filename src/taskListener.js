@@ -45,9 +45,9 @@ export function taskListener() {
                 const storedTasks = [] //Will be filled with the inputs of an individual task
                 let projectTitle = document.querySelector('.project-title').textContent
                 let projectID = document.querySelector('.project-title').id
-                const projectTasks = {title: projectTitle, tasks: storeTaskInput(storedTasks), id: projectID}
                 //Array of all the tasks of one project
-
+                const projectTasks = {title: projectTitle, tasks: storeTaskInput(storedTasks), id: projectID}
+                
                 projectStorage('write', projectID, projectTasks) //Stores the tasks of one project
                 clearDOM()
                 projectDOM()
