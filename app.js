@@ -768,9 +768,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "taskDate": () => (/* binding */ taskDate)
 /* harmony export */ });
-function taskDate(e) {
-    //Tomorrow button not working at the end of a month
-    
+function taskDate(e) {    
     let taskCount = parseInt(e.target.id.match(/\d+$/)[0]);
     let taskDateDisplay = document.getElementById(`date${taskCount}`) 
     
@@ -833,13 +831,15 @@ __webpack_require__.r(__webpack_exports__);
 
 function taskListener() {
     let content = document.querySelector('#content')
-    let taskCount = 0
     let taskIdNumber
     
     content.addEventListener('click', (e) => {
         let taskDash = document.querySelector('.edit-project-dash')
 
         if (taskDash != null) {
+            let tasksNodeList = document.querySelectorAll('.task-container')
+            let taskCount = tasksNodeList.length
+            
             //Add task
             if (e.target.id.includes('add-task')) {
                 taskCount += 1
