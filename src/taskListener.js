@@ -23,7 +23,7 @@ export function taskListener() {
                 newTask(taskCount) //Pushes taskCount number for creating different id's
             }
 
-            //Remove task
+            //Delete task
             if (e.target.parentElement.id.includes('task-delete')) {
                 let task = e.target.parentElement.parentElement.parentElement
                 taskDash.removeChild(task)
@@ -49,13 +49,12 @@ export function taskListener() {
                 //Array of all the tasks of one project
 
                 projectStorage('write', projectID, projectTasks) //Stores the tasks of one project
-
                 clearDOM()
                 projectDOM()
                 insertStoredProjects()
-
-                taskCount = 0
                 removeReturnButton()
+                taskCount = 0
+                
             }
         }
     })

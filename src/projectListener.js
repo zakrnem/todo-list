@@ -6,6 +6,7 @@ import { projectStorage } from "./projectStorage"
 import { upcomingTasksDOM } from "./upcomingDOM"
 import { insertStoredTasks} from "./projectInsertTasks"
 import { removeReturnButton } from "./returnButtonRemove"
+import { insertStoredProjects } from "./projectInsertProjects"
 
 export function projectListener() {
     let content = document.querySelector('#content')
@@ -14,7 +15,7 @@ export function projectListener() {
     let projectCount = storedProjects.length
 
     //Insert project dashboard initially
-    projectDOM(projectCount, storedProjects[projectCount-1].title)
+    projectDOM()
 
     content.addEventListener('click', (e) => {
         //Insert project dashboard
@@ -22,6 +23,7 @@ export function projectListener() {
         e.target.parentElement.id.includes('project-button')) {
         clearDOM()
         projectDOM()
+        insertStoredProjects()
         removeReturnButton()
         }
 

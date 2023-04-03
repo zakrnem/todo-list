@@ -1,13 +1,8 @@
 Pending:
-    Remove button bug:
-        When entering into the 'project edit dashboard' and using the 'projects'
-            or 'upcoming tasks' button the return button isn't removed.
-        So when ones enters the 'pj-edit-dash' again a new return button is added,
-            creating multiple return buttons.
-    Solution:
-        Every time the 'projects' buttons is pressed the 'return' button must be
-            removed, the 'projects dashboard' won't have a return button because
-            is the main page.
+    Return button improved functionality:
+        In the 'upcoming tasks dashboard' there should be a return button.
+        The return button must be smarter, it should remember what was the last
+            page to return into it when clicked.
     
 
     Make the search bar work.

@@ -3,11 +3,17 @@ import { appendDOM } from "./appendDOM";
 import { footer } from "./footer"
 import { displayUpcomingTask } from "./upcomingDisplay";
 import { upcomingTasksObject } from "./upcomingObject";
+import { newIcon } from "./newIcon";
+import { removeReturnButton } from "./returnButtonRemove";
 
 export function upcomingTasksDOM() {
     clearDOM()
+    removeReturnButton()
 
     let sidebar = document.querySelector('.sidebar')
+    let returnButton = newIcon('sidebar-button', 'returnB1',
+    'return-back-svgrepo-com.svg', 'sidebar-icon', 'Return')
+    sidebar.appendChild(returnButton)
     
     let dashboard = document.createElement('div')
     dashboard.className = 'upcoming-dash'
