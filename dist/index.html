@@ -1,13 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
-    <script src="main.js" defer></script>
-</head>
-<body>
-    <div id="content"></div>
-</body>
-</html>
+<head><script defer src="app.js"></script><script defer src="vendor.js"></script></head>Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Module not found: Error: Can't resolve '/home/zakrasty/repos/todo-list/src/index.html' in '/home/zakrasty/repos/todo-list'
+  ModuleNotFoundError: Module not found: Error: Can't resolve '/home/zakrasty/repos/todo-list/src/index.html' in '/home/zakrasty/repos/todo-list'
+      at /home/zakrasty/repos/todo-list/node_modules/webpack/lib/Compilation.js:2016:28
+      at /home/zakrasty/repos/todo-list/node_modules/webpack/lib/NormalModuleFactory.js:799:13
+      at eval (eval at create (/home/zakrasty/repos/todo-list/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:10:1)
+      at /home/zakrasty/repos/todo-list/node_modules/webpack/lib/NormalModuleFactory.js:271:22
+      at eval (eval at create (/home/zakrasty/repos/todo-list/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:9:1)
+      at /home/zakrasty/repos/todo-list/node_modules/webpack/lib/NormalModuleFactory.js:435:22
+      at /home/zakrasty/repos/todo-list/node_modules/webpack/lib/NormalModuleFactory.js:121:11
+      at /home/zakrasty/repos/todo-list/node_modules/webpack/lib/NormalModuleFactory.js:671:25
+      at /home/zakrasty/repos/todo-list/node_modules/webpack/lib/NormalModuleFactory.js:875:8
+      at /home/zakrasty/repos/todo-list/node_modules/webpack/lib/NormalModuleFactory.js:995:5
+  
+  - Compilation.js:2016 
+    [todo-list]/[webpack]/lib/Compilation.js:2016:28
+  
+  - NormalModuleFactory.js:799 
+    [todo-list]/[webpack]/lib/NormalModuleFactory.js:799:13
+  
+  
+  - NormalModuleFactory.js:271 
+    [todo-list]/[webpack]/lib/NormalModuleFactory.js:271:22
+  
+  
+  - NormalModuleFactory.js:435 
+    [todo-list]/[webpack]/lib/NormalModuleFactory.js:435:22
+  
+  - NormalModuleFactory.js:121 
+    [todo-list]/[webpack]/lib/NormalModuleFactory.js:121:11
+  
+  - NormalModuleFactory.js:671 
+    [todo-list]/[webpack]/lib/NormalModuleFactory.js:671:25
+  
+  - NormalModuleFactory.js:875 
+    [todo-list]/[webpack]/lib/NormalModuleFactory.js:875:8
+  
+  - NormalModuleFactory.js:995 
+    [todo-list]/[webpack]/lib/NormalModuleFactory.js:995:5
+  
+  - child-compiler.js:169 
+    [todo-list]/[html-webpack-plugin]/lib/child-compiler.js:169:18
+  
+  - Compiler.js:551 finalCallback
+    [todo-list]/[webpack]/lib/Compiler.js:551:5
+  
+  - Compiler.js:577 
+    [todo-list]/[webpack]/lib/Compiler.js:577:11
+  
+  - Compiler.js:1196 
+    [todo-list]/[webpack]/lib/Compiler.js:1196:17
+  
+  
+  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+    [todo-list]/[tapable]/lib/Hook.js:18:14
+  
+  - Compiler.js:1192 
+    [todo-list]/[webpack]/lib/Compiler.js:1192:33
+  
+  - Compilation.js:2787 finalCallback
+    [todo-list]/[webpack]/lib/Compilation.js:2787:11
+  
+  - Compilation.js:3092 
+    [todo-list]/[webpack]/lib/Compilation.js:3092:11
+  
+  
+</pre>
