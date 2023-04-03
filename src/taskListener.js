@@ -1,8 +1,7 @@
 import { toggleDetail } from "./taskToggleDetail"
 import { newTask } from "./taskNew"
-import { storeTaskInput } from "./taskStoreInput"
-import { projectStorage } from "./projectStorage"
 import { returnToPreviousDashboard } from "./returnPrevious"
+import { readTaskInput } from "./taskReadInput"
 
 export function taskListener() {
     let content = document.querySelector('#content')
@@ -38,12 +37,7 @@ export function taskListener() {
             //Return to projects
             if (e.target.id.includes('return-pj-edit') ||
             e.target.parentElement.id.includes('return-pj-edit')) {
-                const storedTasks = [] //Will be filled with the inputs of an individual task
-                let projectTitle = document.querySelector('.project-title').textContent
-                let projectID = document.querySelector('.project-title').id
-                //Array of all the tasks of one project
-                const projectTasks = {title: projectTitle, tasks: storeTaskInput(storedTasks), id: projectID}
-                projectStorage('write', projectID, projectTasks) //Stores the tasks of one project
+                readTaskInput()
                 returnToPreviousDashboard()
                 taskCount = 0
             }

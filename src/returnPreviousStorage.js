@@ -4,6 +4,9 @@ export function storePreviousDashboard(typeOfOperation) {
     if (typeOfOperation === 'read') {
         return previousDashboard[arrayLength-2]
     }
+    if (typeOfOperation === 'current') {
+        return previousDashboard[arrayLength-1]
+    }
 
     if (typeOfOperation === 'write') {
         let dashboard = document.querySelector('.dashboard')

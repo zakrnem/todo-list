@@ -1,14 +1,7 @@
 Pending:
-    Return button improved functionality:
-        The return button must be smarter, it should remember what was the last
-            page to return into it when clicked.
-        For the memory of the last page we need a f() very similar to projectStorage.js
-        But instead of using a object we can use a simple variable.
-        Can we integrate the storage into this f() in the appendDOM.js?
-        How many dashboards are there?
-            Project edit: '.edit-project-dash'
-            Projects: '.projects-dashboard'
-            Upcoming tasks: '.upcoming-dash'
+    Bug: task not being stored when the user clicks 'upcoming tasks' from
+        the project edit dashboard.
+        
     
 
     Make the search bar work.

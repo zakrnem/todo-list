@@ -1,4 +1,8 @@
-export function storeTaskInput(storedTasks) {
+import { projectStorage } from "./projectStorage"
+
+export function readTaskInput() {
+    const storedTasks = []
+
     //Gets the tasks inputs from the DOM
     let tasksNodeList = document.querySelectorAll('.task-container')
     let tasksArray = Array.from(tasksNodeList)
@@ -17,6 +21,10 @@ export function storeTaskInput(storedTasks) {
             storedTasks.push(projectTasks)
         }
     }
-    return storedTasks
+    
+
+    const projectTasks = {title: projectTitle, tasks: storedTasks, id: projectID}
+    projectStorage('write', projectID, projectTasks) //Stores the tasks of one project
+    console.log(projectStorage('read'))
  }
  
