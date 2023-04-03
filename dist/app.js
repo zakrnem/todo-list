@@ -102,7 +102,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function clearDOM() {
     let dashboard = document.querySelector('.dashboard')
-    dashboard.removeChild(dashboard.firstElementChild)
+    if (dashboard != null) {
+        dashboard.removeChild(dashboard.firstElementChild)
+    }
+    
+    let sidebar = document.querySelector('.sidebar')
+    let returnButton = document.querySelector('[id*="return"]')
+    if (returnButton != null) {
+        sidebar.removeChild(returnButton)
+    }
 
     let footer = document.querySelector('footer')
     let footerParent = footer.parentElement
@@ -211,16 +219,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "projectDOM": () => (/* binding */ projectDOM)
 /* harmony export */ });
 /* harmony import */ var _appendDOM__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./appendDOM */ "./src/appendDOM.js");
-/* harmony import */ var _projectNew__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./projectNew */ "./src/projectNew.js");
-/* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./footer */ "./src/footer.js");
-/* harmony import */ var _projectInsertProjects__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./projectInsertProjects */ "./src/projectInsertProjects.js");
+/* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./footer */ "./src/footer.js");
+/* harmony import */ var _projectInsertProjects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./projectInsertProjects */ "./src/projectInsertProjects.js");
 
 
 
 
 
 function projectDOM() {
-
     let dashboard = document.createElement('div')
         dashboard.className = 'projects-dashboard'
 
@@ -236,11 +242,11 @@ function projectDOM() {
 
     
     document.addEventListener('DOMContentLoaded', () => {
-        ;(0,_projectInsertProjects__WEBPACK_IMPORTED_MODULE_3__.insertStoredProjects)()
+        ;(0,_projectInsertProjects__WEBPACK_IMPORTED_MODULE_2__.insertStoredProjects)()
     })
 
     ;(0,_appendDOM__WEBPACK_IMPORTED_MODULE_0__.appendDOM)(dashboard)
-    ;(0,_footer__WEBPACK_IMPORTED_MODULE_2__.footer)()
+    ;(0,_footer__WEBPACK_IMPORTED_MODULE_1__.footer)()
 }
 
 /***/ }),
@@ -382,12 +388,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _projectStorage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./projectStorage */ "./src/projectStorage.js");
 /* harmony import */ var _upcomingDOM__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./upcomingDOM */ "./src/upcomingDOM.js");
 /* harmony import */ var _projectInsertTasks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./projectInsertTasks */ "./src/projectInsertTasks.js");
-/* harmony import */ var _returnButtonRemove__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./returnButtonRemove */ "./src/returnButtonRemove.js");
-/* harmony import */ var _projectInsertProjects__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./projectInsertProjects */ "./src/projectInsertProjects.js");
-/* harmony import */ var _returnPreviousStorage__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./returnPreviousStorage */ "./src/returnPreviousStorage.js");
-/* harmony import */ var _returnPrevious__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./returnPrevious */ "./src/returnPrevious.js");
-
-
+/* harmony import */ var _projectInsertProjects__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./projectInsertProjects */ "./src/projectInsertProjects.js");
+/* harmony import */ var _returnPrevious__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./returnPrevious */ "./src/returnPrevious.js");
 
 
 
@@ -413,8 +415,7 @@ function projectListener() {
         e.target.parentElement.id.includes('project-button')) {
         (0,_clearDOM__WEBPACK_IMPORTED_MODULE_2__.clearDOM)()
         ;(0,_projectDOM__WEBPACK_IMPORTED_MODULE_0__.projectDOM)()
-        ;(0,_projectInsertProjects__WEBPACK_IMPORTED_MODULE_8__.insertStoredProjects)()
-        ;(0,_returnButtonRemove__WEBPACK_IMPORTED_MODULE_7__.removeReturnButton)()
+        ;(0,_projectInsertProjects__WEBPACK_IMPORTED_MODULE_7__.insertStoredProjects)()
         }
 
         //Add a new project
@@ -439,31 +440,27 @@ function projectListener() {
         //Return button
         if (e.target.id.includes('return-upcoming') ||
             e.target.parentElement.id.includes('return-upcoming')) {
-                (0,_returnPrevious__WEBPACK_IMPORTED_MODULE_10__.returnToPreviousDashboard)()
-                ;(0,_clearDOM__WEBPACK_IMPORTED_MODULE_2__.clearDOM)()
-                ;(0,_projectDOM__WEBPACK_IMPORTED_MODULE_0__.projectDOM)()
-                ;(0,_projectInsertProjects__WEBPACK_IMPORTED_MODULE_8__.insertStoredProjects)()
-                ;(0,_returnButtonRemove__WEBPACK_IMPORTED_MODULE_7__.removeReturnButton)()
-                //console.log(storePreviousDashboard('read'))
+                (0,_returnPrevious__WEBPACK_IMPORTED_MODULE_8__.returnToPreviousDashboard)()
             }
     })
     
     content.addEventListener('dblclick', (e) => {
-        let projectIDnumber
+        let projIDnumber
         let projTitle
         //Go to project edit (task creation)
         if (e.target.id.includes('projectN')) {
-            projectIDnumber = e.target.id.match(/\d+$/)[0]
-            projTitle = document.querySelector(`#projectT${projectIDnumber}`).value
-            ;(0,_projectEdit__WEBPACK_IMPORTED_MODULE_1__.projectEdit)(projTitle, projectIDnumber)
-            ;(0,_projectInsertTasks__WEBPACK_IMPORTED_MODULE_6__.insertStoredTasks)(projectIDnumber)
+            projIDnumber = e.target.id.match(/\d+$/)[0]
+            projTitle = document.querySelector(`#projectT${projIDnumber}`).value
+           
+            ;(0,_projectEdit__WEBPACK_IMPORTED_MODULE_1__.projectEdit)(projTitle, projIDnumber)
+            ;(0,_projectInsertTasks__WEBPACK_IMPORTED_MODULE_6__.insertStoredTasks)(projIDnumber)
         }
         if (e.target.id.includes('upcomingT')) {
-            projectIDnumber = e.target.id.match(/\d+$/)[0]
-            projTitle = document.querySelector(`#upcomingT-pj${projectIDnumber}`).textContent
-            ;(0,_projectEdit__WEBPACK_IMPORTED_MODULE_1__.projectEdit)(projTitle, projectIDnumber)
-            ;(0,_projectInsertTasks__WEBPACK_IMPORTED_MODULE_6__.insertStoredTasks)(projectIDnumber)
-            ;(0,_returnButtonRemove__WEBPACK_IMPORTED_MODULE_7__.removeReturnButton)()
+            projIDnumber = e.target.id.match(/\d+$/)[0]
+            projTitle = document.querySelector(`#upcomingT-pj${projIDnumber}`).textContent
+            
+            ;(0,_projectEdit__WEBPACK_IMPORTED_MODULE_1__.projectEdit)(projTitle, projIDnumber)
+            ;(0,_projectInsertTasks__WEBPACK_IMPORTED_MODULE_6__.insertStoredTasks)(projIDnumber)
         }
     })
 }
@@ -480,9 +477,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "newProject": () => (/* binding */ newProject)
 /* harmony export */ });
-/* harmony import */ var _appendDOM__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./appendDOM */ "./src/appendDOM.js");
-
-
 function newProject(projectCount, projTextCont) {
         let dashboard = document.querySelector('.projects-dashboard')
         let projectsGrid = document.querySelector('.projects-grid')
@@ -635,26 +629,6 @@ const storedProjects = [
 
 /***/ }),
 
-/***/ "./src/returnButtonRemove.js":
-/*!***********************************!*\
-  !*** ./src/returnButtonRemove.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "removeReturnButton": () => (/* binding */ removeReturnButton)
-/* harmony export */ });
-function removeReturnButton() {
-    let sidebar = document.querySelector('.sidebar')
-    let returnButton = document.querySelector('[id*="return"]')
-    if (returnButton != null) {
-        sidebar.removeChild(returnButton)
-    }
-}
-
-/***/ }),
-
 /***/ "./src/returnPrevious.js":
 /*!*******************************!*\
   !*** ./src/returnPrevious.js ***!
@@ -667,28 +641,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _returnPreviousStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./returnPreviousStorage */ "./src/returnPreviousStorage.js");
 /* harmony import */ var _upcomingDOM__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./upcomingDOM */ "./src/upcomingDOM.js");
+/* harmony import */ var _clearDOM__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./clearDOM */ "./src/clearDOM.js");
+/* harmony import */ var _projectDOM__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./projectDOM */ "./src/projectDOM.js");
+/* harmony import */ var _projectInsertProjects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./projectInsertProjects */ "./src/projectInsertProjects.js");
+/* harmony import */ var _projectEdit__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./projectEdit */ "./src/projectEdit.js");
+/* harmony import */ var _projectInsertTasks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./projectInsertTasks */ "./src/projectInsertTasks.js");
+
+
+
+
+
 
 
 
 function returnToPreviousDashboard() {
     let previousDashboard = (0,_returnPreviousStorage__WEBPACK_IMPORTED_MODULE_0__.storePreviousDashboard)('read')
-    clearDOM()
-
+    
     switch(true) {
-        case (previousDashboard === 'projects-dashboard'):
-            projectDOM()
-            insertStoredProjects()
+        case (previousDashboard.name === 'projects-dashboard'):
+            ;(0,_clearDOM__WEBPACK_IMPORTED_MODULE_2__.clearDOM)()
+            ;(0,_projectDOM__WEBPACK_IMPORTED_MODULE_3__.projectDOM)()
+            ;(0,_projectInsertProjects__WEBPACK_IMPORTED_MODULE_4__.insertStoredProjects)()
             break
-        case (previousDashboard === 'upcoming-dash'):
+        case (previousDashboard.name === 'upcoming-dash'):
             ;(0,_upcomingDOM__WEBPACK_IMPORTED_MODULE_1__.upcomingTasksDOM)()
             break
-        case (previousDashboard === 'edit-project-dash'):
-            //
+        case (previousDashboard.name === 'edit-project-dash'):
+            let projTitle = previousDashboard.project
+            let projIDnumber = previousDashboard.id
+            ;(0,_projectEdit__WEBPACK_IMPORTED_MODULE_5__.projectEdit)(projTitle, projIDnumber)
+            ;(0,_projectInsertTasks__WEBPACK_IMPORTED_MODULE_6__.insertStoredTasks)(projIDnumber)
             break
     }
-    
-    
-    removeReturnButton()
 }
 
 /***/ }),
@@ -707,7 +691,7 @@ function storePreviousDashboard(typeOfOperation) {
     let arrayLength = previousDashboard.length
 
     if (typeOfOperation === 'read') {
-        return previousDashboard[arrayLength-1]
+        return previousDashboard[arrayLength-2]
     }
 
     if (typeOfOperation === 'write') {
@@ -715,19 +699,22 @@ function storePreviousDashboard(typeOfOperation) {
         let currentDashboard = dashboard.lastElementChild.className
         
         if (previousDashboard[arrayLength-1].name != currentDashboard) {
-            const currentArray = {name: currentDashboard, project: ''}            
+            const currentArray = {name: currentDashboard, project: '', id: ''}            
             previousDashboard.push(currentArray)
 
             if (currentDashboard === 'edit-project-dash') {
                 let projectTitle = document.querySelector('.project-title').textContent
+                let projectID = document.querySelector('.project-title').id
                 previousDashboard[arrayLength].project = projectTitle
+                previousDashboard[arrayLength].id = projectID
             }
         }
-        console.log(previousDashboard)
+        //console.log(storePreviousDashboard('read'))
+        //console.log(previousDashboard)
     }
 }
 
-const previousDashboard = [{name: '', project: ''}]
+const previousDashboard = [{name: ''}]
 
 /***/ }),
 
@@ -830,18 +817,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "taskListener": () => (/* binding */ taskListener)
 /* harmony export */ });
 /* harmony import */ var _taskToggleDetail__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./taskToggleDetail */ "./src/taskToggleDetail.js");
-/* harmony import */ var _clearDOM__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./clearDOM */ "./src/clearDOM.js");
-/* harmony import */ var _projectDOM__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./projectDOM */ "./src/projectDOM.js");
-/* harmony import */ var _projectNew__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./projectNew */ "./src/projectNew.js");
-/* harmony import */ var _taskNew__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./taskNew */ "./src/taskNew.js");
-/* harmony import */ var _taskStoreInput__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./taskStoreInput */ "./src/taskStoreInput.js");
-/* harmony import */ var _projectStorage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./projectStorage */ "./src/projectStorage.js");
-/* harmony import */ var _projectInsertProjects__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./projectInsertProjects */ "./src/projectInsertProjects.js");
-/* harmony import */ var _returnButtonRemove__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./returnButtonRemove */ "./src/returnButtonRemove.js");
-
-
-
-
+/* harmony import */ var _taskNew__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./taskNew */ "./src/taskNew.js");
+/* harmony import */ var _taskStoreInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./taskStoreInput */ "./src/taskStoreInput.js");
+/* harmony import */ var _projectStorage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./projectStorage */ "./src/projectStorage.js");
+/* harmony import */ var _returnPrevious__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./returnPrevious */ "./src/returnPrevious.js");
 
 
 
@@ -860,7 +839,7 @@ function taskListener() {
             //Add task
             if (e.target.id.includes('add-task')) {
                 taskCount += 1
-                ;(0,_taskNew__WEBPACK_IMPORTED_MODULE_4__.newTask)(taskCount) //Pushes taskCount number for creating different id's
+                ;(0,_taskNew__WEBPACK_IMPORTED_MODULE_1__.newTask)(taskCount) //Pushes taskCount number for creating different id's
             }
 
             //Delete task
@@ -886,13 +865,9 @@ function taskListener() {
                 let projectTitle = document.querySelector('.project-title').textContent
                 let projectID = document.querySelector('.project-title').id
                 //Array of all the tasks of one project
-                const projectTasks = {title: projectTitle, tasks: (0,_taskStoreInput__WEBPACK_IMPORTED_MODULE_5__.storeTaskInput)(storedTasks), id: projectID}
-                
-                ;(0,_projectStorage__WEBPACK_IMPORTED_MODULE_6__.projectStorage)('write', projectID, projectTasks) //Stores the tasks of one project
-                ;(0,_clearDOM__WEBPACK_IMPORTED_MODULE_1__.clearDOM)()
-                ;(0,_projectDOM__WEBPACK_IMPORTED_MODULE_2__.projectDOM)()
-                ;(0,_projectInsertProjects__WEBPACK_IMPORTED_MODULE_7__.insertStoredProjects)()
-                ;(0,_returnButtonRemove__WEBPACK_IMPORTED_MODULE_8__.removeReturnButton)()
+                const projectTasks = {title: projectTitle, tasks: (0,_taskStoreInput__WEBPACK_IMPORTED_MODULE_2__.storeTaskInput)(storedTasks), id: projectID}
+                ;(0,_projectStorage__WEBPACK_IMPORTED_MODULE_3__.projectStorage)('write', projectID, projectTasks) //Stores the tasks of one project
+                ;(0,_returnPrevious__WEBPACK_IMPORTED_MODULE_4__.returnToPreviousDashboard)()
                 taskCount = 0
             }
         }
@@ -1078,8 +1053,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _upcomingDisplay__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./upcomingDisplay */ "./src/upcomingDisplay.js");
 /* harmony import */ var _upcomingObject__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./upcomingObject */ "./src/upcomingObject.js");
 /* harmony import */ var _newIcon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./newIcon */ "./src/newIcon.js");
-/* harmony import */ var _returnButtonRemove__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./returnButtonRemove */ "./src/returnButtonRemove.js");
-
 
 
 
@@ -1089,7 +1062,6 @@ __webpack_require__.r(__webpack_exports__);
 
 function upcomingTasksDOM() {
     (0,_clearDOM__WEBPACK_IMPORTED_MODULE_0__.clearDOM)()
-    ;(0,_returnButtonRemove__WEBPACK_IMPORTED_MODULE_6__.removeReturnButton)()
 
     let sidebar = document.querySelector('.sidebar')
     let returnButton = (0,_newIcon__WEBPACK_IMPORTED_MODULE_5__.newIcon)('sidebar-button', 'return-upcoming-tsk',

@@ -1,12 +1,8 @@
 import { toggleDetail } from "./taskToggleDetail"
-import { clearDOM } from "./clearDOM"
-import { projectDOM } from "./projectDOM"
-import { newProject } from "./projectNew"
 import { newTask } from "./taskNew"
 import { storeTaskInput } from "./taskStoreInput"
 import { projectStorage } from "./projectStorage"
-import { insertStoredProjects } from "./projectInsertProjects"
-import { removeReturnButton } from "./returnButtonRemove"
+import { returnToPreviousDashboard } from "./returnPrevious"
 
 export function taskListener() {
     let content = document.querySelector('#content')
@@ -47,12 +43,8 @@ export function taskListener() {
                 let projectID = document.querySelector('.project-title').id
                 //Array of all the tasks of one project
                 const projectTasks = {title: projectTitle, tasks: storeTaskInput(storedTasks), id: projectID}
-                
                 projectStorage('write', projectID, projectTasks) //Stores the tasks of one project
-                clearDOM()
-                projectDOM()
-                insertStoredProjects()
-                removeReturnButton()
+                returnToPreviousDashboard()
                 taskCount = 0
             }
         }

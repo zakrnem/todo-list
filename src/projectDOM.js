@@ -1,10 +1,9 @@
 import { appendDOM } from "./appendDOM"
-import { newProject } from "./projectNew"
 import { footer } from "./footer"
 import { insertStoredProjects } from "./projectInsertProjects"
 
-export function projectDOM() {
 
+export function projectDOM() {
     let dashboard = document.createElement('div')
         dashboard.className = 'projects-dashboard'
 

@@ -1,6 +1,14 @@
 export function clearDOM() {
     let dashboard = document.querySelector('.dashboard')
-    dashboard.removeChild(dashboard.firstElementChild)
+    if (dashboard != null) {
+        dashboard.removeChild(dashboard.firstElementChild)
+    }
+    
+    let sidebar = document.querySelector('.sidebar')
+    let returnButton = document.querySelector('[id*="return"]')
+    if (returnButton != null) {
+        sidebar.removeChild(returnButton)
+    }
 
     let footer = document.querySelector('footer')
     let footerParent = footer.parentElement

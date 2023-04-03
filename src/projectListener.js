@@ -5,9 +5,7 @@ import { newProject } from "./projectNew"
 import { projectStorage } from "./projectStorage"
 import { upcomingTasksDOM } from "./upcomingDOM"
 import { insertStoredTasks} from "./projectInsertTasks"
-import { removeReturnButton } from "./returnButtonRemove"
 import { insertStoredProjects } from "./projectInsertProjects"
-import { storePreviousDashboard } from "./returnPreviousStorage"
 import { returnToPreviousDashboard } from "./returnPrevious"
 
 export function projectListener() {
@@ -26,7 +24,6 @@ export function projectListener() {
         clearDOM()
         projectDOM()
         insertStoredProjects()
-        removeReturnButton()
         }
 
         //Add a new project
@@ -52,30 +49,26 @@ export function projectListener() {
         if (e.target.id.includes('return-upcoming') ||
             e.target.parentElement.id.includes('return-upcoming')) {
                 returnToPreviousDashboard()
-                clearDOM()
-                projectDOM()
-                insertStoredProjects()
-                removeReturnButton()
-                //console.log(storePreviousDashboard('read'))
             }
     })
     
     content.addEventListener('dblclick', (e) => {
-        let projectIDnumber
+        let projIDnumber
         let projTitle
         //Go to project edit (task creation)
         if (e.target.id.includes('projectN')) {
-            projectIDnumber = e.target.id.match(/\d+$/)[0]
-            projTitle = document.querySelector(`#projectT${projectIDnumber}`).value
-            projectEdit(projTitle, projectIDnumber)
-            insertStoredTasks(projectIDnumber)
+            projIDnumber = e.target.id.match(/\d+$/)[0]
+            projTitle = document.querySelector(`#projectT${projIDnumber}`).value
+           
+            projectEdit(projTitle, projIDnumber)
+            insertStoredTasks(projIDnumber)
         }
         if (e.target.id.includes('upcomingT')) {
-            projectIDnumber = e.target.id.match(/\d+$/)[0]
-            projTitle = document.querySelector(`#upcomingT-pj${projectIDnumber}`).textContent
-            projectEdit(projTitle, projectIDnumber)
-            insertStoredTasks(projectIDnumber)
-            removeReturnButton()
+            projIDnumber = e.target.id.match(/\d+$/)[0]
+            projTitle = document.querySelector(`#upcomingT-pj${projIDnumber}`).textContent
+            
+            projectEdit(projTitle, projIDnumber)
+            insertStoredTasks(projIDnumber)
         }
     })
 }

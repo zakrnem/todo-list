@@ -4,11 +4,9 @@ import { footer } from "./footer"
 import { displayUpcomingTask } from "./upcomingDisplay";
 import { upcomingTasksObject } from "./upcomingObject";
 import { newIcon } from "./newIcon";
-import { removeReturnButton } from "./returnButtonRemove";
 
 export function upcomingTasksDOM() {
     clearDOM()
-    removeReturnButton()
 
     let sidebar = document.querySelector('.sidebar')
     let returnButton = newIcon('sidebar-button', 'return-upcoming-tsk',
