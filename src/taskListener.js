@@ -40,8 +40,8 @@ export function taskListener() {
             toggleDetail(selectedButton, taskDetail, detailTarget)
 
             //Return to projects
-            if (e.target.id.includes('returnB') ||
-            e.target.parentElement.id.includes('returnB')) {
+            if (e.target.id.includes('return-pj-edit') ||
+            e.target.parentElement.id.includes('return-pj-edit')) {
                 const storedTasks = [] //Will be filled with the inputs of an individual task
                 let projectTitle = document.querySelector('.project-title').textContent
                 let projectID = document.querySelector('.project-title').id
@@ -54,7 +54,6 @@ export function taskListener() {
                 insertStoredProjects()
                 removeReturnButton()
                 taskCount = 0
-                
             }
         }
     })

@@ -11,7 +11,7 @@ export function upcomingTasksDOM() {
     removeReturnButton()
 
     let sidebar = document.querySelector('.sidebar')
-    let returnButton = newIcon('sidebar-button', 'returnB1',
+    let returnButton = newIcon('sidebar-button', 'return-upcoming-tsk',
     'return-back-svgrepo-com.svg', 'sidebar-icon', 'Return')
     sidebar.appendChild(returnButton)
     

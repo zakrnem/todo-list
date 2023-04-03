@@ -45,6 +45,15 @@ export function projectListener() {
         e.target.parentElement.id.includes('upcomingB')) {
             upcomingTasksDOM()
         }
+
+        //Return button
+        if (e.target.id.includes('return-upcoming') ||
+            e.target.parentElement.id.includes('return-upcoming')) {
+                clearDOM()
+                projectDOM()
+                insertStoredProjects()
+                removeReturnButton()                
+            }
     })
     
     content.addEventListener('dblclick', (e) => {
@@ -62,6 +71,7 @@ export function projectListener() {
             projTitle = document.querySelector(`#upcomingT-pj${projectIDnumber}`).textContent
             projectEdit(projTitle, projectIDnumber)
             insertStoredTasks(projectIDnumber)
+            removeReturnButton()
         }
     })
 }

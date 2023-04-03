@@ -7,7 +7,7 @@ export function projectEdit(projTitle, projID) {
     clearDOM()
 
     let sidebar = document.querySelector('.sidebar')
-    let returnButton = newIcon('sidebar-button', 'returnB1',
+    let returnButton = newIcon('sidebar-button', 'return-pj-edit',
     'return-back-svgrepo-com.svg', 'sidebar-icon', 'Return')
     sidebar.appendChild(returnButton)
 
