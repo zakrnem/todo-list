@@ -1,7 +1,13 @@
 Pending:
-    //upcomingTasks.js//
-    When double-clicking them the corresponding project will be opened
-    So they'll uneditable on the upcoming tasks dashboard
+    Remove button bug:
+        When entering into the 'project edit dashboard' and using the 'projects'
+            or 'upcoming tasks' button the return button isn't removed.
+        So when ones enters the 'pj-edit-dash' again a new return button is added,
+            creating multiple return buttons.
+    Solution:
+        Every time the 'projects' buttons is pressed the 'return' button must be
+            removed, the 'projects dashboard' won't have a return button because
+            is the main page.
     
 
     Make the search bar work.

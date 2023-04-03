@@ -21,6 +21,11 @@ export function projectListener() {
         e.target.parentElement.id.includes('project-button')) {
         clearDOM()
         projectDOM()
+
+        let sidebar = document.querySelector('.sidebar')
+        let returnButton = document.querySelector('#returnB1')
+        sidebar.removeChild(returnButton)
+
         newProject(projectCount, storedProjects[projectCount-1].title)
         }
 

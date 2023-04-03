@@ -371,6 +371,11 @@ function projectListener() {
         e.target.parentElement.id.includes('project-button')) {
         (0,_clearDOM__WEBPACK_IMPORTED_MODULE_2__.clearDOM)()
         ;(0,_projectDOM__WEBPACK_IMPORTED_MODULE_0__.projectDOM)()
+
+        let sidebar = document.querySelector('.sidebar')
+        let returnButton = document.querySelector('#returnB1')
+        sidebar.removeChild(returnButton)
+
         ;(0,_projectNew__WEBPACK_IMPORTED_MODULE_3__.newProject)(projectCount, storedProjects[projectCount-1].title)
         }
 
