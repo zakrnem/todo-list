@@ -1,28 +1,16 @@
 Pending:
-    Make the upcoming tasks button work.
-        Check all tasks in all projects and sort them by date.
-            Use a for loop inside a for loop to print all the tasks in an array.
-            Display the project title in each tasks for differentiate them.
-            For each item we need to convert the date array into a number that represents the date.
-                How to convert a date into a number.
-            Then we will be able to sort the tasks using this number.
-                How to sort items in an array
-        Display the task's project next to the title.
-
-
-    //upcomingTasks.js//
-    We should just display tasks that are uncompleted
-    The following properties should be displayed:
-        Title
-        Completion
-        Date
-    They will change color when hovering above them
-    When double-clicking them the corresponding project will be opened
-    So they'll uneditable on the upcoming tasks dashboard
+    Remove button bug:
+        When entering into the 'project edit dashboard' and using the 'projects'
+            or 'upcoming tasks' button the return button isn't removed.
+        So when ones enters the 'pj-edit-dash' again a new return button is added,
+            creating multiple return buttons.
+    Solution:
+        Every time the 'projects' buttons is pressed the 'return' button must be
+            removed, the 'projects dashboard' won't have a return button because
+            is the main page.
     
 
     Make the search bar work.
-    Add footer
     Implement "date-fns"
     Implement "local-storage"
 
