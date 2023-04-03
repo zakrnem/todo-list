@@ -10,7 +10,6 @@ import { returnToPreviousDashboard } from "./returnPrevious"
 
 export function projectListener() {
     let content = document.querySelector('#content')
-
     let storedProjects = projectStorage('read')
     let projectCount = storedProjects.length
 
@@ -18,14 +17,6 @@ export function projectListener() {
     projectDOM()
 
     content.addEventListener('click', (e) => {
-        //Insert project dashboard
-        if (e.target.id.includes('project-button') ||
-        e.target.parentElement.id.includes('project-button')) {
-        clearDOM()
-        projectDOM()
-        insertStoredProjects()
-        }
-
         //Add a new project
         if (e.target.id.includes('new-project')) {
             newProject(++projectCount, `New project #${projectCount}`)
@@ -37,6 +28,14 @@ export function projectListener() {
             projectsGrid.removeChild(e.target.parentElement)
             let projectIDnumber = e.target.id.match(/\d+$/)[0]
             projectStorage('delete', projectIDnumber)
+        }
+        
+        //Insert project dashboard
+        if (e.target.id.includes('project-button') ||
+        e.target.parentElement.id.includes('project-button')) {
+        clearDOM()
+        projectDOM()
+        insertStoredProjects()
         }
 
         //Upcoming tasks

@@ -1,7 +1,5 @@
 Pending:
-    Bug: task not being stored when the user clicks 'upcoming tasks' from
-        the project edit dashboard.
-        
+    taskDate() not working always.
     
 
     Make the search bar work.

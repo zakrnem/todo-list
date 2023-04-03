@@ -1,4 +1,11 @@
+import { storeTaskInput } from "./taskStoreInput"
+
 export function clearDOM() {
+    let editProject = document.querySelector('.edit-project-dash')
+    if (editProject != null) {
+        storeTaskInput()
+    }
+
     let dashboard = document.querySelector('.dashboard')
     if (dashboard != null) {
         dashboard.removeChild(dashboard.firstElementChild)

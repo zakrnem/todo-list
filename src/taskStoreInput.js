@@ -1,6 +1,6 @@
 import { projectStorage } from "./projectStorage"
 
-export function readTaskInput() {
+export function storeTaskInput() {
     const storedTasks = []
 
     //Gets the tasks inputs from the DOM

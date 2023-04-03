@@ -1,7 +1,7 @@
 import { toggleDetail } from "./taskToggleDetail"
 import { newTask } from "./taskNew"
 import { returnToPreviousDashboard } from "./returnPrevious"
-import { readTaskInput } from "./taskReadInput"
+import { storeTaskInput } from "./taskStoreInput"
 
 export function taskListener() {
     let content = document.querySelector('#content')
@@ -37,7 +37,6 @@ export function taskListener() {
             //Return to projects
             if (e.target.id.includes('return-pj-edit') ||
             e.target.parentElement.id.includes('return-pj-edit')) {
-                readTaskInput()
                 returnToPreviousDashboard()
                 taskCount = 0
             }

@@ -85,7 +85,7 @@ function appendDOM(taskEdit) {
         main.appendChild(container)
         content.appendChild(main)
     }
-    (0,_returnPreviousStorage__WEBPACK_IMPORTED_MODULE_0__.storePreviousDashboard)('write')
+    (0,_returnPreviousStorage__WEBPACK_IMPORTED_MODULE_0__.previousDashboardStorage)('write')
 }
 
 /***/ }),
@@ -100,7 +100,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "clearDOM": () => (/* binding */ clearDOM)
 /* harmony export */ });
+/* harmony import */ var _taskStoreInput__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./taskStoreInput */ "./src/taskStoreInput.js");
+
+
 function clearDOM() {
+    let editProject = document.querySelector('.edit-project-dash')
+    if (editProject != null) {
+        (0,_taskStoreInput__WEBPACK_IMPORTED_MODULE_0__.storeTaskInput)()
+    }
+
     let dashboard = document.querySelector('.dashboard')
     if (dashboard != null) {
         dashboard.removeChild(dashboard.firstElementChild)
@@ -402,7 +410,6 @@ __webpack_require__.r(__webpack_exports__);
 
 function projectListener() {
     let content = document.querySelector('#content')
-
     let storedProjects = (0,_projectStorage__WEBPACK_IMPORTED_MODULE_4__.projectStorage)('read')
     let projectCount = storedProjects.length
 
@@ -410,14 +417,6 @@ function projectListener() {
     ;(0,_projectDOM__WEBPACK_IMPORTED_MODULE_0__.projectDOM)()
 
     content.addEventListener('click', (e) => {
-        //Insert project dashboard
-        if (e.target.id.includes('project-button') ||
-        e.target.parentElement.id.includes('project-button')) {
-        (0,_clearDOM__WEBPACK_IMPORTED_MODULE_2__.clearDOM)()
-        ;(0,_projectDOM__WEBPACK_IMPORTED_MODULE_0__.projectDOM)()
-        ;(0,_projectInsertProjects__WEBPACK_IMPORTED_MODULE_7__.insertStoredProjects)()
-        }
-
         //Add a new project
         if (e.target.id.includes('new-project')) {
             (0,_projectNew__WEBPACK_IMPORTED_MODULE_3__.newProject)(++projectCount, `New project #${projectCount}`)
@@ -429,6 +428,14 @@ function projectListener() {
             projectsGrid.removeChild(e.target.parentElement)
             let projectIDnumber = e.target.id.match(/\d+$/)[0]
             ;(0,_projectStorage__WEBPACK_IMPORTED_MODULE_4__.projectStorage)('delete', projectIDnumber)
+        }
+        
+        //Insert project dashboard
+        if (e.target.id.includes('project-button') ||
+        e.target.parentElement.id.includes('project-button')) {
+        (0,_clearDOM__WEBPACK_IMPORTED_MODULE_2__.clearDOM)()
+        ;(0,_projectDOM__WEBPACK_IMPORTED_MODULE_0__.projectDOM)()
+        ;(0,_projectInsertProjects__WEBPACK_IMPORTED_MODULE_7__.insertStoredProjects)()
         }
 
         //Upcoming tasks
@@ -646,10 +653,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _projectInsertProjects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./projectInsertProjects */ "./src/projectInsertProjects.js");
 /* harmony import */ var _projectEdit__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./projectEdit */ "./src/projectEdit.js");
 /* harmony import */ var _projectInsertTasks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./projectInsertTasks */ "./src/projectInsertTasks.js");
-/* harmony import */ var _projectStorage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./projectStorage */ "./src/projectStorage.js");
-/* harmony import */ var _taskReadInput__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./taskReadInput */ "./src/taskReadInput.js");
-
-
 
 
 
@@ -659,22 +662,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function returnToPreviousDashboard() {
-    let previousDashboard = (0,_returnPreviousStorage__WEBPACK_IMPORTED_MODULE_0__.storePreviousDashboard)('read')
-    let currentDashboard = (0,_returnPreviousStorage__WEBPACK_IMPORTED_MODULE_0__.storePreviousDashboard)('current')
-    
-    if (currentDashboard.name === 'edit-project-dash') {
-        /* const storedTasks = [] //Will be filled with the inputs of an individual task
-        let projectTitle = document.querySelector('.project-title').textContent
-        let projectID = document.querySelector('.project-title').id
-        //Array of all the tasks of one project
-        const projectTasks = {title: projectTitle, tasks: readTaskInput(storedTasks), id: projectID}
-        projectStorage('write', projectID, projectTasks) //Stores the tasks of one project
-        console.log(projectStorage('read')) */
-    }
+    let previousDashboard = (0,_returnPreviousStorage__WEBPACK_IMPORTED_MODULE_0__.previousDashboardStorage)('read')
     
     switch(true) {
         case (previousDashboard.name === 'projects-dashboard'):
-            (0,_clearDOM__WEBPACK_IMPORTED_MODULE_2__.clearDOM)()
+            ;(0,_clearDOM__WEBPACK_IMPORTED_MODULE_2__.clearDOM)()
             ;(0,_projectDOM__WEBPACK_IMPORTED_MODULE_3__.projectDOM)()
             ;(0,_projectInsertProjects__WEBPACK_IMPORTED_MODULE_4__.insertStoredProjects)()
             break
@@ -700,18 +692,14 @@ function returnToPreviousDashboard() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "storePreviousDashboard": () => (/* binding */ storePreviousDashboard)
+/* harmony export */   "previousDashboardStorage": () => (/* binding */ previousDashboardStorage)
 /* harmony export */ });
-function storePreviousDashboard(typeOfOperation) {
+function previousDashboardStorage(typeOfOperation) {
     let arrayLength = previousDashboard.length
 
     if (typeOfOperation === 'read') {
         return previousDashboard[arrayLength-2]
     }
-    if (typeOfOperation === 'current') {
-        return previousDashboard[arrayLength-1]
-    }
-
     if (typeOfOperation === 'write') {
         let dashboard = document.querySelector('.dashboard')
         let currentDashboard = dashboard.lastElementChild.className
@@ -837,7 +825,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _taskToggleDetail__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./taskToggleDetail */ "./src/taskToggleDetail.js");
 /* harmony import */ var _taskNew__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./taskNew */ "./src/taskNew.js");
 /* harmony import */ var _returnPrevious__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./returnPrevious */ "./src/returnPrevious.js");
-/* harmony import */ var _taskReadInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./taskReadInput */ "./src/taskReadInput.js");
+/* harmony import */ var _taskStoreInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./taskStoreInput */ "./src/taskStoreInput.js");
 
 
 
@@ -877,8 +865,7 @@ function taskListener() {
             //Return to projects
             if (e.target.id.includes('return-pj-edit') ||
             e.target.parentElement.id.includes('return-pj-edit')) {
-                (0,_taskReadInput__WEBPACK_IMPORTED_MODULE_3__.readTaskInput)()
-                ;(0,_returnPrevious__WEBPACK_IMPORTED_MODULE_2__.returnToPreviousDashboard)()
+                (0,_returnPrevious__WEBPACK_IMPORTED_MODULE_2__.returnToPreviousDashboard)()
                 taskCount = 0
             }
         }
@@ -987,20 +974,20 @@ function newTask(taskCount, tskCheck, tskTitle, tskDescrip, tskDate) {
 
 /***/ }),
 
-/***/ "./src/taskReadInput.js":
-/*!******************************!*\
-  !*** ./src/taskReadInput.js ***!
-  \******************************/
+/***/ "./src/taskStoreInput.js":
+/*!*******************************!*\
+  !*** ./src/taskStoreInput.js ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "readTaskInput": () => (/* binding */ readTaskInput)
+/* harmony export */   "storeTaskInput": () => (/* binding */ storeTaskInput)
 /* harmony export */ });
 /* harmony import */ var _projectStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projectStorage */ "./src/projectStorage.js");
 
 
-function readTaskInput() {
+function storeTaskInput() {
     const storedTasks = []
 
     //Gets the tasks inputs from the DOM
