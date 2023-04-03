@@ -66,6 +66,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "appendDOM": () => (/* binding */ appendDOM)
 /* harmony export */ });
+/* harmony import */ var _previousDashboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./previousDashboard */ "./src/previousDashboard.js");
+
+
 function appendDOM(taskEdit) {
     let container = document.querySelector('.dashboard')    
     let main = document.querySelector('main')
@@ -82,6 +85,7 @@ function appendDOM(taskEdit) {
         main.appendChild(container)
         content.appendChild(main)
     }
+    (0,_previousDashboard__WEBPACK_IMPORTED_MODULE_0__.storePreviousDashboard)('write')
 }
 
 /***/ }),
@@ -193,6 +197,38 @@ function newIcon(className, id, imgSrc, iconClass, buttonText) {
     
     return newButton
 }
+
+/***/ }),
+
+/***/ "./src/previousDashboard.js":
+/*!**********************************!*\
+  !*** ./src/previousDashboard.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "storePreviousDashboard": () => (/* binding */ storePreviousDashboard)
+/* harmony export */ });
+function storePreviousDashboard(typeOfOperation) {
+    let arrayLength = previousDashboard.length
+
+    if (typeOfOperation === 'read') {
+        return previousDashboard[arrayLength-1]
+    }
+
+    if (typeOfOperation === 'write') {
+        let dashboard = document.querySelector('.dashboard')
+        let currentDashboard = dashboard.lastElementChild.className
+        
+        if (previousDashboard[arrayLength-1] != currentDashboard) {
+            previousDashboard.push(currentDashboard)
+        }
+        //console.log(previousDashboard)
+    }
+}
+
+const previousDashboard = ['projects-dashboard']
 
 /***/ }),
 
@@ -380,6 +416,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _projectInsertTasks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./projectInsertTasks */ "./src/projectInsertTasks.js");
 /* harmony import */ var _returnButtonRemove__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./returnButtonRemove */ "./src/returnButtonRemove.js");
 /* harmony import */ var _projectInsertProjects__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./projectInsertProjects */ "./src/projectInsertProjects.js");
+/* harmony import */ var _previousDashboard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./previousDashboard */ "./src/previousDashboard.js");
+
 
 
 
@@ -434,7 +472,8 @@ function projectListener() {
                 (0,_clearDOM__WEBPACK_IMPORTED_MODULE_2__.clearDOM)()
                 ;(0,_projectDOM__WEBPACK_IMPORTED_MODULE_0__.projectDOM)()
                 ;(0,_projectInsertProjects__WEBPACK_IMPORTED_MODULE_8__.insertStoredProjects)()
-                ;(0,_returnButtonRemove__WEBPACK_IMPORTED_MODULE_7__.removeReturnButton)()                
+                ;(0,_returnButtonRemove__WEBPACK_IMPORTED_MODULE_7__.removeReturnButton)()
+                console.log((0,_previousDashboard__WEBPACK_IMPORTED_MODULE_9__.storePreviousDashboard)('read'))
             }
     })
     
@@ -799,9 +838,9 @@ function taskListener() {
                 const storedTasks = [] //Will be filled with the inputs of an individual task
                 let projectTitle = document.querySelector('.project-title').textContent
                 let projectID = document.querySelector('.project-title').id
-                const projectTasks = {title: projectTitle, tasks: (0,_taskStoreInput__WEBPACK_IMPORTED_MODULE_5__.storeTaskInput)(storedTasks), id: projectID}
                 //Array of all the tasks of one project
-
+                const projectTasks = {title: projectTitle, tasks: (0,_taskStoreInput__WEBPACK_IMPORTED_MODULE_5__.storeTaskInput)(storedTasks), id: projectID}
+                
                 ;(0,_projectStorage__WEBPACK_IMPORTED_MODULE_6__.projectStorage)('write', projectID, projectTasks) //Stores the tasks of one project
                 ;(0,_clearDOM__WEBPACK_IMPORTED_MODULE_1__.clearDOM)()
                 ;(0,_projectDOM__WEBPACK_IMPORTED_MODULE_2__.projectDOM)()
