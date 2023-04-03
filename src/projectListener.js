@@ -7,7 +7,8 @@ import { upcomingTasksDOM } from "./upcomingDOM"
 import { insertStoredTasks} from "./projectInsertTasks"
 import { removeReturnButton } from "./returnButtonRemove"
 import { insertStoredProjects } from "./projectInsertProjects"
-import { storePreviousDashboard } from "./previousDashboard"
+import { storePreviousDashboard } from "./returnPreviousStorage"
+import { returnToPreviousDashboard } from "./returnPrevious"
 
 export function projectListener() {
     let content = document.querySelector('#content')
@@ -50,11 +51,12 @@ export function projectListener() {
         //Return button
         if (e.target.id.includes('return-upcoming') ||
             e.target.parentElement.id.includes('return-upcoming')) {
+                returnToPreviousDashboard()
                 clearDOM()
                 projectDOM()
                 insertStoredProjects()
                 removeReturnButton()
-                console.log(storePreviousDashboard('read'))
+                //console.log(storePreviousDashboard('read'))
             }
     })
     

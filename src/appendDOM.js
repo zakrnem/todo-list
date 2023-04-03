@@ -1,4 +1,4 @@
-import { storePreviousDashboard } from "./previousDashboard"
+import { storePreviousDashboard } from "./returnPreviousStorage"
 
 export function appendDOM(taskEdit) {
     let container = document.querySelector('.dashboard')    
