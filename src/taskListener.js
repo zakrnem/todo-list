@@ -5,6 +5,7 @@ import { newProject } from "./projectNew"
 import { newTask } from "./taskNew"
 import { storeTaskInput } from "./taskStoreInput"
 import { projectStorage } from "./projectStorage"
+import { insertStoredProjects } from "./projectInsertProjects"
 
 export function taskListener() {
     let content = document.querySelector('#content')
@@ -50,15 +51,7 @@ export function taskListener() {
 
                 clearDOM()
                 projectDOM()
-
-                let storedProjects = projectStorage('read')
-                //console.log('Stored Projects:')
-                console.log(storedProjects)
-                let projectCount = storedProjects.length
-                //For loop for inserting multiple stored projects
-                for (; projectCount>0; projectCount--) {
-                    newProject(projectCount, storedProjects[projectCount-1].title)
-                }
+                insertStoredProjects()
 
                 taskCount = 0
                 let sidebar = document.querySelector('.sidebar')

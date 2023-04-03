@@ -4,7 +4,7 @@ import { clearDOM } from "./clearDOM"
 import { newProject } from "./projectNew"
 import { projectStorage } from "./projectStorage"
 import { upcomingTasksDOM } from "./upcomingDOM"
-import { insertStoredTasks} from "./projectInsertStorage"
+import { insertStoredTasks} from "./projectInsertTasks"
 
 export function projectListener() {
     let content = document.querySelector('#content')
@@ -24,8 +24,10 @@ export function projectListener() {
 
         let sidebar = document.querySelector('.sidebar')
         let returnButton = document.querySelector('#returnB1')
-        sidebar.removeChild(returnButton)
-
+        if (returnButton != null) {
+            sidebar.removeChild(returnButton)
+        }
+        
         newProject(projectCount, storedProjects[projectCount-1].title)
         }
 
