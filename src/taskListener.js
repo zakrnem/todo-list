@@ -5,13 +5,15 @@ import { storeTaskInput } from "./taskStoreInput"
 
 export function taskListener() {
     let content = document.querySelector('#content')
-    let taskCount = 0
     let taskIdNumber
     
     content.addEventListener('click', (e) => {
         let taskDash = document.querySelector('.edit-project-dash')
 
         if (taskDash != null) {
+            let tasksNodeList = document.querySelectorAll('.task-container')
+            let taskCount = tasksNodeList.length
+            
             //Add task
             if (e.target.id.includes('add-task')) {
                 taskCount += 1
