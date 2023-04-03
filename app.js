@@ -646,6 +646,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _projectInsertProjects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./projectInsertProjects */ "./src/projectInsertProjects.js");
 /* harmony import */ var _projectEdit__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./projectEdit */ "./src/projectEdit.js");
 /* harmony import */ var _projectInsertTasks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./projectInsertTasks */ "./src/projectInsertTasks.js");
+/* harmony import */ var _projectStorage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./projectStorage */ "./src/projectStorage.js");
+/* harmony import */ var _taskReadInput__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./taskReadInput */ "./src/taskReadInput.js");
+
+
 
 
 
@@ -656,10 +660,21 @@ __webpack_require__.r(__webpack_exports__);
 
 function returnToPreviousDashboard() {
     let previousDashboard = (0,_returnPreviousStorage__WEBPACK_IMPORTED_MODULE_0__.storePreviousDashboard)('read')
+    let currentDashboard = (0,_returnPreviousStorage__WEBPACK_IMPORTED_MODULE_0__.storePreviousDashboard)('current')
+    
+    if (currentDashboard.name === 'edit-project-dash') {
+        /* const storedTasks = [] //Will be filled with the inputs of an individual task
+        let projectTitle = document.querySelector('.project-title').textContent
+        let projectID = document.querySelector('.project-title').id
+        //Array of all the tasks of one project
+        const projectTasks = {title: projectTitle, tasks: readTaskInput(storedTasks), id: projectID}
+        projectStorage('write', projectID, projectTasks) //Stores the tasks of one project
+        console.log(projectStorage('read')) */
+    }
     
     switch(true) {
         case (previousDashboard.name === 'projects-dashboard'):
-            ;(0,_clearDOM__WEBPACK_IMPORTED_MODULE_2__.clearDOM)()
+            (0,_clearDOM__WEBPACK_IMPORTED_MODULE_2__.clearDOM)()
             ;(0,_projectDOM__WEBPACK_IMPORTED_MODULE_3__.projectDOM)()
             ;(0,_projectInsertProjects__WEBPACK_IMPORTED_MODULE_4__.insertStoredProjects)()
             break
@@ -692,6 +707,9 @@ function storePreviousDashboard(typeOfOperation) {
 
     if (typeOfOperation === 'read') {
         return previousDashboard[arrayLength-2]
+    }
+    if (typeOfOperation === 'current') {
+        return previousDashboard[arrayLength-1]
     }
 
     if (typeOfOperation === 'write') {
@@ -818,10 +836,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _taskToggleDetail__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./taskToggleDetail */ "./src/taskToggleDetail.js");
 /* harmony import */ var _taskNew__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./taskNew */ "./src/taskNew.js");
-/* harmony import */ var _taskStoreInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./taskStoreInput */ "./src/taskStoreInput.js");
-/* harmony import */ var _projectStorage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./projectStorage */ "./src/projectStorage.js");
-/* harmony import */ var _returnPrevious__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./returnPrevious */ "./src/returnPrevious.js");
-
+/* harmony import */ var _returnPrevious__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./returnPrevious */ "./src/returnPrevious.js");
+/* harmony import */ var _taskReadInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./taskReadInput */ "./src/taskReadInput.js");
 
 
 
@@ -861,13 +877,8 @@ function taskListener() {
             //Return to projects
             if (e.target.id.includes('return-pj-edit') ||
             e.target.parentElement.id.includes('return-pj-edit')) {
-                const storedTasks = [] //Will be filled with the inputs of an individual task
-                let projectTitle = document.querySelector('.project-title').textContent
-                let projectID = document.querySelector('.project-title').id
-                //Array of all the tasks of one project
-                const projectTasks = {title: projectTitle, tasks: (0,_taskStoreInput__WEBPACK_IMPORTED_MODULE_2__.storeTaskInput)(storedTasks), id: projectID}
-                ;(0,_projectStorage__WEBPACK_IMPORTED_MODULE_3__.projectStorage)('write', projectID, projectTasks) //Stores the tasks of one project
-                ;(0,_returnPrevious__WEBPACK_IMPORTED_MODULE_4__.returnToPreviousDashboard)()
+                (0,_taskReadInput__WEBPACK_IMPORTED_MODULE_3__.readTaskInput)()
+                ;(0,_returnPrevious__WEBPACK_IMPORTED_MODULE_2__.returnToPreviousDashboard)()
                 taskCount = 0
             }
         }
@@ -976,17 +987,22 @@ function newTask(taskCount, tskCheck, tskTitle, tskDescrip, tskDate) {
 
 /***/ }),
 
-/***/ "./src/taskStoreInput.js":
-/*!*******************************!*\
-  !*** ./src/taskStoreInput.js ***!
-  \*******************************/
+/***/ "./src/taskReadInput.js":
+/*!******************************!*\
+  !*** ./src/taskReadInput.js ***!
+  \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "storeTaskInput": () => (/* binding */ storeTaskInput)
+/* harmony export */   "readTaskInput": () => (/* binding */ readTaskInput)
 /* harmony export */ });
-function storeTaskInput(storedTasks) {
+/* harmony import */ var _projectStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projectStorage */ "./src/projectStorage.js");
+
+
+function readTaskInput() {
+    const storedTasks = []
+
     //Gets the tasks inputs from the DOM
     let tasksNodeList = document.querySelectorAll('.task-container')
     let tasksArray = Array.from(tasksNodeList)
@@ -1005,7 +1021,11 @@ function storeTaskInput(storedTasks) {
             storedTasks.push(projectTasks)
         }
     }
-    return storedTasks
+    
+
+    const projectTasks = {title: projectTitle, tasks: storedTasks, id: projectID}
+    ;(0,_projectStorage__WEBPACK_IMPORTED_MODULE_0__.projectStorage)('write', projectID, projectTasks) //Stores the tasks of one project
+    console.log((0,_projectStorage__WEBPACK_IMPORTED_MODULE_0__.projectStorage)('read'))
  }
  
 
