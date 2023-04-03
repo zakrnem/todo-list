@@ -6,6 +6,7 @@ import { newTask } from "./taskNew"
 import { storeTaskInput } from "./taskStoreInput"
 import { projectStorage } from "./projectStorage"
 import { insertStoredProjects } from "./projectInsertProjects"
+import { removeReturnButton } from "./returnButtonRemove"
 
 export function taskListener() {
     let content = document.querySelector('#content')
@@ -54,9 +55,7 @@ export function taskListener() {
                 insertStoredProjects()
 
                 taskCount = 0
-                let sidebar = document.querySelector('.sidebar')
-                let returnButton = document.querySelector('#returnB1')
-                sidebar.removeChild(returnButton)
+                removeReturnButton()
             }
         }
     })

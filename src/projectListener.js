@@ -5,6 +5,7 @@ import { newProject } from "./projectNew"
 import { projectStorage } from "./projectStorage"
 import { upcomingTasksDOM } from "./upcomingDOM"
 import { insertStoredTasks} from "./projectInsertTasks"
+import { removeReturnButton } from "./returnButtonRemove"
 
 export function projectListener() {
     let content = document.querySelector('#content')
@@ -21,14 +22,7 @@ export function projectListener() {
         e.target.parentElement.id.includes('project-button')) {
         clearDOM()
         projectDOM()
-
-        let sidebar = document.querySelector('.sidebar')
-        let returnButton = document.querySelector('#returnB1')
-        if (returnButton != null) {
-            sidebar.removeChild(returnButton)
-        }
-        
-        newProject(projectCount, storedProjects[projectCount-1].title)
+        removeReturnButton()
         }
 
         //Add a new project

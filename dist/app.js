@@ -209,11 +209,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _appendDOM__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./appendDOM */ "./src/appendDOM.js");
 /* harmony import */ var _projectNew__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./projectNew */ "./src/projectNew.js");
 /* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./footer */ "./src/footer.js");
+/* harmony import */ var _projectInsertProjects__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./projectInsertProjects */ "./src/projectInsertProjects.js");
 
 
 
 
-function projectDOM(count, title) {
+
+function projectDOM() {
 
     let dashboard = document.createElement('div')
         dashboard.className = 'projects-dashboard'
@@ -228,8 +230,9 @@ function projectDOM(count, title) {
         projectsGrid.className = 'projects-grid'
         dashboard.appendChild(projectsGrid)
 
+    
     document.addEventListener('DOMContentLoaded', () => {
-        ;(0,_projectNew__WEBPACK_IMPORTED_MODULE_1__.newProject)(count, title)
+        ;(0,_projectInsertProjects__WEBPACK_IMPORTED_MODULE_3__.insertStoredProjects)()
     })
 
     ;(0,_appendDOM__WEBPACK_IMPORTED_MODULE_0__.appendDOM)(dashboard)
@@ -375,6 +378,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _projectStorage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./projectStorage */ "./src/projectStorage.js");
 /* harmony import */ var _upcomingDOM__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./upcomingDOM */ "./src/upcomingDOM.js");
 /* harmony import */ var _projectInsertTasks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./projectInsertTasks */ "./src/projectInsertTasks.js");
+/* harmony import */ var _returnButtonRemove__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./returnButtonRemove */ "./src/returnButtonRemove.js");
+
 
 
 
@@ -398,14 +403,7 @@ function projectListener() {
         e.target.parentElement.id.includes('project-button')) {
         (0,_clearDOM__WEBPACK_IMPORTED_MODULE_2__.clearDOM)()
         ;(0,_projectDOM__WEBPACK_IMPORTED_MODULE_0__.projectDOM)()
-
-        let sidebar = document.querySelector('.sidebar')
-        let returnButton = document.querySelector('#returnB1')
-        if (returnButton != null) {
-            sidebar.removeChild(returnButton)
-        }
-        
-        (0,_projectNew__WEBPACK_IMPORTED_MODULE_3__.newProject)(projectCount, storedProjects[projectCount-1].title)
+        ;(0,_returnButtonRemove__WEBPACK_IMPORTED_MODULE_7__.removeReturnButton)()
         }
 
         //Add a new project
@@ -614,6 +612,26 @@ const storedProjects = [
 
 /***/ }),
 
+/***/ "./src/returnButtonRemove.js":
+/*!***********************************!*\
+  !*** ./src/returnButtonRemove.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "removeReturnButton": () => (/* binding */ removeReturnButton)
+/* harmony export */ });
+function removeReturnButton() {
+    let sidebar = document.querySelector('.sidebar')
+    let returnButton = document.querySelector('#returnB1')
+    if (returnButton != null) {
+        sidebar.removeChild(returnButton)
+    }
+}
+
+/***/ }),
+
 /***/ "./src/sidebarDOM.js":
 /*!***************************!*\
   !*** ./src/sidebarDOM.js ***!
@@ -720,6 +738,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _taskStoreInput__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./taskStoreInput */ "./src/taskStoreInput.js");
 /* harmony import */ var _projectStorage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./projectStorage */ "./src/projectStorage.js");
 /* harmony import */ var _projectInsertProjects__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./projectInsertProjects */ "./src/projectInsertProjects.js");
+/* harmony import */ var _returnButtonRemove__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./returnButtonRemove */ "./src/returnButtonRemove.js");
+
 
 
 
@@ -776,9 +796,7 @@ function taskListener() {
                 ;(0,_projectInsertProjects__WEBPACK_IMPORTED_MODULE_7__.insertStoredProjects)()
 
                 taskCount = 0
-                let sidebar = document.querySelector('.sidebar')
-                let returnButton = document.querySelector('#returnB1')
-                sidebar.removeChild(returnButton)
+                ;(0,_returnButtonRemove__WEBPACK_IMPORTED_MODULE_8__.removeReturnButton)()
             }
         }
     })

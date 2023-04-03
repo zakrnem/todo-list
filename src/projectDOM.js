@@ -1,8 +1,9 @@
 import { appendDOM } from "./appendDOM"
 import { newProject } from "./projectNew"
 import { footer } from "./footer"
+import { insertStoredProjects } from "./projectInsertProjects"
 
-export function projectDOM(count, title) {
+export function projectDOM() {
 
     let dashboard = document.createElement('div')
         dashboard.className = 'projects-dashboard'
@@ -17,8 +18,9 @@ export function projectDOM(count, title) {
         projectsGrid.className = 'projects-grid'
         dashboard.appendChild(projectsGrid)
 
+    
     document.addEventListener('DOMContentLoaded', () => {
-        newProject(count, title)
+        insertStoredProjects()
     })
 
     appendDOM(dashboard)
