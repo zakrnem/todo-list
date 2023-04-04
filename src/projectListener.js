@@ -7,7 +7,7 @@ import { upcomingTasksDOM } from "./upcomingDOM"
 import { insertStoredTasks} from "./projectInsertTasks"
 import { insertStoredProjects } from "./projectInsertProjects"
 import { returnToPreviousDashboard } from "./returnPrevious"
-import { searchArray } from "./searchArray"
+import { searchDOM } from "./searchResultsDOM"
 
 export function projectListener() {
     let content = document.querySelector('#content')
@@ -52,10 +52,18 @@ export function projectListener() {
             }
 
         //Search bar
-        if (e.target.id.includes('search-button') ||
-            e.target.parentElement.id.includes('search-button')) {
-                searchArray()
+        let searchInput = content.querySelector('#search-bar')
+        if ((e.target.id.includes('search-button') ||
+            e.target.parentElement.id.includes('search-button')) &&
+            searchInput.value) {
+                searchDOM()
             }
+        searchInput.addEventListener('input', (e) => {
+            let searchDash = content.querySelector('.search-dash')
+            if (searchDash) {
+                searchDOM()
+            }
+        })
     })
     
     content.addEventListener('dblclick', (e) => {

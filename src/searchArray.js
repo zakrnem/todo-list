@@ -9,5 +9,5 @@ export function searchArray() {
         return arr.filter((el) => el.title.toLowerCase().includes(query.toLowerCase()));
     }
 
-    console.log(filterItems(flattened, searchInput));
+    return filterItems(flattened, searchInput)
 }

@@ -255,7 +255,8 @@ input {
 
 .projects-dashboard,
 .edit-project-dash,
-.upcoming-dash {
+.upcoming-dash,
+.search-dash {
     margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -335,7 +336,8 @@ input {
 }
 
 .project-title,
-.upcoming-title {
+.upcoming-title,
+.search-title {
     font-size: 2rem;
 }
 
