@@ -191,6 +191,28 @@ function headerDOM() {
 
 /***/ }),
 
+/***/ "./src/localStorage.js":
+/*!*****************************!*\
+  !*** ./src/localStorage.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "storeLocally": () => (/* binding */ storeLocally)
+/* harmony export */ });
+function storeLocally(typeOfOperation, obj) {
+    if (typeOfOperation === 'write') {
+        localStorage.setItem('storedProjects', JSON.stringify(obj))
+    }
+    if (typeOfOperation === 'read') {
+        let storedString = localStorage.getItem('storedProjects')
+        return JSON.parse(storedString)
+    }
+}
+
+/***/ }),
+
 /***/ "./src/newIcon.js":
 /*!************************!*\
   !*** ./src/newIcon.js ***!
@@ -535,12 +557,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "projectStorage": () => (/* binding */ projectStorage)
 /* harmony export */ });
+/* harmony import */ var _localStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./localStorage */ "./src/localStorage.js");
+
+
 function projectStorage(typeOfOperation, projID, projTasks) {
+    if ((0,_localStorage__WEBPACK_IMPORTED_MODULE_0__.storeLocally)('read')) {
+        storedProjects = (0,_localStorage__WEBPACK_IMPORTED_MODULE_0__.storeLocally)('read')
+    }
+
     if (typeOfOperation === 'read') {
         return storedProjects
     }
     if (typeOfOperation === 'write') {
-        //console.log(projTasks)
         let found
         for (let key in storedProjects) {
             if (storedProjects[key].id == projID) {
@@ -556,97 +584,20 @@ function projectStorage(typeOfOperation, projID, projTasks) {
             if (storedProjects[itemIndex].id != itemIndex+1) {
                 storedProjects[itemIndex].id = itemIndex+1
             }
+        (0,_localStorage__WEBPACK_IMPORTED_MODULE_0__.storeLocally)('write', storedProjects)
         }
-        //localStorage.setItem('storedProjects', storedProjects.toString())
-        //console.log(localStorage.getItem('storedProjects'))
     }
     if (typeOfOperation === 'delete') {
         storedProjects.splice(projID-1,1)
+        ;(0,_localStorage__WEBPACK_IMPORTED_MODULE_0__.storeLocally)('write', storedProjects)
     }
 }
 
-const storedProjects = [
+let storedProjects = [
     {
-        "title": "Daihatsu",
-        "tasks": [
-            {
-                "id": "1",
-                "project": "Daihatsu",
-                "title": "Review expenses logging from the last month",
-                "description": "",
-                "date": "2003-03-23",
-                "completed": true
-            },
-            {
-                "id": "1",
-                "project": "Daihatsu",
-                "title": "Study javascript array methods",
-                "description": "",
-                "date": "1811-03-24",
-                "completed": false
-            },
-            {
-                "id": "1",
-                "project": "Daihatsu",
-                "title": "Buy clothes for the holidays",
-                "description": "",
-                "date": "2005-04-05",
-                "completed": false
-            }
-        ],
+        "title": "Personal",
+        "tasks": [],
         "id": "1"
-    },
-    {
-        "title": "Suzuki",
-        "tasks": [
-            {
-                "id": "2",
-                "project": "Suzuki",
-                "title": "Ignis",
-                "description": "",
-                "date": "2001-03-01",
-                "completed": false
-            },
-            {
-                "id": "2",
-                "project": "Suzuki",
-                "title": "Cultus",
-                "description": "",
-                "date": "1999-03-31",
-                "completed": true
-            }
-        ],
-        "id": "2"
-    },
-    {
-        "title": "Mazda",
-        "tasks": [
-            {
-                "id": "3",
-                "project": "Mazda",
-                "title": "323",
-                "description": "",
-                "date": "2007-06-07",
-                "completed": true
-            },
-            {
-                "id": "3",
-                "project": "Mazda",
-                "title": "Protegé",
-                "description": "",
-                "date": "2003-04-13",
-                "completed": false
-            },
-            {
-                "id": "3",
-                "project": "Mazda",
-                "title": "626",
-                "description": "",
-                "date": "2004-02-07",
-                "completed": false
-            }
-        ],
-        "id": "3"
     }
 ]
 
@@ -1310,11 +1261,6 @@ function upcomingTasksObject() {
     let storedProjects = (0,_projectStorage__WEBPACK_IMPORTED_MODULE_0__.projectStorage)('read')
     let flattened = storedProjects.flatMap(item => item.tasks);
     flattened.sort((a, b) => (a.date > b.date) ? 1 : -1)
-    
-    let flatString = JSON.stringify(flattened)
-    localStorage.setItem('storedProjects', flatString)
-    console.log(localStorage.getItem('storedProjects'))
-
     return flattened
 }
 
