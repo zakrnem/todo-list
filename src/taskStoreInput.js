@@ -21,10 +21,9 @@ export function storeTaskInput() {
             storedTasks.push(projectTasks)
         }
     }
-    
 
     const projectTasks = {title: projectTitle, tasks: storedTasks, id: projectID}
     projectStorage('write', projectID, projectTasks) //Stores the tasks of one project
-    console.log(projectStorage('read'))
+    //console.log(projectStorage('read'))
  }
  

@@ -7,6 +7,7 @@ import { upcomingTasksDOM } from "./upcomingDOM"
 import { insertStoredTasks} from "./projectInsertTasks"
 import { insertStoredProjects } from "./projectInsertProjects"
 import { returnToPreviousDashboard } from "./returnPrevious"
+import { searchArray } from "./searchArray"
 
 export function projectListener() {
     let content = document.querySelector('#content')
@@ -48,6 +49,12 @@ export function projectListener() {
         if (e.target.id.includes('return-upcoming') ||
             e.target.parentElement.id.includes('return-upcoming')) {
                 returnToPreviousDashboard()
+            }
+
+        //Search bar
+        if (e.target.id.includes('search-button') ||
+            e.target.parentElement.id.includes('search-button')) {
+                searchArray()
             }
     })
     

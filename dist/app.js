@@ -398,6 +398,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _projectInsertTasks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./projectInsertTasks */ "./src/projectInsertTasks.js");
 /* harmony import */ var _projectInsertProjects__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./projectInsertProjects */ "./src/projectInsertProjects.js");
 /* harmony import */ var _returnPrevious__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./returnPrevious */ "./src/returnPrevious.js");
+/* harmony import */ var _searchArray__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./searchArray */ "./src/searchArray.js");
+
 
 
 
@@ -448,6 +450,12 @@ function projectListener() {
         if (e.target.id.includes('return-upcoming') ||
             e.target.parentElement.id.includes('return-upcoming')) {
                 (0,_returnPrevious__WEBPACK_IMPORTED_MODULE_8__.returnToPreviousDashboard)()
+            }
+
+        //Search bar
+        if (e.target.id.includes('search-button') ||
+            e.target.parentElement.id.includes('search-button')) {
+                (0,_searchArray__WEBPACK_IMPORTED_MODULE_9__.searchArray)()
             }
     })
     
@@ -724,6 +732,33 @@ const previousDashboard = [{name: ''}]
 
 /***/ }),
 
+/***/ "./src/searchArray.js":
+/*!****************************!*\
+  !*** ./src/searchArray.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "searchArray": () => (/* binding */ searchArray)
+/* harmony export */ });
+/* harmony import */ var _projectStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projectStorage */ "./src/projectStorage.js");
+
+
+function searchArray() {
+    let storedProjects = (0,_projectStorage__WEBPACK_IMPORTED_MODULE_0__.projectStorage)('read')
+    let flattened = storedProjects.flatMap(item => item.tasks);
+    let searchInput = document.querySelector('#search-bar').value
+
+    function filterItems(arr, query) {
+        return arr.filter((el) => el.title.toLowerCase().includes(query.toLowerCase()));
+    }
+
+    console.log(filterItems(flattened, searchInput));
+}
+
+/***/ }),
+
 /***/ "./src/sidebarDOM.js":
 /*!***************************!*\
   !*** ./src/sidebarDOM.js ***!
@@ -823,8 +858,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _taskToggleDetail__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./taskToggleDetail */ "./src/taskToggleDetail.js");
 /* harmony import */ var _taskNew__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./taskNew */ "./src/taskNew.js");
 /* harmony import */ var _returnPrevious__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./returnPrevious */ "./src/returnPrevious.js");
-/* harmony import */ var _taskStoreInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./taskStoreInput */ "./src/taskStoreInput.js");
-
 
 
 
@@ -839,7 +872,7 @@ function taskListener() {
         if (taskDash != null) {
             let tasksNodeList = document.querySelectorAll('.task-container')
             let taskCount = tasksNodeList.length
-            
+
             //Add task
             if (e.target.id.includes('add-task')) {
                 taskCount += 1
@@ -1008,11 +1041,10 @@ function storeTaskInput() {
             storedTasks.push(projectTasks)
         }
     }
-    
 
     const projectTasks = {title: projectTitle, tasks: storedTasks, id: projectID}
     ;(0,_projectStorage__WEBPACK_IMPORTED_MODULE_0__.projectStorage)('write', projectID, projectTasks) //Stores the tasks of one project
-    console.log((0,_projectStorage__WEBPACK_IMPORTED_MODULE_0__.projectStorage)('read'))
+    //console.log(projectStorage('read'))
  }
  
 
