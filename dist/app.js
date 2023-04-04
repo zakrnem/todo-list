@@ -589,7 +589,14 @@ function projectStorage(typeOfOperation, projID, projTasks) {
     }
     if (typeOfOperation === 'delete') {
         storedProjects.splice(projID-1,1)
-        ;(0,_localStorage__WEBPACK_IMPORTED_MODULE_0__.storeLocally)('write', storedProjects)
+        //We need to reset project ID's after a deletion
+        let projectsLength = storedProjects.length
+        for (let key in storedProjects) {
+            if (storedProjects[key].id != key+1) {
+                storedProjects[key].id = parseInt(key)+1
+            }
+        }
+        (0,_localStorage__WEBPACK_IMPORTED_MODULE_0__.storeLocally)('write', storedProjects)
     }
 }
 

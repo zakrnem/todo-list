@@ -1,5 +1,5 @@
 Pending:
-    Implement "local-storage".
+    Store changes made in pj dash
     Remove unused button from header.
     Implement "date-fns".
     

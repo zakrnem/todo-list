@@ -29,6 +29,13 @@ export function projectStorage(typeOfOperation, projID, projTasks) {
     }
     if (typeOfOperation === 'delete') {
         storedProjects.splice(projID-1,1)
+        //We need to reset project ID's after a deletion
+        let projectsLength = storedProjects.length
+        for (let key in storedProjects) {
+            if (storedProjects[key].id != key+1) {
+                storedProjects[key].id = parseInt(key)+1
+            }
+        }
         storeLocally('write', storedProjects)
     }
 }
