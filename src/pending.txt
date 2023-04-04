@@ -1,11 +1,6 @@
 Pending:
-    Make the search bar work.
-        The search button will automatically open the 'upcomig tasks dashboard'.
-        The search result dashboard will be very similar to that one but with element filtering.
-        But fist we need to export to the console this filtered array.
-        We will add an event listener for the search bar input field, with every input the array
-            will be filtered more.
-
-    Implement "date-fns"
-    Implement "local-storage"
+    Implement "local-storage".
+    Remove unused button from header.
+    Implement "date-fns".
+    
 

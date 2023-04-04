@@ -5,6 +5,7 @@ import { projectDOM } from "./projectDOM"
 import { insertStoredProjects } from "./projectInsertProjects"
 import { projectEdit } from "./projectEdit"
 import { insertStoredTasks } from "./projectInsertTasks"
+import { searchDOM } from "./searchResultsDOM"
 
 export function returnToPreviousDashboard() {
     let previousDashboard = previousDashboardStorage('read')
@@ -23,6 +24,9 @@ export function returnToPreviousDashboard() {
             let projIDnumber = previousDashboard.id
             projectEdit(projTitle, projIDnumber)
             insertStoredTasks(projIDnumber)
+            break
+        case (previousDashboard.name === 'search-dash'):
+            searchDOM()
             break
     }
 }

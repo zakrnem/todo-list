@@ -8,13 +8,11 @@ export function projectStorage(typeOfOperation, projID, projTasks) {
         for (let key in storedProjects) {
             if (storedProjects[key].id == projID) {
                 storedProjects[key] = projTasks
-                let projectCount = storedProjects.length
                 found = true
             }
         }
         if (found !== true) {
             storedProjects.push(projTasks)
-            let projectCount = storedProjects.length
         }
         for (let key in storedProjects) {
             let itemIndex = parseInt(key)
@@ -22,6 +20,8 @@ export function projectStorage(typeOfOperation, projID, projTasks) {
                 storedProjects[itemIndex].id = itemIndex+1
             }
         }
+        //localStorage.setItem('storedProjects', storedProjects.toString())
+        //console.log(localStorage.getItem('storedProjects'))
     }
     if (typeOfOperation === 'delete') {
         storedProjects.splice(projID-1,1)

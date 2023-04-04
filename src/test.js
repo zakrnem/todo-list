@@ -1,72 +1,30 @@
-let flattened = [
-    {
-        "id": "1",
-        "project": "Daihatsu",
-        "title": "Review expenses logging from the last month",
-        "description": "",
-        "date": "2003-03-23",
-        "completed": true
-    },
-    {
-        "id": "1",
-        "project": "Daihatsu",
-        "title": "Study javascript array methods",
-        "description": "",
-        "date": "1811-03-24",
-        "completed": false
-    },
-    {
-        "id": "1",
-        "project": "Daihatsu",
-        "title": "Buy clothes for the holidays",
-        "description": "",
-        "date": "2005-04-05",
-        "completed": false
-    },
-    {
-        "id": "2",
-        "project": "Suzuki",
-        "title": "Ignis",
-        "description": "",
-        "date": "2001-03-01",
-        "completed": false
-    },
-    {
-        "id": "2",
-        "project": "Suzuki",
-        "title": "Cultus",
-        "description": "",
-        "date": "1999-03-31",
-        "completed": true
-    },
-    {
-        "id": "3",
-        "project": "Mazda",
-        "title": "323",
-        "description": "",
-        "date": "2007-06-07",
-        "completed": true
-    },
-    {
-        "id": "3",
-        "project": "Mazda",
-        "title": "Protegé",
-        "description": "",
-        "date": "2003-04-13",
-        "completed": false
-    },
-    {
-        "id": "3",
-        "project": "Mazda",
-        "title": "626",
-        "description": "",
-        "date": "2004-02-07",
-        "completed": false
-    }
-]
+//Checks if item exist in storage, if it doesn't we add the custom values to the storage
+if (!localStorage.getItem("bgcolor")) {
+    populateStorage();
+  } else {
+    setStyles();
+  }
+//If it exist we run a function to set the styles stored
 
-function filterItems(arr, query) {
-    return arr.filter((el) => el.title.toLowerCase().includes(query.toLowerCase()));
-}
-
-console.log(filterItems(flattened, "a"));
+function setStyles() {
+    const currentColor = localStorage.getItem("bgcolor");
+    const currentFont = localStorage.getItem("font");
+    const currentImage = localStorage.getItem("image");
+  
+    document.getElementById("bgcolor").value = currentColor;
+    document.getElementById("font").value = currentFont;
+    document.getElementById("image").value = currentImage;
+  
+    htmlElem.style.backgroundColor = `#${currentColor}`;
+    pElem.style.fontFamily = currentFont;
+    imgElem.setAttribute("src", currentImage);
+  }
+  
+  function populateStorage() {
+    localStorage.setItem("bgcolor", document.getElementById("bgcolor").value);
+    localStorage.setItem("font", document.getElementById("font").value);
+    localStorage.setItem("image", document.getElementById("image").value);
+  
+    setStyles();
+  }
+  

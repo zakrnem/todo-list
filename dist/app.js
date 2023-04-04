@@ -545,13 +545,11 @@ function projectStorage(typeOfOperation, projID, projTasks) {
         for (let key in storedProjects) {
             if (storedProjects[key].id == projID) {
                 storedProjects[key] = projTasks
-                let projectCount = storedProjects.length
                 found = true
             }
         }
         if (found !== true) {
             storedProjects.push(projTasks)
-            let projectCount = storedProjects.length
         }
         for (let key in storedProjects) {
             let itemIndex = parseInt(key)
@@ -559,6 +557,8 @@ function projectStorage(typeOfOperation, projID, projTasks) {
                 storedProjects[itemIndex].id = itemIndex+1
             }
         }
+        //localStorage.setItem('storedProjects', storedProjects.toString())
+        //console.log(localStorage.getItem('storedProjects'))
     }
     if (typeOfOperation === 'delete') {
         storedProjects.splice(projID-1,1)
@@ -669,6 +669,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _projectInsertProjects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./projectInsertProjects */ "./src/projectInsertProjects.js");
 /* harmony import */ var _projectEdit__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./projectEdit */ "./src/projectEdit.js");
 /* harmony import */ var _projectInsertTasks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./projectInsertTasks */ "./src/projectInsertTasks.js");
+/* harmony import */ var _searchResultsDOM__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./searchResultsDOM */ "./src/searchResultsDOM.js");
+
 
 
 
@@ -694,6 +696,9 @@ function returnToPreviousDashboard() {
             let projIDnumber = previousDashboard.id
             ;(0,_projectEdit__WEBPACK_IMPORTED_MODULE_5__.projectEdit)(projTitle, projIDnumber)
             ;(0,_projectInsertTasks__WEBPACK_IMPORTED_MODULE_6__.insertStoredTasks)(projIDnumber)
+            break
+        case (previousDashboard.name === 'search-dash'):
+            ;(0,_searchResultsDOM__WEBPACK_IMPORTED_MODULE_7__.searchDOM)()
             break
     }
 }
@@ -1305,6 +1310,10 @@ function upcomingTasksObject() {
     let storedProjects = (0,_projectStorage__WEBPACK_IMPORTED_MODULE_0__.projectStorage)('read')
     let flattened = storedProjects.flatMap(item => item.tasks);
     flattened.sort((a, b) => (a.date > b.date) ? 1 : -1)
+    
+    let flatString = JSON.stringify(flattened)
+    localStorage.setItem('storedProjects', flatString)
+    console.log(localStorage.getItem('storedProjects'))
 
     return flattened
 }
